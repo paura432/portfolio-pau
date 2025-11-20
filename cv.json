@@ -13,32 +13,32 @@
       }
     ],
     "image": "/about/me.webp",
-    "intro": "hey, Pau here!",
-    "summary": "Software Developer at Telefónica Tech 🌀. Trabajo en identidad digital, verifiable credentials, APIs y soluciones full-stack. Estudiante en 42 Madrid con enfoque en C, C++, sistemas, cloud y seguridad.",
+    "intro": "¡Hola, soy Pau!",
+    "summary": "Software Developer en Telefónica Tech especializado en desarrollo de APIs, microservicios y aplicaciones web con tecnología blockchain. Actualmente en formación en 42 Madrid, combino ingeniería, diseño y seguridad para ofrecer soluciones fiables y escalables. Apasionado por la identidad digital y el desarrollo backend.",
     "projects": [
       {
-        "name": "VCS API — TrustOS",
+        "name": "VCS Frontend Demo",
         "image": "/home/webserv.webp",
-        "summary": "API para emisión y verificación de credenciales verificables. Integración con Procivis, PrivadoID e Idenfy.",
+        "summary": "Frontend principal para la demo de credenciales verificables de Telefónica Tech. Flujos de autenticación y verificación con wallets PrivadoID, Procivis e Identfy.",
+        "url": "https://vcs-dev.trustos.telefonicatech.com"
+      },
+      {
+        "name": "VCS API — TrustOS",
+        "image": "/home/inception.webp",
+        "summary": "API para generar credenciales verificables interoperables con múltiples wallets. Integrado en el ecosistema TrustOS.",
         "url": "https://github.com/telefonicatech"
       },
       {
-        "name": "Demo Identidad Salud",
-        "image": "/home/inception.webp",
-        "summary": "Flujo completo con QR, wallets, verificación delegada, mTLS y animaciones estilo Telefónica.",
-        "url": "https://github.com/paura432"
-      },
-      {
-        "name": "NorteVerse VC Game",
+        "name": "TrustOS Blockchain APIs",
         "image": "/home/minishell.webp",
-        "summary": "Juego basado en credenciales verificables con mundos, poderes y matching de atributos.",
-        "url": "https://github.com/paura432"
+        "summary": "Contribución al desarrollo del ecosistema de APIs blockchain de TrustOS (CertAPI, TokenAPI, IDAPI, DBAPI, EVMAPI).",
+        "url": "https://github.com/telefonicatech"
       },
       {
-        "name": "Fraude BEC",
+        "name": "Proyecto ASO",
         "image": "/home/fdf.webp",
-        "summary": "Sistema anti Business Email Compromise: backend TS + Next.js + análisis de firmas y VoP.",
-        "url": "https://github.com/paura432"
+        "summary": "Infraestructura IT automatizada para gestión de usuarios, impresoras, backups y permisos. Active Directory, PowerShell y scripts .bat.",
+        "url": "https://github.com/Proyecto-ASO"
       }
     ]
   },
@@ -56,8 +56,8 @@
       "url": "https://github.com/paura432"
     },
     {
-      "network": "42 Intra",
-      "url": "https://profile.intra.42.fr/users/paura"
+      "network": "Teléfono",
+      "url": "tel:+34630118759"
     }
   ],
   "about": {
@@ -88,41 +88,57 @@
       }
     ],
     "bio": [
-      "Hi, I'm Pau from Salamanca, Spain. Trabajo como Software Developer en Telefónica Tech, centrado en identidad digital, verifiable credentials y demos técnicas para clientes.",
-      "Estoy estudiando en 42 Madrid desde 2023, donde he aprendido C, C++, programación de sistemas, shells, threads y fundamentos de arquitectura.",
-      "Fuera del código, me encanta entrenar, cocinar y hacer demos visuales con QR, wallets, animaciones y mTLS 🙂"
+      "Hola, soy Pau de Madrid, España. Trabajo como Software Developer en Telefónica Tech, especializado en identidad digital, credenciales verificables y demos técnicas para clientes corporativos.",
+      "Estoy estudiando en 42 Madrid desde 2023, donde desarrollo habilidades en C, C++, programación de sistemas, arquitectura de software y seguridad. Combino formación técnica con experiencia profesional en desarrollo de APIs y microservicios blockchain.",
+      "Me apasiona crear soluciones tecnológicas claras, simples y eficientes. Fuera del código, disfruto del deporte, la cocina y construir demos interactivas con QR, wallets digitales y tecnologías modernas 🚀"
     ],
-    "work_intro": "Here are some of the places I have worked.",
+    "work_intro": "Lugares donde he trabajado",
     "work": [
       {
         "area": "Software Developer",
         "company": "Telefónica Tech",
         "logo": "/about/telefonica.webp",
         "url": "https://telefonicatech.com/",
-        "date": "Mar 2024 - Now",
+        "date": "2024 - Actualidad",
         "key": "1"
       },
       {
-        "area": "IT Technician",
+        "area": "IT Technician Intern",
         "company": "AllCloud Computing",
         "logo": "/about/techtitute.webp",
         "url": "",
-        "date": "2021 - 2022",
+        "date": "Mar 2022 - May 2022",
         "key": "2"
       }
     ],
-    "education_intro": "Here are some of my studies.",
+    "education_intro": "Mis estudios",
     "education": [
       {
-        "area": "Software Engineering",
+        "area": "Ingeniería de Software",
         "company": "42 Madrid",
         "logo": "/about/42.webp",
         "url": "https://www.42network.org/",
-        "date": "Sept 2023 - Now",
+        "date": "2023 - Actualidad",
         "key": "1"
+      },
+      {
+        "area": "CFGS Administración de Sistemas Informáticos en Red",
+        "company": "ITEP",
+        "logo": "/about/techtitute.webp",
+        "url": "",
+        "date": "2020 - 2022",
+        "key": "2"
+      },
+      {
+        "area": "Bachillerato Científico-Tecnológico",
+        "company": "Mater Salvatoris Lleida",
+        "logo": "/about/techtitute.webp",
+        "url": "",
+        "date": "2018 - 2020",
+        "key": "3"
       }
     ],
-    "certificates_intro": "Here are some of my latest certifications.",
+    "certificates_intro": "Certificaciones y proyectos destacados",
     "certificates": [
       {
         "alt": "Blockchain & Digital Identity Projects",
@@ -133,8 +149,8 @@
     ],
     "cerficatesv2": [
       {
-        "alt": "Verifiable Credentials Specialist",
-        "logo": "/about/OSCP.webp",
+        "alt": "TrustOS Ecosystem Development",
+        "logo": "/about/telefonica.webp",
         "url": "",
         "key": "2"
       }

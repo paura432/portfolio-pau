@@ -1,27 +1,28 @@
-# My personal Website
+# Portfolio de Pau Ramos
 
-My personal portfolio website to showcase my projects and resume. It's design to be simplistic and clean, while easy-configurable through a json file.
+Portfolio personal para mostrar mis proyectos y experiencia profesional. Diseño minimalista y limpio, fácilmente configurable a través de un archivo JSON.
 
-# Tech Stack
-- [React](https://es.react.dev/) with [Vite](https://vitejs.dev/) (Frontend library)
-- [React Router](https://reactrouter.com/en/main) (to configure website routes)
-- [Tailwind CSS](https://tailwindcss.com/) (Styling)
-- [Radix UI Primitives](https://www.radix-ui.com/primitives) (Headless UI components)
-- [Framer motion](https://www.framer.com/) (Animations)
+# Stack Tecnológico
+- [React](https://es.react.dev/) con [Vite](https://vitejs.dev/) (Framework frontend)
+- [React Router](https://reactrouter.com/en/main) (Enrutamiento)
+- [Tailwind CSS](https://tailwindcss.com/) (Estilos)
+- [Radix UI Primitives](https://www.radix-ui.com/primitives) (Componentes UI headless)
+- [Framer Motion](https://www.framer.com/) (Animaciones)
 
-# Getting Started
+# Comenzar
 
-1 - Clone this repository
-	
-	git clone https://github.com/MGuardia10/portfolio.git
-2 - Navigate to the new directory
-	
-	cd portfolio
-3 - Make sure you have install `Node v20.17.0+` and run this command to start developing process:
+1 - Instalar dependencias (requiere Node v20.17.0+):
+
+	npm install
+
+2 - Iniciar servidor de desarrollo:
 
 	npm run dev
-4 - configure `cv.json` with your personal information and projects.
 
-5 - When finish, run the following command and upload `dist` directory in your preferred hosting.
+3 - Configurar `cv.json` con tu información personal y proyectos.
+
+4 - Para producción, ejecutar:
 
 	npm run build
+
+5 - Subir el directorio `dist` a tu hosting preferido (Vercel, Netlify, GitHub Pages, etc.).
