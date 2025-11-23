@@ -1,209 +1,113 @@
 {
   "personal": {
-    "nombre": "Pau Ramos",
-    "titulo": "Software Developer · Digital Identity & Blockchain",
-    "descripcion": "Software developer at Telefónica Tech specializing in backend engineering, digital identity, blockchain-based systems, and production-grade web platforms. Strong focus on clean architecture, secure APIs, and real-world verification workflows.",
+    "name": "Pau Ramos",
+    "title": "Software Developer · Digital Identity & Blockchain",
+    "description": "Software developer at Telefónica Tech specializing in backend engineering, digital identity, blockchain-based systems, and production-grade web platforms.",
     "email": "pauramosimo@gmail.com",
     "github": "https://github.com/paura432",
     "linkedin": "https://linkedin.com/in/paura432",
-    "ubicacion": "Madrid, Spain"
+    "location": "Madrid, Spain"
   },
 
-  "sobre_mi": {
-    "parrafos": [
-      "I am a software developer at Telefónica Tech focused on building reliable and secure backend systems, blockchain-based identity solutions, and full-stack platforms using TypeScript, Node.js, and Next.js. I work across digital identity, verifiable credentials, authentication flows, and microservices.",
-      "I study at 42 Madrid, where I strengthen my low-level problem-solving skills through advanced C and C++ projects. This combination of systems programming and full-stack development allows me to design efficient, scalable, and maintainable architectures.",
-      "I am passionate about secure authentication, verifiable credentials, automation, and real-world digital identity use cases. I enjoy creating demo platforms, QR-based verification flows, and solutions that combine backend engineering with strong UX thinking."
+  "about": {
+    "paragraphs": [
+      "I am a software developer at Telefónica Tech focused on building reliable and secure backend systems, blockchain-based identity solutions, and full-stack applications.",
+      "I study at 42 Madrid, strengthening low-level problem-solving through advanced C and C++ projects.",
+      "I am passionate about secure authentication, verifiable credentials, automation, and real-world digital identity solutions."
     ],
-    "experiencia": {
-      "titulo": "Experience",
-      "descripcion": "Professional experience building APIs, microservices, identity systems and production-ready web applications."
+
+    "experience": {
+      "title": "Experience",
+      "description": "Professional experience building APIs, microservices, identity systems and production-ready applications."
     },
-    "educacion": {
-      "titulo": "Education",
-      "descripcion": "42 Madrid · Higher National Diploma in Networked Computer Systems Administration (ASIR)"
+
+    "education": {
+      "title": "Education",
+      "description": "42 Madrid · Higher National Diploma in Networked Computer Systems Administration (ASIR)"
     },
-    "logros": {
-      "titulo": "Highlights",
-      "descripcion": "Contributor to Telefónica Tech’s TrustOS ecosystem, multi-wallet VCS platform, blockchain identity demos, and enterprise-grade digital verification flows."
+
+    "highlights": {
+      "title": "Highlights",
+      "description": "Contributor to Telefónica Tech TrustOS ecosystem, multi-wallet VCS platform and enterprise digital identity flows."
     }
   },
 
-  "habilidades": [
+  "skills": [
     {
-      "categoria": "Backend",
-      "items": [
-        "Node.js",
-        "Express",
-        "TypeScript",
-        "REST APIs",
-        "MongoDB",
-        "SQL",
-        "Docker",
-        "Microservices"
-      ]
+      "category": "Backend",
+      "items": ["Node.js", "Express", "TypeScript", "MongoDB", "SQL", "Docker", "Microservices"]
     },
     {
-      "categoria": "Frontend",
-      "items": [
-        "React",
-        "Next.js",
-        "JavaScript",
-        "Tailwind CSS",
-        "HTML",
-        "CSS"
-      ]
+      "category": "Frontend",
+      "items": ["React", "Next.js", "JavaScript", "HTML", "CSS"]
     },
     {
-      "categoria": "Systems",
-      "items": [
-        "Linux",
-        "Windows Server",
-        "Networking",
-        "Bash",
-        "PowerShell",
-        "VirtualBox"
-      ]
+      "category": "Systems",
+      "items": ["Linux", "Windows Server", "Bash", "PowerShell", "VirtualBox"]
     },
     {
-      "categoria": "Tools",
-      "items": [
-        "Git",
-        "GitHub Actions",
-        "Docker",
-        "Postman",
-        "Swagger",
-        "Nginx"
-      ]
+      "category": "Tools",
+      "items": ["GitHub Actions", "Docker", "Postman", "Nginx", "Kubernetes"]
     }
   ],
 
-  "proyectos": [
+  "projects": [
     {
-      "titulo": "TrustOS VCS Core API – Multi-Provider Credential Infrastructure",
-      "descripcion": "Production-grade backend powering all verifiable credential implementations across Telefónica Tech. Architected using a provider-abstraction pattern supporting PolygonID (Privado), Procivis, Identfy, and Truvera. Includes a factory-based initialization system, unified VCService layer, structured logging, safe error handling, Swagger auto-docs, and modular routing. Enables credential issuance, verification, and lifecycle management across corporate, healthcare, education, and government sectors.",
-      "tecnologias": [
-        "Node.js",
-        "Express",
-        "TypeScript",
-        "Polygon ID",
-        "Procivis",
-        "Identfy",
-        "Truvera",
-        "Swagger",
-        "Zod",
-        "Docker",
-        "MongoDB"
-      ],
-      "imagen": "/trust-vcs.jpeg",
+      "title": "TrustOS VCS Core API Multi-Provider Credential Infrastructure",
+      "description": "Production-grade backend powering all verifiable credentials at Telefónica Tech using a provider abstraction layer for PolygonID, Procivis, Identfy and Truvera.",
+      "technologies": ["Node.js", "Express", "TypeScript", "PrivadiID", "Procivis", "Identfy", "Docker", "MongoDB"],
+      "image": "/trust-vcs.jpeg",
       "github": "https://github.com/TELEFONICA-IOTBD/trustos-vcs"
     },
-
     {
-      "titulo": "TrustOS Verifiable Credentials Platform",
-      "descripcion": "Complete digital identity platform enabling multi-scenario verifiable credential workflows. Includes demos for healthcare, education, professional credentials, and government services. Implements QR-based issuance and verification, multilingual support (ES/EN), role-based flows, and real-time polling. Built with full TypeScript type safety and modular Next.js architecture.",
-      "tecnologias": [
-        "Next.js 14",
-        "React 18",
-        "TypeScript",
-        "Tailwind CSS",
-        "i18n",
-        "REST APIs"
-      ],
-      "imagen": "/trust-vcs-portal.png",
+      "title": "TrustOS Verifiable Credentials Platform",
+      "description": "Full digital identity platform with multi-scenario demos, QR issuance/verification, real-time polling, and multilingual flows.",
+      "technologies": ["Next.js", "React", "TypeScript", "Tailwind CSS", "i18n", "REST APIs"],
+      "image": "/trust-vcs-portal.png",
       "link": "https://vcs-dev.trustos.telefonicatech.com/",
       "github": "https://github.com/paura432/CabinaFrontProcivis"
     },
-
     {
-      "titulo": "FraudeBec – Anti Business Email Compromise Platform",
-      "descripcion": "Enterprise fraud-prevention system combining certificate-based authentication (mTLS), bank account verification (Iberpay/Devengo), and verifiable credentials for supplier identity. Features dual authentication flows (certificate login and QR-based VC presentation), real-time status updates, Dockerized backend, and Nginx reverse proxy. Designed for high-security corporate environments with HMAC-signed API requests.",
-      "tecnologias": [
-        "Next.js 14",
-        "TypeScript",
-        "Express",
-        "Nginx",
-        "Docker",
-        "AWS ALB",
-        "mTLS",
-        "Devengo API",
-        "Verifiable Credentials",
-        "HMAC Auth"
-      ],
-      "imagen": "/FraudeBec.png",
+      "title": "FraudeBec Anti-BEC Fraud Prevention Platform",
+      "description": "Corporate fraud prevention system using mTLS login, Iberpay/Devengo bank verification, and verifiable credentials for supplier identity.",
+      "technologies": ["Next.js", "TypeScript", "Express", "Nginx", "Docker", "AWS ALB", "mTLS", "Devengo API", "Verifiable Credentials"],
+      "image": "/FraudeBec.png",
       "link": "https://supplier.trustos.telefonicatech.com/",
       "github": "https://github.com/paura432/Fraude_BEC"
     },
-
     {
-      "titulo": "TrustOS PAN – Agricultural Commodity Certificate Portal",
-      "descripcion": "Web platform for the PAN (National Agricultural Platform) enabling digital certification of commodity purchase records such as wheat and other raw materials. The system retrieves authenticated purchase certificates, validates them, and records them on blockchain by deploying dedicated smart contracts to ensure immutable traceability. Designed to provide secure, tamper-proof certification across agricultural supply chains.",
-      "tecnologias": [
-        "Next.js 14",
-        "React 18",
-        "TypeScript",
-        "Tailwind CSS",
-        "TrustOS Token API",
-        "Blockchain",
-        "Smart Contracts",
-        "ERC721",
-        "AWS SSM",
-        "JWT Auth"
-      ],
-      "imagen": "/PAN.png",
+      "title": "TrustOS PAN Agricultural Commodity Certificate Portal",
+      "description": "Blockchain-based certification portal for validating agricultural purchase certificates using TrustOS Token API and dedicated smart contracts.",
+      "technologies": ["Next", "React 18", "TypeScript", "Tailwind CSS", "TrustOS Token API", "Blockchain", "Smart Contracts", "ERC721", "AWS SSM", "JWT Auth"],
+      "image": "/PAN.png",
       "github": "https://github.com/paura432/front-pan"
     },
-
     {
-      "titulo": "Norteverse – Gamified Verifiable Credentials Experience",
-      "descripcion": "Gamified team-building platform using verifiable credentials to create interactive digital identities. Users receive unique 'superpower' credentials and can scan others' QR codes to compare compatibility through real-time matching. Full stack system with Procivis integration, credential polling, dynamic routing, MongoDB storage, and responsive UI.",
-      "tecnologias": [
-        "Next.js",
-        "TypeScript",
-        "React",
-        "Tailwind CSS",
-        "shadcn/ui",
-        "QR Code",
-        "Procivis API",
-        "MongoDB"
-      ],
-      "imagen": "/NorteVerse.png",
+      "title": "Norteverse Gamified Verifiable Credentials Experience",
+      "description": "Gamified team-building platform using verifiable credentials, QR matching and Procivis integrations.",
+      "technologies": ["Next", "TypeScript", "React", "Tailwind CSS", "shadcn/ui", "QR Code", "Procivis API", "MongoDB"],
+      "image": "/NorteVerse.png",
       "github": "https://github.com/TELEFONICA-IOTBD/norteverse-front"
     },
-
     {
-      "titulo": "cub3D – Raycasting 3D Engine",
-      "descripcion": "3D rendering engine inspired by Wolfenstein 3D, built entirely from scratch in C using raycasting. Implements a full software rendering pipeline, real-time wall projection, field-of-view calculations, collision detection, and player movement. Includes parsing and validation of .cub map files, texture loading, and pixel-level drawing using MiniLibX.",
-      "tecnologias": [
-        "C",
-        "MiniLibX",
-        "Raycasting",
-        "Graphics Programming"
-      ],
-      "imagen": "/cub3d.png",
+      "title": "cub3D Raycasting 3D Engine",
+      "description": "Wolfenstein-style 3D engine built in C using raycasting and MiniLibX, including FOV, wall rendering, textures and collision detection.",
+      "technologies": ["C", "MiniLibX", "Raycasting", "Graphics Programming"],
+      "image": "/cub3d.png",
       "github": "https://github.com/paura432/cub3D"
     },
-
     {
-      "titulo": "Minishell – UNIX Shell Recreation",
-      "descripcion": "Custom UNIX shell built from scratch in C, implementing command parsing, environment variable expansion, piping, redirections (<, >, >>, <<), signal handling, and process execution. Includes lexer–parser pipeline, AST construction, custom builtins (cd, echo, env, export, unset, pwd, exit), and robust error management. Demonstrates deep understanding of UNIX internals and memory-safe programming.",
-      "tecnologias": [
-        "C",
-        "UNIX System Calls",
-        "Process Management",
-        "Pipes & Redirections",
-        "Signals",
-        "Parsing",
-        "Memory Management"
-      ],
-      "imagen": "/minishell.png",
+      "title": "Minishell UNIX Shell Recreation",
+      "description": "Custom UNIX shell in C with full lexer/parser pipeline, AST execution, builtins, pipes, redirects, env expansion and signal handling.",
+      "technologies": ["C", "UNIX System Calls", "Process Management", "Pipes & Redirections", "Signals", "Parsing", "Memory Management"],
+      "image": "/minishell.png",
       "github": "https://github.com/paura432/minishell"
     }
   ],
 
-  "contacto": {
-    "titulo": "Get in Touch",
-    "descripcion": "Looking to collaborate or discuss a project? Feel free to reach out — I'm always open to connecting.",
+  "contact": {
+    "title": "Get in Touch",
+    "description": "Looking to collaborate or discuss a project? Feel free to reach out — I'm always open to connecting.",
     "copyright": "© 2024 Pau Ramos"
   }
 }
