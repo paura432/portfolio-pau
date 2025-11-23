@@ -1,0 +1,14 @@
+# 1. Asegúrate de estar en tu carpeta
+cd /home/pau/Escritorio/portfolio-pau
+
+# 2. Dale permisos de ejecución al script
+chmod +x setup.sh
+
+# 3. Ejecuta el script (esto creará TODOS los archivos)
+./setup.sh
+
+# 4. Instala las dependencias
+npm install
+
+# 5. Ejecuta el servidor de desarrollo
+npm run dev
