@@ -23,7 +23,7 @@ export default function Portfolio() {
 
   useEffect(() => {
     const handleScroll = () => {
-      const sections = ['home', 'about', 'experience', 'education', 'skills', 'projects', 'contact']
+      const sections = ['home', 'about', 'experience', 'education', 'skills', 'projects']
       const scrollPosition = window.scrollY + 100
 
       for (const section of sections) {
@@ -65,7 +65,7 @@ export default function Portfolio() {
           </button>
 
           <div className="hidden md:flex gap-8">
-            {['home', 'about', 'experience', 'education', 'skills', 'projects', 'contact'].map((section) => (
+            {['home', 'about', 'experience', 'education', 'skills', 'projects'].map((section) => (
               <a
                 key={section}
                 href={`#${section}`}
