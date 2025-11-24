@@ -220,10 +220,5 @@
       "imagen": "/minishell.png",
       "github": "https://github.com/paura432/minishell"
     }
-  ],
-  "contacto": {
-    "titulo": "Get in Touch",
-    "descripcion": "Looking to collaborate or discuss a project? Feel free to reach out — I'm always open to connecting.",
-    "copyright": "© 2024 Pau Ramos"
-  }
+  ]
 }

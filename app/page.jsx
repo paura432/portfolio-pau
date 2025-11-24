@@ -298,37 +298,6 @@ export default function Portfolio() {
         </div>
       </section>
 
-
-      {/* CONTACT */}
-      <section id="contact" className="py-20 px-6 bg-[#0f0f14]">
-        <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-5xl font-bold mb-6 bg-gradient-to-r from-[#0066FF] to-[#00a8ff] bg-clip-text text-transparent">
-            {data.contacto.titulo}
-          </h2>
-          <p className="text-lg text-[#b8b8ba] mb-8">{data.contacto.descripcion}</p>
-
-          <div className="flex gap-6 justify-center mb-8">
-            <a href={data.personal.github} target="_blank"
-              className="p-4 bg-[#1a1a1f] rounded-full hover:bg-[#0066FF]">
-              <Github size={28} />
-            </a>
-            <a href={data.personal.linkedin} target="_blank"
-              className="p-4 bg-[#1a1a1f] rounded-full hover:bg-[#0066FF]">
-              <Linkedin size={28} />
-            </a>
-            <a href={`mailto:${data.personal.email}`}
-              className="p-4 bg-[#1a1a1f] rounded-full hover:bg-[#0066FF]">
-              <Mail size={28} />
-            </a>
-          </div>
-
-          <a href={`mailto:${data.personal.email}`}
-            className="px-8 py-4 bg-gradient-to-r from-[#0066FF] to-[#00a8ff] rounded-full font-semibold hover:scale-105 transition">
-            Send Message
-          </a>
-        </div>
-      </section>
-
       {/* FOOTER */}
       <footer className="py-8 px-6 border-t border-[#1a1a1f]">
         <div className="max-w-6xl mx-auto text-center text-[#888890]">
