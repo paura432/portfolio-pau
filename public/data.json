@@ -10,9 +10,13 @@
   },
   "sobre_mi": {
     "parrafos": [
-      "I am a software developer at Telefónica Tech focused on backend systems, decentralized identity, verifiable credentials and secure authentication flows. My work ranges from production APIs to complex real-world identity verification demos.",
-      "I study at 42 Madrid, where I gain deep low-level programming experience through advanced C and C++ projects, mastering memory management, algorithms and UNIX internals.",
-      "I enjoy building clean architectures, scalable services and strong UX flows that make digital identity accessible and intuitive."
+      "I am a software developer at Telefónica Tech focused on backend engineering, API design and real-world production services. I work across the full lifecycle of a project, from architecture and data modeling to deployment, debugging and performance improvements. I enjoy building reliable systems that solve real business needs.",
+      
+      "In parallel, I study at 42 Madrid, where I develop strong low-level programming skills through intensive C and C++ projects. This experience has given me a deep understanding of memory management, algorithms, UNIX internals and how software behaves at a systems level. It has shaped the way I approach code: clean, efficient and predictable.",
+      
+      "I like working on projects that combine backend logic with clear, intuitive frontends. I routinely build full-stack applications using modern frameworks, modular architectures and well-structured state management, always prioritizing maintainability and developer experience.",
+    
+      "My goals as an engineer are to write scalable code, design solid architectures and keep learning new tools, patterns and technologies. I enjoy turning ideas into working products and collaborating on solutions that are robust, elegant and impactful."
     ],
     "experiencia": {
       "titulo": "Experience",
@@ -72,7 +76,7 @@
     {
       "empresa": "Telefónica Tech",
       "puesto": "Software Developer",
-      "fecha": "2024 – Present",
+      "fecha": "2024  Present",
       "logo": "/logos/telefonica-tech.jpg",
       "descripcion": "Backend and full-stack development across the TrustOS ecosystem, working on digital identity, verifiable credentials and secure microservices. Contributed to the design and implementation of the VCS API, blockchain integrations and production-ready authentication flows using TypeScript, Node.js, Next.js and cloud infrastructure."
     },
@@ -88,43 +92,45 @@
     {
       "centro": "42 Madrid",
       "titulo": "Software Engineering Program",
-      "fecha": "2023 – Present",
+      "fecha": "2023  Present",
       "logo": "/logos/42Madrid.png",
       "descripcion": "High-intensity project-based training focused on C, C++, algorithms, UNIX systems and low-level engineering. Built real-world projects including a raycasting engine, a Bash-like shell and complex parsers, reinforcing problem-solving, memory management and systems programming."
     },
     {
       "centro": "ITEP",
       "titulo": "HND in Networked Computer Systems Administration (ASIR)",
-      "fecha": "2020 – 2022",
+      "fecha": "2020  2022",
       "logo": "/logos/ITEP.png",
       "descripcion": "Systems administration, networking, Linux, Windows Server, virtualization, hardware maintenance and IT security. Developed strong foundations in technical infrastructure and enterprise IT environments."
     }
   ],
   "proyectos": [
     {
-      "titulo": "TrustOS VCS Core API – Multi-Provider Credential Infrastructure",
-      "descripcion": "Backend infrastructure powering all verifiable credential logic at Telefónica Tech, supporting PrivadoID, Procivis and Identfy.",
-      "detalles": "Built a full provider-abstraction architecture, factory-based initialization, unified VCService layer, validation via Zod, structured logging, error-safe middleware and Swagger documentation. Enables issuance, verification and lifecycle management across healthcare, education, corporate and government identity flows.",
+      "titulo": "TrustOS VCS Core API  Multi-Provider Credential Infrastructure",
+      "descripcion": "Backend infrastructure powering all verifiable credential logic at Telefónica Tech, supporting PrivadoID, Procivis and Idenfy.",
+      "detalles": "TrustOS VCS Core API is the backend service responsible for creating and verifying verifiable credentials (VCs) within the TrustOS ecosystem at Telefónica Tech. It provides a unified and secure abstraction layer for issuing credentials through multiple identity wallets in the market, currently supporting PrivadoID, Procivis, and Idenfy. The API exposes a set of endpoints that allow frontend applications to request the issuance or verification of credentials. Each request includes the required schema-specific payload, which must match the credential schema deployed in the selected wallet provider. Once processed, the API returns a verification or issuance link, which the frontend transforms into a QR code to be scanned by the user's wallet. On the architectural side, the backend follows strict engineering standards using ESLint, Prettier, and Semantic Versioning (SemVer) to maintain code quality and ensure consistent releases. It includes a full suite of unit and integration tests, all of which must pass before the service can be merged and deployed to the main branch. This API acts as the core engine behind multiple TrustOS identity demos and production flows, enabling multi-provider interoperability, secure credential lifecycle management, and scalable enterprise identity solutions.",
       "tecnologias": [
         "Node.js",
         "Express",
         "TypeScript",
         "Polygon ID",
         "Procivis",
-        "Identfy",
-        "Truvera",
+        "Idenfy",
         "Swagger",
         "Zod",
         "Docker",
-        "MongoDB"
+        "MongoDB",
+        "Jest",
+        "linter",
+        "semVer"
       ],
       "imagen": "/trust-vcs.jpeg",
-      "github": "https://github.com/TELEFONICA-IOTBD/trustos-vcs"
+      "github": "/#"
     },
     {
       "titulo": "TrustOS Verifiable Credentials Platform",
       "descripcion": "Digital identity platform with multi-scenario VC verification, QR issuance, multilingual interface and role-based flows.",
-      "detalles": "Built modular Next.js architecture with real-time status polling, ES/EN i18n, complex state management for citizens and authorities, credential viewer and QR interaction layer. Supports professional credentials, academic degrees, healthcare flows and trusted attribute verification.",
+      "detalles": "TrustOS Verifiable Credentials Platform is a modular Next.js application designed to verify and interact with digital credentials across multiple real-world scenarios. The platform enables citizens, professionals, and authorities to authenticate with their digital wallets, scan QR codes, and validate trusted attributes through secure backend APIs. The frontend handles complex state transitions for each role, includes a multilingual ES/EN interface, and features a full credential viewer capable of rendering dynamic VC data from providers like PrivadoID, Procivis, and Idenfy. It also implements real-time QR verification with status polling to ensure smooth credential exchanges. Architecturally, the system uses modular components, clean separation of flows, and tailored state management patterns, supporting professional IDs, academic degrees, healthcare credentials, and multi-provider identity verification.",
       "tecnologias": [
         "Next.js 14",
         "React 18",
@@ -135,64 +141,52 @@
       ],
       "imagen": "/trust-vcs-portal.png",
       "link": "https://vcs-dev.trustos.telefonicatech.com/",
-      "github": "https://github.com/paura432/CabinaFrontProcivis"
+      "github": "/#"
     },
     {
-      "titulo": "FraudeBec – Anti Business Email Compromise Platform",
+      "titulo": "FraudeBec  Anti Business Email Compromise Platform",
       "descripcion": "Corporate anti-fraud system combining mTLS login, Iberpay/Devengo bank verification and verifiable credentials.",
-      "detalles": "Developed dual authentication flows (digital certificate login and VC-based QR flow), secure Nginx proxy, HMAC-signed requests, AWS ALB mTLS, Dockerized backend, and a supplier identity verification dashboard. Prevents account hijacking and ensures secure supplier validation.",
+      "detalles": "FraudeBec is a corporate antiBusiness Email Compromise (BEC) platform designed to prevent fraud in supplier payment workflows. It integrates dual authentication flows (secure mTLS certificate login and a verifiable credentials QR flow), enforced by an Nginx reverse proxy with HMAC-signed requests, AWS ALB mTLS, and strict schema validation. The platform includes real-time bank account verification through the Devengo/Iberpay API to confirm IBAN ownership and prevent fraudulent substitutions. The Next.js frontend provides a supplier onboarding dashboard, secure session handling, and identity validation steps. Fully Dockerized and deployed on AWS, the system ensures strong protection against account hijacking, impersonation, and unauthorized changes to payment destinations.",
       "tecnologias": [
         "Next.js 14",
         "TypeScript",
         "Express",
         "Nginx",
         "Docker",
-        "AWS ALB",
-        "mTLS",
-        "Devengo API",
-        "Verifiable Credentials"
+        "AWS ALB"
       ],
       "imagen": "/FraudeBec.png",
       "link": "https://supplier.trustos.telefonicatech.com/",
-      "github": "https://github.com/paura432/Fraude_BEC"
+      "github": "/#"
     },
     {
-      "titulo": "TrustOS PAN – Agricultural Commodity Certificate Portal",
+      "titulo": "TrustOS PAN  Agricultural Commodity Certificate Portal",
       "descripcion": "Portal for certifying agricultural commodity purchases (wheat, grains, raw materials) and anchoring them on blockchain.",
-      "detalles": "Developed a portal that retrieves validated producer purchase certificates, signs them using TrustOS Token API and publishes them as ERC-721 digital assets for traceability. Enables regulatory bodies, producers and buyers to verify authenticity and supply chain origin.",
+      "detalles": "TrustOS PAN is a certification portal for agricultural commodity purchases such as wheat, grains, and raw materials. The platform retrieves validated producer certificates and converts them into blockchain-anchored ERC-721 digital assets using the TrustOS Token API. It allows regulatory bodies, producers, and buyers to authenticate the origin, integrity, and traceability of each commodity lot. Once validated, each certificate is cryptographically signed and published on-chain, ensuring tamper-proof verification across the supply chain. The portal includes secure login, JWT-based authorization, AWS SSM-driven configuration management, and an interface for certificate visualization and digital token issuance.",
       "tecnologias": [
         "Next.js 14",
-        "React 18",
         "TypeScript",
-        "Tailwind CSS",
         "TrustOS Token API",
         "ERC721",
-        "AWS SSM",
-        "JWT Auth",
-        "Blockchain"
+        "AWS SSM"
       ],
       "imagen": "/PAN.png",
-      "github": "https://github.com/paura432/front-pan"
+      "github": "/#"
     },
     {
-      "titulo": "Norteverse – Gamified Verifiable Credentials Experience",
+      "titulo": "Norteverse  Gamified Verifiable Credentials Experience",
       "descripcion": "Gamified corporate identity experience where users share 'superpower' credentials and compare compatibility via QR.",
-      "detalles": "Built full Procivis integration, QR verification flow, real-time polling, dynamic UI routing based on credential attributes, MongoDB storage, and matching engine that calculates compatibility between users. Designed for events and team-building environments.",
+      "detalles": "Norteverse is a gamified corporate identity experience developed by Telefónica Tech for commercial and customer-facing events. Participants receive a 'superpower' verifiable credential and compare their attributes via a QR-based verification flow. The platform includes full Procivis integration, dynamic UI routing, real-time polling, MongoDB storage, and a matching engine for compatibility scoring. It has been successfully deployed across multiple corporate events, achieving strong engagement and becoming a recurring Telefónica Tech experience.",
       "tecnologias": [
         "Next.js",
         "TypeScript",
-        "React",
-        "Tailwind CSS",
-        "shadcn/ui",
-        "QR Code",
-        "Procivis API",
         "MongoDB"
       ],
       "imagen": "/NorteVerse.png",
-      "github": "https://github.com/TELEFONICA-IOTBD/norteverse-front"
+      "github": "/#"
     },
     {
-      "titulo": "cub3D – Raycasting 3D Engine",
+      "titulo": "cub3D  Raycasting 3D Engine",
       "descripcion": "3D engine in C inspired by Wolfenstein 3D using raycasting.",
       "detalles": "Implements a full rendering pipeline, DDA raycasting algorithm, collision detection, wall projection, FOV calculations, texture mapping, .cub file parser and pixel graphics using MiniLibX. Demonstrates strong mathematical and low-level programming skills.",
       "tecnologias": [
@@ -205,7 +199,7 @@
       "github": "https://github.com/paura432/cub3D"
     },
     {
-      "titulo": "Minishell – UNIX Shell Recreation",
+      "titulo": "Minishell  UNIX Shell Recreation",
       "descripcion": "Custom UNIX shell replicating Bash core behavior.",
       "detalles": "Built a full lexer, parser, AST builder, executor, environment variable system, redirections (<, >, >>, <<), pipes, signals, process handling, custom builtins and robust memory-safe implementations. Shows deep understanding of UNIX internals.",
       "tecnologias": [
