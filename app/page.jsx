@@ -306,7 +306,7 @@ export default function Portfolio() {
                   {openProject === index && (
                     <div className="p-4 sm:p-6 bg-[#1a1a1f]/80 border-t border-[#2a2a2f] animate-fadeIn">
                       <h4 className="text-lg sm:text-xl font-bold mb-2 text-[#00a8ff]">
-                        Detalle del proyecto
+                        Details of {project.titulo}
                       </h4>
 
                       <p className="text-sm sm:text-base text-[#b8b8ba] leading-relaxed mb-3 sm:mb-4">
