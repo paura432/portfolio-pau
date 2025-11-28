@@ -46,8 +46,7 @@
         "Next.js",
         "HTML",
         "CSS",
-        "SQL",
-        "Docker"
+        "SQL"
       ]
     },
     {
@@ -68,7 +67,8 @@
         "AI agents",
         "Kubernetes",
         "MongoDB",
-        "Virtual Box"
+        "Virtual Box",
+        "Docker"
       ]
     }
   ],
@@ -140,7 +140,7 @@
         "REST APIs"
       ],
       "imagen": "/trust-vcs-portal.png",
-      "link": "https://vcs-dev.trustos.telefonicatech.com/",
+      "link": "https://vcs.trustos.telefonicatech.com/",
       "github": "/#"
     },
     {
