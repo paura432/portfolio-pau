@@ -1,15 +1,15 @@
 import './globals.css'
 
 export const metadata = {
-  title: 'Tu Nombre - Portfolio',
+  title: 'Pau ramos - Portfolio',
   description: 'Portfolio profesional de desarrollo web full stack',
   keywords: 'desarrollador, portfolio, react, next.js, full stack',
-  authors: [{ name: 'Tu Nombre' }],
+  authors: [{ name: 'Pau ramos' }],
   openGraph: {
-    title: 'Tu Nombre - Portfolio',
+    title: 'Pau ramos - Portfolio',
     description: 'Portfolio profesional de desarrollo web',
     url: 'https://tu-dominio.com',
-    siteName: 'Tu Nombre Portfolio',
+    siteName: 'Pau ramos Portfolio',
     locale: 'es_ES',
     type: 'website',
   },
