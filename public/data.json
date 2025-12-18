@@ -1,8 +1,8 @@
 {
   "personal": {
     "nombre": "Pau Ramos",
-    "titulo": "Software Developer · Digital Identity & Blockchain",
-    "descripcion": "Software developer at Telefónica Tech specializing in backend engineering, digital identity, verifiable credentials and secure web platforms.",
+    "titulo": "Full stack developer · Digital Identity & Blockchain",
+    "descripcion": "Full stack developer at Telefónica Tech building production-ready digital identity platforms, combining backend APIs, secure authentication and modern web frontends.",
     "email": "pauramosimo@gmail.com",
     "github": "https://github.com/paura432",
     "linkedin": "https://linkedin.com/in/paura432",
@@ -10,17 +10,14 @@
   },
   "sobre_mi": {
     "parrafos": [
-      "I am a software developer at Telefónica Tech focused on backend engineering, API design and real-world production services. I work across the full lifecycle of a project, from architecture and data modeling to deployment, debugging and performance improvements. I enjoy building reliable systems that solve real business needs.",
-      
-      "In parallel, I study at 42 Madrid, where I develop strong low-level programming skills through intensive C and C++ projects. This experience has given me a deep understanding of memory management, algorithms, UNIX internals and how software behaves at a systems level. It has shaped the way I approach code: clean, efficient and predictable.",
-      
-      "I like working on projects that combine backend logic with clear, intuitive frontends. I routinely build full-stack applications using modern frameworks, modular architectures and well-structured state management, always prioritizing maintainability and developer experience.",
-    
-      "My goals as an engineer are to write scalable code, design solid architectures and keep learning new tools, patterns and technologies. I enjoy turning ideas into working products and collaborating on solutions that are robust, elegant and impactful."
+      "I am a full-stack developer at Telefónica Tech working on production digital identity platforms within the TrustOS ecosystem. I design backend APIs, build frontend applications and take features through the full lifecycle, from architecture and data modeling to deployment, debugging and performance optimization.",
+      "My work focuses on building reliable, secure systems that solve real business problems. I regularly work on verifiable credentials, authentication flows and scalable microservices, ensuring that backend logic, security and user experience fit together coherently.",
+      "In parallel, I study at 42 Madrid, where I strengthen my low-level programming skills through intensive C and C++ projects. This background gives me a strong understanding of memory management, algorithms and UNIX internals, shaping a clean, efficient and predictable engineering mindset.",
+      "I enjoy projects that combine complex backend logic with clear, intuitive frontends. My goal as an engineer is to design solid architectures, write scalable code and continuously improve as a full-stack professional working on real-world products."
     ],
     "experiencia": {
       "titulo": "Experience",
-      "descripcion": "Backend engineering, microservices, secure authentication and digital identity."
+      "descripcion": "End-to-end full-stack development, backend APIs, frontend engineering, secure authentication and digital identity platforms."
     },
     "educacion": {
       "titulo": "Education",
@@ -43,19 +40,14 @@
         "Node.js",
         "Express",
         "React",
+        "Angular",
         "Next.js",
         "HTML",
         "CSS",
-        "SQL"
-      ]
-    },
-    {
-      "categoria": "Systems",
-      "items": [
-        "Linux",
-        "Ubuntu",
-        "MacOS",
-        "Windows Server"
+        "SQL",
+        "CI/CD",
+        "Jest",
+        "Tailwind CSS"
       ]
     },
     {
@@ -70,15 +62,24 @@
         "Virtual Box",
         "Docker"
       ]
+    },
+    {
+      "categoria": "Systems",
+      "items": [
+        "Linux",
+        "Ubuntu",
+        "MacOS",
+        "Windows Server"
+      ]
     }
   ],
   "experiencia_laboral": [
     {
       "empresa": "Telefónica Tech",
-      "puesto": "Software Developer",
+      "puesto": "Full stack developer",
       "fecha": "2024  Present",
       "logo": "/logos/telefonica-tech.jpg",
-      "descripcion": "Backend and full-stack development across the TrustOS ecosystem, working on digital identity, verifiable credentials and secure microservices. Contributed to the design and implementation of the VCS API, blockchain integrations and production-ready authentication flows using TypeScript, Node.js, Next.js and cloud infrastructure."
+      "descripcion": "Full-stack development across the TrustOS ecosystem, building end-to-end digital identity platforms. I design and implement backend APIs for verifiable credentials, develop Next.js frontends with complex identity flows and integrate secure authentication mechanisms such as mTLS and certificate-based access. I actively contribute to the TrustOS VCS Core API and collaborate with DevOps and product teams to deliver scalable, production-ready solutions on cloud infrastructure."
     },
     {
       "empresa": "AllCloud Computing",
