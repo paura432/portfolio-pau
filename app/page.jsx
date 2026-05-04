@@ -1,15 +1,19 @@
 'use client'
 
 import { useState, useEffect } from 'react'
-import { Github, Linkedin, Mail, ExternalLink, Menu, X } from 'lucide-react'
+import { Github, Linkedin, Mail, ExternalLink, Menu, X, Sun, Moon, Globe2 } from 'lucide-react'
 import Image from 'next/image'
 import ParticlesBackground from './components/ParticlesBackground'
+
+const sectionIds = ['home', 'about', 'experience', 'education', 'skills', 'projects', 'contact']
 
 export default function Portfolio() {
   const [activeSection, setActiveSection] = useState('home')
   const [menuOpen, setMenuOpen] = useState(false)
   const [data, setData] = useState(null)
   const [openProject, setOpenProject] = useState(null)
+  const [language, setLanguage] = useState('en')
+  const [theme, setTheme] = useState('dark')
 
   const toggleAccordion = (i) => {
     setOpenProject(openProject === i ? null : i)
@@ -23,11 +27,30 @@ export default function Portfolio() {
   }, [])
 
   useEffect(() => {
-    const handleScroll = () => {
-      const sections = ['home', 'about', 'experience', 'education', 'skills', 'projects']
-      const scrollPosition = window.scrollY + 100
+    const savedLanguage = window.localStorage.getItem('portfolio-language')
+    const savedTheme = window.localStorage.getItem('portfolio-theme')
 
-      for (const section of sections) {
+    if (savedLanguage === 'en' || savedLanguage === 'es') {
+      setLanguage(savedLanguage)
+    }
+
+    if (savedTheme === 'dark' || savedTheme === 'light') {
+      setTheme(savedTheme)
+    }
+  }, [])
+
+  useEffect(() => {
+    document.documentElement.dataset.theme = theme
+    document.documentElement.lang = language
+    window.localStorage.setItem('portfolio-theme', theme)
+    window.localStorage.setItem('portfolio-language', language)
+  }, [theme, language])
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollPosition = window.scrollY + 120
+
+      for (const section of sectionIds) {
         const el = document.getElementById(section)
         if (el) {
           const { offsetTop, offsetHeight } = el
@@ -40,259 +63,369 @@ export default function Portfolio() {
     }
 
     window.addEventListener('scroll', handleScroll)
+    handleScroll()
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
   if (!data) {
     return (
-      <div className="min-h-screen flex items-center justify-center bg-[#0a0a0f]/90">
-        <div className="text-[#e8e8ea] text-xl">Loading...</div>
+      <div className="min-h-screen flex items-center justify-center bg-[var(--bg)]">
+        <div className="text-[var(--text)] text-xl">Loading...</div>
       </div>
     )
   }
 
+  const t = data.locales[language]
+  const shared = data.shared
+  const isPendingUrl = (url) => !url || url.startsWith('PENDING_')
+
+  const renderControls = (isMobile = false) => (
+    <div className={`flex ${isMobile ? 'flex-col items-stretch' : 'items-center'} gap-2`}>
+      <div className="flex items-center gap-2 rounded-full border border-[var(--border)] bg-[var(--surface-soft)] p-1" aria-label={t.ui.languageLabel}>
+        {['en', 'es'].map((locale) => (
+          <button
+            key={locale}
+            type="button"
+            onClick={() => setLanguage(locale)}
+            className={`rounded-full px-3 py-1.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-[var(--accent)] ${language === locale
+              ? 'bg-[var(--accent)] text-white'
+              : 'text-[var(--muted)] hover:text-[var(--text)]'
+              }`}
+            aria-pressed={language === locale}
+          >
+            {locale.toUpperCase()}
+          </button>
+        ))}
+      </div>
+
+      <button
+        type="button"
+        onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
+        className="inline-flex items-center justify-center gap-2 rounded-full border border-[var(--border)] bg-[var(--surface-soft)] px-3 py-2 text-xs font-semibold text-[var(--text)] transition-colors hover:border-[var(--accent)] focus:outline-none focus:ring-2 focus:ring-[var(--accent)]"
+        aria-label={`${t.ui.themeLabel}: ${theme === 'dark' ? t.ui.dark : t.ui.light}`}
+      >
+        {theme === 'dark' ? <Moon size={15} aria-hidden="true" /> : <Sun size={15} aria-hidden="true" />}
+        {theme === 'dark' ? t.ui.dark : t.ui.light}
+      </button>
+    </div>
+  )
+
   return (
     <>
-      <ParticlesBackground />
-      <div className="relative z-20 min-h-screen bg-transparent text-[#e8e8ea]">
-
-        {/* NAVBAR */}
-        <nav className="fixed top-0 w-full z-50 bg-[#0a0a0f] border-b border-[#1a1a1f]">
-          <div className="max-w-6xl mx-auto px-4 sm:px-6 py-3 sm:py-4 flex justify-between items-center">
-            <span className="text-xl sm:text-2xl font-bold bg-gradient-to-r from-[#0066FF] to-[#00a8ff] bg-clip-text text-transparent">
-              Portfolio
-            </span>
-
-            <button
-              className="md:hidden text-[#e8e8ea] p-2 hover:bg-[#1a1a1f] rounded-lg transition-colors"
-              onClick={() => setMenuOpen(!menuOpen)}
-              aria-label="Toggle menu"
+      <ParticlesBackground theme={theme} />
+      <div className="relative z-20 min-h-screen bg-[var(--page-overlay)] text-[var(--text)] transition-colors duration-300">
+        <nav className="fixed top-0 z-50 w-full border-b border-[var(--border)] bg-[var(--nav-bg)] backdrop-blur-xl">
+          <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-4 py-3 sm:px-6 sm:py-4">
+            <a
+              href="#home"
+              className="text-xl font-bold text-gradient sm:text-2xl"
+              aria-label={`${shared.nombre} ${t.ui.portfolio}`}
             >
-              {menuOpen ? <X size={24} /> : <Menu size={24} />}
-            </button>
+              {t.ui.portfolio}
+            </a>
 
-            <div className="hidden md:flex gap-6 lg:gap-8 items-center">
-              {['home', 'about', 'experience', 'education', 'skills', 'projects'].map((section) => (
+            <div className="hidden items-center gap-6 md:flex lg:gap-8">
+              {sectionIds.map((section) => (
                 <a
                   key={section}
                   href={`#${section}`}
-                  className={`transition-colors capitalize text-sm lg:text-base ${activeSection === section ? 'text-[#0066FF]' : 'text-[#e8e8ea] hover:text-[#0066FF]'
+                  className={`text-sm font-medium transition-colors lg:text-base ${activeSection === section
+                    ? 'text-[var(--accent)]'
+                    : 'text-[var(--text)] hover:text-[var(--accent)]'
                     }`}
                 >
-                  {section}
+                  {t.nav[section]}
                 </a>
               ))}
+              {renderControls()}
             </div>
+
+            <button
+              type="button"
+              className="rounded-lg p-2 text-[var(--text)] transition-colors hover:bg-[var(--surface-soft)] focus:outline-none focus:ring-2 focus:ring-[var(--accent)] md:hidden"
+              onClick={() => setMenuOpen(!menuOpen)}
+              aria-label="Toggle menu"
+              aria-expanded={menuOpen}
+            >
+              {menuOpen ? <X size={24} /> : <Menu size={24} />}
+            </button>
           </div>
 
           {menuOpen && (
-            <div className="md:hidden bg-[#0a0a0f] border-t border-[#1a1a1f]">
-              <div className="px-4 py-4 flex flex-col gap-3">
-                {['home', 'about', 'experience', 'education', 'skills', 'projects'].map(section => (
+            <div className="border-t border-[var(--border)] bg-[var(--nav-bg)] md:hidden">
+              <div className="flex flex-col gap-3 px-4 py-4">
+                {sectionIds.map(section => (
                   <a
                     key={section}
                     href={`#${section}`}
-                    className="text-[#e8e8ea] hover:text-[#0066FF] capitalize py-2 px-3 rounded-lg hover:bg-[#1a1a1f] transition-colors"
+                    className="rounded-lg px-3 py-2 text-[var(--text)] transition-colors hover:bg-[var(--surface-soft)] hover:text-[var(--accent)]"
                     onClick={() => setMenuOpen(false)}
                   >
-                    {section}
+                    {t.nav[section]}
                   </a>
                 ))}
+                {renderControls(true)}
               </div>
             </div>
           )}
         </nav>
 
-        {/* HOME */}
-        <section id="home" className="min-h-screen flex items-center justify-center pt-20 px-4 sm:px-6">
-          <div className="max-w-4xl mx-auto text-center">
-            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-4 sm:mb-6 bg-gradient-to-r from-[#0066FF] to-[#00a8ff] bg-clip-text text-transparent leading-tight">
-              {data.personal.nombre}
+        <section id="home" className="flex min-h-screen items-center justify-center px-4 pt-24 sm:px-6">
+          <div className="mx-auto max-w-4xl text-center">
+            <p className="mb-4 inline-flex items-center gap-2 rounded-full border border-[var(--border)] bg-[var(--surface-soft)] px-4 py-2 text-sm font-medium text-[var(--muted)]">
+              <Globe2 size={16} aria-hidden="true" />
+              {shared.ubicacion}
+            </p>
+            <h1 className="mb-4 text-4xl font-bold leading-tight text-gradient sm:mb-6 sm:text-5xl md:text-6xl lg:text-7xl">
+              {shared.nombre}
             </h1>
-            <div className="bg-[#1a1a1f]/90 p-6 sm:p-8 md:p-10 rounded-lg border border-[#2a2a2f]">
-              <p className="text-xl sm:text-2xl md:text-3xl mb-3 sm:mb-4 text-[#b8b8ba]">{data.personal.titulo}</p>
-              <p className="text-base sm:text-lg md:text-xl mb-6 sm:mb-8 text-[#888890] px-2">{data.personal.descripcion}</p>
+            <div className="rounded-2xl border border-[var(--border)] bg-[var(--surface)] p-6 shadow-[var(--shadow)] sm:p-8 md:p-10">
+              <p className="mb-3 text-xl text-[var(--muted)] sm:mb-4 sm:text-2xl md:text-3xl">{t.personal.titulo}</p>
+              <h2 className="mb-4 text-2xl font-semibold leading-tight text-[var(--text)] sm:text-3xl md:text-4xl">
+                {t.personal.headline}
+              </h2>
+              <p className="mb-6 px-2 text-base leading-relaxed text-[var(--subtle)] sm:mb-8 sm:text-lg md:text-xl">
+                {t.personal.descripcion}
+              </p>
 
-              <div className="flex gap-4 sm:gap-6 justify-center mb-6 sm:mb-8">
+              <div className="mb-6 flex justify-center gap-4 sm:mb-8 sm:gap-6">
                 <a
-                  href={data.personal.github}
+                  href={shared.github}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="p-3 sm:p-3 bg-[#1a1a1f]/90 rounded-full hover:bg-[#0066FF]/90 transition-colors"
+                  className="rounded-full bg-[var(--surface-soft)] p-3 transition-colors hover:bg-[var(--accent)] hover:text-white focus:outline-none focus:ring-2 focus:ring-[var(--accent)]"
                   aria-label="GitHub"
                 >
-                  <Github size={20} className="sm:w-6 sm:h-6" />
+                  <Github size={20} className="sm:h-6 sm:w-6" />
                 </a>
                 <a
-                  href={data.personal.linkedin}
+                  href={shared.linkedin}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="p-3 sm:p-3 bg-[#1a1a1f]/90 rounded-full hover:bg-[#0066FF]/90 transition-colors"
+                  className="rounded-full bg-[var(--surface-soft)] p-3 transition-colors hover:bg-[var(--accent)] hover:text-white focus:outline-none focus:ring-2 focus:ring-[var(--accent)]"
                   aria-label="LinkedIn"
                 >
-                  <Linkedin size={20} className="sm:w-6 sm:h-6" />
+                  <Linkedin size={20} className="sm:h-6 sm:w-6" />
                 </a>
                 <a
-                  href={`mailto:${data.personal.email}`}
-                  className="p-3 sm:p-3 bg-[#1a1a1f]/90 rounded-full hover:bg-[#0066FF]/90 transition-colors"
+                  href={`mailto:${shared.email}`}
+                  className="rounded-full bg-[var(--surface-soft)] p-3 transition-colors hover:bg-[var(--accent)] hover:text-white focus:outline-none focus:ring-2 focus:ring-[var(--accent)]"
                   aria-label="Email"
                 >
-                  <Mail size={20} className="sm:w-6 sm:h-6" />
+                  <Mail size={20} className="sm:h-6 sm:w-6" />
                 </a>
               </div>
 
               <a
                 href="#projects"
-                className="inline-block px-6 sm:px-8 py-3 sm:py-4 bg-gradient-to-r from-[#0066FF] to-[#00a8ff] rounded-full font-semibold text-sm sm:text-base hover:opacity-90 transition-opacity"
+                className="inline-block rounded-full bg-gradient-to-r from-[#0066FF] to-[#00a8ff] px-6 py-3 text-sm font-semibold text-white transition-opacity hover:opacity-90 focus:outline-none focus:ring-2 focus:ring-[var(--accent)] sm:px-8 sm:py-4 sm:text-base"
               >
-                View Projects
+                {t.ui.viewProjects}
               </a>
             </div>
           </div>
         </section>
 
-        {/* ABOUT */}
-        <section id="about" className="py-12 sm:py-16 md:py-20 px-4 sm:px-6">
-          <div className="max-w-6xl mx-auto">
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-8 sm:mb-12 text-center bg-gradient-to-r from-[#0066FF] to-[#00a8ff] bg-clip-text text-transparent">
-              About Me
+        <section id="about" className="px-4 py-12 sm:px-6 sm:py-16 md:py-20">
+          <div className="mx-auto max-w-6xl">
+            <h2 className="mb-8 text-center text-3xl font-bold text-gradient sm:mb-12 sm:text-4xl md:text-5xl">
+              {t.nav.about}
             </h2>
 
-            <div className="grid md:grid-cols-2 gap-6 sm:gap-8 bg-[#1a1a1f]/90 p-4 sm:p-6 rounded-lg border border-[#2a2a2f]">
-              {data.sobre_mi.parrafos.map((p, i) => (
-                <p key={i} className="text-base sm:text-lg text-[#b8b8ba] leading-relaxed">{p}</p>
+            <div className="grid gap-6 rounded-2xl border border-[var(--border)] bg-[var(--surface)] p-4 shadow-[var(--shadow)] sm:gap-8 sm:p-6 md:grid-cols-2">
+              {t.sobre_mi.parrafos.map((p, i) => (
+                <p key={i} className="text-base leading-relaxed text-[var(--muted)] sm:text-lg">{p}</p>
               ))}
             </div>
           </div>
         </section>
 
-        {/* EXPERIENCE */}
-        <section id="experience" className="py-12 sm:py-16 md:py-20 px-4 sm:px-6">
-          <div className="max-w-6xl mx-auto">
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-8 sm:mb-12 text-center bg-gradient-to-r from-[#0066FF] to-[#00a8ff] bg-clip-text text-transparent">
-              Work Experience
+        <section id="experience" className="px-4 py-12 sm:px-6 sm:py-16 md:py-20">
+          <div className="mx-auto max-w-6xl">
+            <h2 className="mb-8 text-center text-3xl font-bold text-gradient sm:mb-12 sm:text-4xl md:text-5xl">
+              {t.nav.experience}
             </h2>
 
             <div className="grid gap-6 sm:gap-8">
-              {data.experiencia_laboral.map((job, index) => (
-                <div key={index} className="flex flex-col sm:flex-row items-start gap-4 sm:gap-6 bg-[#1a1a1f]/90 p-4 sm:p-6 rounded-lg border border-[#2a2a2f]">
-                  <Image
-                    src={job.logo}
-                    alt={job.empresa}
-                    width={70}
-                    height={70}
-                    className="rounded-lg object-contain bg-white p-2 w-16 h-16 sm:w-[70px] sm:h-[70px] flex-shrink-0"
-                  />
+              {t.experiencia_laboral.map((job, index) => (
+                <article key={index} className="flex flex-col items-start gap-4 rounded-2xl border border-[var(--border)] bg-[var(--surface)] p-4 shadow-[var(--shadow)] sm:flex-row sm:gap-6 sm:p-6">
+                  {job.logo ? (
+                    <Image
+                      src={job.logo}
+                      alt={`${job.empresa} logo`}
+                      width={70}
+                      height={70}
+                      className="h-16 w-16 flex-shrink-0 rounded-lg bg-white object-contain p-2 sm:h-[70px] sm:w-[70px]"
+                    />
+                  ) : (
+                    <div
+                      className="flex h-16 w-16 flex-shrink-0 items-center justify-center rounded-lg border border-[var(--border)] bg-[var(--surface-soft)] text-xl font-bold text-[var(--accent)] sm:h-[70px] sm:w-[70px]"
+                      aria-label={`${job.empresa} logo placeholder`}
+                    >
+                      {job.empresa.charAt(0)}
+                    </div>
+                  )}
                   <div className="flex-1">
-                    <h3 className="text-xl sm:text-2xl font-bold text-[#00a8ff]">{job.puesto}</h3>
-                    <p className="text-[#e8e8ea] font-semibold text-sm sm:text-base">{job.empresa}</p>
-                    <p className="text-[#888890] text-xs sm:text-sm mb-2 sm:mb-3">{job.fecha}</p>
-                    <p className="text-[#b8b8ba] leading-relaxed text-sm sm:text-base">{job.descripcion}</p>
+                    <h3 className="text-xl font-bold text-[var(--accent-2)] sm:text-2xl">{job.puesto}</h3>
+                    <p className="text-sm font-semibold text-[var(--text)] sm:text-base">{job.empresa}</p>
+                    <p className="mb-2 text-xs text-[var(--subtle)] sm:mb-3 sm:text-sm">{job.fecha}</p>
+                    <p className="mb-4 text-sm leading-relaxed text-[var(--muted)] sm:text-base">{job.descripcion}</p>
+                    <ul className="space-y-2 text-sm text-[var(--subtle)] sm:text-base">
+                      {job.bullets.map((item, i) => (
+                        <li key={i} className="flex gap-2">
+                          <span className="mt-2 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-[var(--accent)]" aria-hidden="true" />
+                          <span>{item}</span>
+                        </li>
+                      ))}
+                    </ul>
                   </div>
-                </div>
+                </article>
               ))}
             </div>
           </div>
         </section>
 
-        {/* EDUCATION */}
-        <section id="education" className="py-12 sm:py-16 md:py-20 px-4 sm:px-6">
-          <div className="max-w-6xl mx-auto">
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-8 sm:mb-12 text-center bg-gradient-to-r from-[#0066FF] to-[#00a8ff] bg-clip-text text-transparent">
-              Education
+        <section id="education" className="px-4 py-12 sm:px-6 sm:py-16 md:py-20">
+          <div className="mx-auto max-w-6xl">
+            <h2 className="mb-8 text-center text-3xl font-bold text-gradient sm:mb-12 sm:text-4xl md:text-5xl">
+              {t.nav.education}
             </h2>
 
             <div className="grid gap-6 sm:gap-8">
-              {data.educacion_completa.map((edu, i) => (
-                <div key={i} className="flex flex-col sm:flex-row items-start gap-4 sm:gap-6 bg-[#1a1a1f]/90 p-4 sm:p-6 rounded-lg border border-[#2a2a2f]">
+              {t.educacion_completa.map((edu, i) => (
+                <article key={i} className="flex flex-col items-start gap-4 rounded-2xl border border-[var(--border)] bg-[var(--surface)] p-4 shadow-[var(--shadow)] sm:flex-row sm:gap-6 sm:p-6">
                   <Image
                     src={edu.logo}
-                    alt={edu.centro}
+                    alt={`${edu.centro} logo`}
                     width={70}
                     height={70}
-                    className="rounded-lg object-contain bg-white p-2 w-16 h-16 sm:w-[70px] sm:h-[70px] flex-shrink-0"
+                    className="h-16 w-16 flex-shrink-0 rounded-lg bg-white object-contain p-2 sm:h-[70px] sm:w-[70px]"
                   />
 
                   <div className="flex-1">
-                    <h3 className="text-xl sm:text-2xl font-bold text-[#00a8ff]">{edu.titulo}</h3>
-                    <p className="text-[#e8e8ea] font-semibold text-sm sm:text-base">{edu.centro}</p>
-                    <p className="text-[#888890] text-xs sm:text-sm mb-2 sm:mb-3">{edu.fecha}</p>
-                    <p className="text-[#b8b8ba] leading-relaxed text-sm sm:text-base">{edu.descripcion}</p>
+                    <h3 className="text-xl font-bold text-[var(--accent-2)] sm:text-2xl">{edu.titulo}</h3>
+                    <p className="text-sm font-semibold text-[var(--text)] sm:text-base">{edu.centro}</p>
+                    <p className="mb-2 text-xs text-[var(--subtle)] sm:mb-3 sm:text-sm">{edu.fecha}</p>
+                    <p className="mb-4 text-sm leading-relaxed text-[var(--muted)] sm:text-base">{edu.descripcion}</p>
+                    <ul className="space-y-2 text-sm text-[var(--subtle)] sm:text-base">
+                      {edu.bullets.map((item, bulletIndex) => (
+                        <li key={bulletIndex} className="flex gap-2">
+                          <span className="mt-2 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-[var(--accent)]" aria-hidden="true" />
+                          <span>{item}</span>
+                        </li>
+                      ))}
+                    </ul>
                   </div>
-                </div>
+                </article>
               ))}
             </div>
           </div>
         </section>
 
-        {/* SKILLS */}
-        <section id="skills" className="py-12 sm:py-16 md:py-20 px-4 sm:px-6">
-          <div className="max-w-6xl mx-auto">
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-8 sm:mb-12 text-center bg-gradient-to-r from-[#0066FF] to-[#00a8ff] bg-clip-text text-transparent">
-              Skills
+        <section id="skills" className="px-4 py-12 sm:px-6 sm:py-16 md:py-20">
+          <div className="mx-auto max-w-6xl">
+            <h2 className="mb-8 text-center text-3xl font-bold text-gradient sm:mb-12 sm:text-4xl md:text-5xl">
+              {t.nav.skills}
             </h2>
 
-            <div className="grid sm:grid-cols-2 gap-6 sm:gap-8">
-              {data.habilidades.map((cat, i) => (
-                <div key={i} className="bg-[#1a1a1f]/90 p-4 sm:p-6 rounded-lg border border-[#2a2a2f]">
-                  <h3 className="text-xl sm:text-2xl font-bold mb-3 sm:mb-4 text-[#0066FF]">{cat.categoria}</h3>
+            <div className="grid gap-6 sm:grid-cols-2 sm:gap-8 lg:grid-cols-3">
+              {t.ai_section && (
+                <article className="rounded-2xl border border-[var(--accent)] bg-[var(--surface)] p-4 shadow-[var(--shadow)] sm:col-span-2 sm:p-6 lg:col-span-3">
+                  <h3 className="mb-3 text-xl font-bold text-[var(--accent)] sm:mb-4 sm:text-2xl">{t.ai_section.titulo}</h3>
+                  <p className="mb-4 text-sm leading-relaxed text-[var(--muted)] sm:text-base">{t.ai_section.descripcion}</p>
+                  <div className="flex flex-wrap gap-2 sm:gap-3">
+                    {t.ai_section.tools.map((tool, index) => (
+                      <span key={index} className="rounded-full border border-[var(--border)] bg-[var(--surface-soft)] px-3 py-1.5 text-xs text-[var(--subtle)] sm:px-4 sm:py-2 sm:text-sm">
+                        {tool}
+                      </span>
+                    ))}
+                  </div>
+                </article>
+              )}
+              {t.habilidades.map((cat, i) => (
+                <article key={i} className="rounded-2xl border border-[var(--border)] bg-[var(--surface)] p-4 shadow-[var(--shadow)] sm:p-6">
+                  <h3 className="mb-3 text-xl font-bold text-[var(--accent)] sm:mb-4 sm:text-2xl">{cat.categoria}</h3>
                   <div className="flex flex-wrap gap-2 sm:gap-3">
                     {cat.items.map((skill, j) => (
-                      <span key={j} className="px-3 sm:px-4 py-1.5 sm:py-2 bg-[#0a0a0f]/90 rounded-full text-xs sm:text-sm border border-[#2a2a2f]">
+                      <span key={j} className="rounded-full border border-[var(--border)] bg-[var(--surface-soft)] px-3 py-1.5 text-xs text-[var(--subtle)] sm:px-4 sm:py-2 sm:text-sm">
                         {skill}
                       </span>
                     ))}
                   </div>
-                </div>
+                </article>
               ))}
             </div>
           </div>
         </section>
 
-        {/* PROJECTS */}
-        <section id="projects" className="py-12 sm:py-16 md:py-20 px-4 sm:px-6">
-          <div className="max-w-6xl mx-auto">
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-8 sm:mb-12 text-center bg-gradient-to-r from-[#0066FF] to-[#00a8ff] bg-clip-text text-transparent">
-              Featured Projects
+        <section id="projects" className="px-4 py-12 sm:px-6 sm:py-16 md:py-20">
+          <div className="mx-auto max-w-6xl">
+            <h2 className="mb-8 text-center text-3xl font-bold text-gradient sm:mb-12 sm:text-4xl md:text-5xl">
+              {t.nav.projects}
             </h2>
 
             <div className="grid gap-8 sm:gap-12">
-              {data.proyectos.map((project, index) => (
-                <div
+              {t.proyectos.map((project, index) => (
+                <article
                   key={index}
-                  className="bg-[#1a1a1f]/90 rounded-lg border border-[#2a2a2f] overflow-hidden hover:border-[#0066FF] transition-all cursor-pointer"
+                  role="button"
+                  tabIndex={0}
+                  aria-expanded={openProject === index}
+                  className="cursor-pointer overflow-hidden rounded-2xl border border-[var(--border)] bg-[var(--surface)] shadow-[var(--shadow)] transition-all hover:border-[var(--accent)] focus:outline-none focus:ring-2 focus:ring-[var(--accent)]"
                   onClick={() => toggleAccordion(index)}
+                  onKeyDown={(event) => {
+                    if (event.key === 'Enter' || event.key === ' ') {
+                      event.preventDefault()
+                      toggleAccordion(index)
+                    }
+                  }}
                 >
-                  {/* GRID: Imagen + Texto */}
-                  <div className="grid md:grid-cols-2 gap-0">
-
-                    {/* IMAGEN */}
-                    <div className="w-full">
+                  <div className="grid gap-0 md:grid-cols-2">
+                    <div className="w-full bg-[var(--image-bg)]">
                       <Image
                         src={project.imagen}
-                        alt={project.titulo}
+                        alt={`${project.titulo} preview`}
                         width={1200}
                         height={700}
-                        className="w-full h-auto object-contain bg-transparent md:rounded-l-lg"
+                        className="h-auto w-full object-contain md:rounded-l-2xl"
                       />
                     </div>
 
-                    {/* CONTENIDO */}
-                    <div className="p-4 sm:p-6 flex flex-col justify-between bg-[#1a1a1f]/90">
+                    <div className="flex flex-col justify-between bg-[var(--surface)] p-4 sm:p-6">
                       <div>
-                        <h3 className="text-xl sm:text-2xl font-bold mb-3 sm:mb-4 text-[#00a8ff]">
+                        <div className="mb-3 flex flex-wrap gap-2">
+                          {project.featured && (
+                            <span className="inline-flex rounded-full bg-gradient-to-r from-[#0066FF] to-[#00a8ff] px-3 py-1 text-xs font-semibold text-white">
+                              {t.ui.featured}
+                            </span>
+                          )}
+                          <span className="inline-flex rounded-full border border-[var(--border)] bg-[var(--surface-soft)] px-3 py-1 text-xs font-semibold text-[var(--subtle)]">
+                            {project.tipo}
+                          </span>
+                        </div>
+                        <h3 className="mb-3 text-xl font-bold text-[var(--accent-2)] sm:mb-4 sm:text-2xl">
                           {project.titulo}
                         </h3>
+                        {project.brandName && (
+                          <p className="mb-3 text-sm font-semibold text-[var(--accent)]">
+                            {project.brandName}
+                          </p>
+                        )}
+                        {project.company && (
+                          <p className="mb-3 text-xs font-semibold uppercase tracking-[0.18em] text-[var(--subtle)]">
+                            {project.company}
+                          </p>
+                        )}
 
-                        <p className="text-sm sm:text-base text-[#b8b8ba] leading-relaxed mb-3 sm:mb-4">
+                        <p className="mb-3 text-sm leading-relaxed text-[var(--muted)] sm:mb-4 sm:text-base">
                           {project.descripcion}
                         </p>
 
-                        <div className="flex flex-wrap gap-2 mb-3 sm:mb-4">
+                        <div className="mb-3 flex flex-wrap gap-2 sm:mb-4">
                           {project.tecnologias.map((tech, idx) => (
                             <span
                               key={idx}
-                              className="px-2 sm:px-3 py-1 bg-[#0a0a0f]/90 rounded-full text-xs border border-[#2a2a2f] text-[#888890]"
+                              className="rounded-full border border-[var(--border)] bg-[var(--surface-soft)] px-2 py-1 text-xs text-[var(--subtle)] sm:px-3"
                             >
                               {tech}
                             </span>
@@ -302,72 +435,109 @@ export default function Portfolio() {
                     </div>
                   </div>
 
-                  {/* DESPLEGABLE DEBAJO DE LA IMAGEN */}
                   {openProject === index && (
-                    <div className="p-4 sm:p-6 bg-[#1a1a1f]/80 border-t border-[#2a2a2f] animate-fadeIn">
-                      <h4 className="text-lg sm:text-xl font-bold mb-2 text-[#00a8ff]">
-                        Details of {project.titulo}
+                    <div className="animate-fadeIn border-t border-[var(--border)] bg-[var(--surface-soft)] p-4 sm:p-6">
+                      <h4 className="mb-2 text-lg font-bold text-[var(--accent-2)] sm:text-xl">
+                        {t.ui.detailsOf} {project.titulo}
                       </h4>
 
-                      <p className="text-sm sm:text-base text-[#b8b8ba] leading-relaxed mb-3 sm:mb-4">
-                        {project.detalles ||
-                          "Este proyecto incluye funcionalidades avanzadas, pero su código es privado."}
+                      <p className="mb-4 text-sm leading-relaxed text-[var(--muted)] sm:text-base">
+                        {project.detalles || t.ui.fallbackDetails}
                       </p>
 
-                      {project.funcionalidades && (
-                        <ul className="list-disc list-inside text-[#888890] space-y-1 mb-3 sm:mb-4 text-sm sm:text-base">
-                          {project.funcionalidades.map((f, i) => (
-                            <li key={i}>{f}</li>
-                          ))}
-                        </ul>
+                      {project.bullets && (
+                        <>
+                          <p className="mb-2 text-sm font-semibold text-[var(--text)]">{t.ui.keyContributions}</p>
+                          <ul className="mb-4 space-y-2 text-sm text-[var(--subtle)] sm:text-base">
+                            {project.bullets.map((f, i) => (
+                              <li key={i} className="flex gap-2">
+                                <span className="mt-2 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-[var(--accent)]" aria-hidden="true" />
+                                <span>{f}</span>
+                              </li>
+                            ))}
+                          </ul>
+                        </>
                       )}
-                      {project.github === "/#" && (
-                        <p className="text-xs sm:text-sm text-[#666] mb-3">
-                          The source code is not publicly available for privacy and security reasons.
+
+                      {project.github === '/#' && (
+                        <p className="mb-3 text-xs text-[var(--subtle)] sm:text-sm">
+                          {t.ui.privateCode}
                         </p>
                       )}
-                      <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
-                        {project.link && (
+                      <div className="flex flex-col gap-3 sm:flex-row sm:gap-4">
+                        {!isPendingUrl(project.url || project.link) && (
                           <a
-                            href={project.link}
+                            href={project.url || project.link}
                             target="_blank"
                             rel="noopener noreferrer"
                             onClick={(e) => e.stopPropagation()}
-                            className="flex items-center justify-center gap-2 px-4 py-2.5 sm:py-2 bg-gradient-to-r from-[#0066FF] to-[#00a8ff] rounded-lg text-sm sm:text-base hover:opacity-90 transition-opacity"
+                            className="flex items-center justify-center gap-2 rounded-lg bg-gradient-to-r from-[#0066FF] to-[#00a8ff] px-4 py-2.5 text-sm text-white transition-opacity hover:opacity-90 focus:outline-none focus:ring-2 focus:ring-[var(--accent)] sm:py-2 sm:text-base"
                           >
-                            <ExternalLink size={16} /> Live Demo
+                            <ExternalLink size={16} /> {t.ui.liveDemo}
                           </a>
                         )}
-                        {project.github !== "/#" && (
+                        {project.url && isPendingUrl(project.url) && (
+                          <p className="inline-flex items-center justify-center rounded-lg border border-[var(--border)] bg-[var(--surface)] px-4 py-2.5 text-sm text-[var(--subtle)] sm:py-2 sm:text-base">
+                            {t.ui.urlPending}
+                          </p>
+                        )}
+                        {project.github !== '/#' && (
                           <a
                             href={project.github}
-                            onClick={(e) => {
-                              e.stopPropagation();
-                              if (project.github === "/#") {
-                                e.preventDefault();
-                              }
-                            }}
-                            target={project.github !== "/#" ? "_blank" : ""}
+                            onClick={(e) => e.stopPropagation()}
+                            target="_blank"
                             rel="noopener noreferrer"
-                            className="inline-flex items-center justify-center gap-2 px-4 py-2.5 sm:py-2 bg-[#0a0a0f]/90 rounded-lg border border-[#2a2a2f] hover:border-[#0066FF] text-sm sm:text-base transition-colors"
+                            className="inline-flex items-center justify-center gap-2 rounded-lg border border-[var(--border)] bg-[var(--surface)] px-4 py-2.5 text-sm transition-colors hover:border-[var(--accent)] focus:outline-none focus:ring-2 focus:ring-[var(--accent)] sm:py-2 sm:text-base"
                           >
-                            <Github size={16} /> Code
+                            <Github size={16} /> {t.ui.code}
                           </a>
                         )}
                       </div>
                     </div>
                   )}
-
-                </div>
+                </article>
               ))}
             </div>
           </div>
         </section>
 
-        {/* FOOTER */}
-        <footer className="py-6 sm:py-8 px-4 sm:px-6 border-t border-[#1a1a1f]">
-          <div className="max-w-6xl mx-auto text-center text-[#888890] text-sm sm:text-base">
-            <p>{data.contacto.copyright}</p>
+        <section id="contact" className="px-4 py-12 sm:px-6 sm:py-16 md:py-20">
+          <div className="mx-auto max-w-4xl rounded-2xl border border-[var(--border)] bg-[var(--surface)] p-6 text-center shadow-[var(--shadow)] sm:p-8">
+            <h2 className="mb-4 text-3xl font-bold text-gradient sm:text-4xl">{t.ui.contactTitle}</h2>
+            <p className="mx-auto mb-6 max-w-2xl text-[var(--muted)]">{t.ui.contactText}</p>
+            <div className="flex justify-center gap-5 sm:gap-7">
+              <a
+                href={shared.github}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex h-12 w-12 items-center justify-center rounded-full bg-[var(--surface-soft)] text-[var(--text)] transition-colors hover:bg-[var(--accent)] hover:text-white focus:outline-none focus:ring-2 focus:ring-[var(--accent)] sm:h-14 sm:w-14"
+                aria-label="GitHub"
+              >
+                <Github size={22} aria-hidden="true" />
+              </a>
+              <a
+                href={shared.linkedin}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex h-12 w-12 items-center justify-center rounded-full bg-[var(--surface-soft)] text-[var(--text)] transition-colors hover:bg-[var(--accent)] hover:text-white focus:outline-none focus:ring-2 focus:ring-[var(--accent)] sm:h-14 sm:w-14"
+                aria-label="LinkedIn"
+              >
+                <Linkedin size={22} aria-hidden="true" />
+              </a>
+              <a
+                href={`mailto:${shared.email}`}
+                className="inline-flex h-12 w-12 items-center justify-center rounded-full bg-[var(--surface-soft)] text-[var(--text)] transition-colors hover:bg-[var(--accent)] hover:text-white focus:outline-none focus:ring-2 focus:ring-[var(--accent)] sm:h-14 sm:w-14"
+                aria-label="Email"
+              >
+                <Mail size={22} aria-hidden="true" />
+              </a>
+            </div>
+          </div>
+        </section>
+
+        <footer className="border-t border-[var(--border)] px-4 py-6 sm:px-6 sm:py-8">
+          <div className="mx-auto max-w-6xl text-center text-sm text-[var(--subtle)] sm:text-base">
+            <p>{t.contacto.copyright}</p>
           </div>
         </footer>
       </div>

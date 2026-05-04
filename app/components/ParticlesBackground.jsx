@@ -2,7 +2,7 @@
 
 import { useRef, useEffect } from 'react'
 
-export default function ParticlesBackground() {
+export default function ParticlesBackground({ theme = 'dark' }) {
   const canvasRef = useRef(null)
 
   useEffect(() => {
@@ -20,10 +20,14 @@ export default function ParticlesBackground() {
     let particles = []
     const mouse = { x: null, y: null, radius: 150 }
 
-    window.addEventListener('mousemove', (e) => {
+    const handleMouseMove = (e) => {
       mouse.x = e.clientX
       mouse.y = e.clientY
-    })
+    }
+
+    window.addEventListener('mousemove', handleMouseMove)
+
+    let animationFrameId
 
     class Particle {
       constructor() {
@@ -41,21 +45,21 @@ export default function ParticlesBackground() {
         if (this.x < 0 || this.x > canvas.width) this.speedX *= -1
         if (this.y < 0 || this.y > canvas.height) this.speedY *= -1
 
-        // Atraídos por el ratón
+        // Particles move away from the cursor to keep the background subtly interactive.
         if (mouse.x !== null && mouse.y !== null) {
           const dx = this.x - mouse.x
           const dy = this.y - mouse.y
           const dist = Math.sqrt(dx * dx + dy * dy)
 
           if (dist < mouse.radius) {
-            this.x += dx / dist * 1.5
-            this.y += dy / dist * 1.5
+            this.x += (dx / dist) * 1.5
+            this.y += (dy / dist) * 1.5
           }
         }
       }
 
       draw() {
-        ctx.fillStyle = 'rgba(0, 150, 255, 0.8)'
+        ctx.fillStyle = theme === 'light' ? 'rgba(0, 102, 255, 0.45)' : 'rgba(0, 150, 255, 0.8)'
         ctx.beginPath()
         ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2)
         ctx.fill()
@@ -77,7 +81,8 @@ export default function ParticlesBackground() {
           const dist = Math.sqrt(dx * dx + dy * dy)
 
           if (dist < 130) {
-            ctx.strokeStyle = `rgba(0, 150, 255, ${1 - dist / 130})`
+            const opacity = theme === 'light' ? (1 - dist / 130) * 0.35 : 1 - dist / 130
+            ctx.strokeStyle = `rgba(0, 150, 255, ${opacity})`
             ctx.lineWidth = 1
             ctx.beginPath()
             ctx.moveTo(particles[a].x, particles[a].y)
@@ -89,7 +94,7 @@ export default function ParticlesBackground() {
     }
 
     const animate = () => {
-      ctx.fillStyle = 'rgba(10, 10, 15, 0.3)'
+      ctx.fillStyle = theme === 'light' ? 'rgba(246, 248, 252, 0.35)' : 'rgba(10, 10, 15, 0.3)'
       ctx.fillRect(0, 0, canvas.width, canvas.height)
 
       particles.forEach(p => {
@@ -99,16 +104,17 @@ export default function ParticlesBackground() {
 
       connectParticles()
 
-      requestAnimationFrame(animate)
+      animationFrameId = requestAnimationFrame(animate)
     }
 
     animate()
 
     return () => {
       window.removeEventListener('resize', resize)
-      window.removeEventListener('mousemove', () => {})
+      window.removeEventListener('mousemove', handleMouseMove)
+      cancelAnimationFrame(animationFrameId)
     }
-  }, [])
+  }, [theme])
 
   return (
     <canvas

@@ -1,221 +1,651 @@
 {
-  "personal": {
+  "shared": {
     "nombre": "Pau Ramos",
-    "titulo": "Full stack developer · Digital Identity & Blockchain",
-    "descripcion": "Full stack developer at Telefónica Tech building production-ready digital identity platforms, combining backend APIs, secure authentication and modern web frontends.",
     "email": "pauramosimo@gmail.com",
     "github": "https://github.com/paura432",
     "linkedin": "https://linkedin.com/in/paura432",
     "ubicacion": "Madrid, Spain"
   },
-  "sobre_mi": {
-    "parrafos": [
-      "I am a full-stack developer at Telefónica Tech working on production digital identity platforms within the TrustOS ecosystem. I design backend APIs, build frontend applications and take features through the full lifecycle, from architecture and data modeling to deployment, debugging and performance optimization.",
-      "My work focuses on building reliable, secure systems that solve real business problems. I regularly work on verifiable credentials, authentication flows and scalable microservices, ensuring that backend logic, security and user experience fit together coherently.",
-      "In parallel, I study at 42 Madrid, where I strengthen my low-level programming skills through intensive C and C++ projects. This background gives me a strong understanding of memory management, algorithms and UNIX internals, shaping a clean, efficient and predictable engineering mindset.",
-      "I enjoy projects that combine complex backend logic with clear, intuitive frontends. My goal as an engineer is to design solid architectures, write scalable code and continuously improve as a full-stack professional working on real-world products."
-    ],
-    "experiencia": {
-      "titulo": "Experience",
-      "descripcion": "End-to-end full-stack development, backend APIs, frontend engineering, secure authentication and digital identity platforms."
+  "locales": {
+    "en": {
+      "meta": {
+        "language": "English",
+        "locale": "en_US"
+      },
+      "nav": {
+        "home": "Home",
+        "about": "About",
+        "experience": "Experience",
+        "education": "Education",
+        "skills": "Skills",
+        "projects": "Projects",
+        "contact": "Contact"
+      },
+      "ui": {
+        "portfolio": "Portfolio",
+        "viewProjects": "View Projects",
+        "languageLabel": "Language",
+        "themeLabel": "Theme",
+        "dark": "Dark",
+        "light": "Light",
+        "detailsOf": "Details of",
+        "projectType": "Type",
+        "keyContributions": "Key contributions",
+        "privateCode": "The source code is not publicly available for privacy and security reasons.",
+        "fallbackDetails": "This project includes advanced functionality, but its source code is private.",
+        "liveDemo": "Live Demo",
+        "urlPending": "Project URL pending",
+        "featured": "Featured",
+        "code": "Code",
+        "contactTitle": "Contact",
+        "contactText": "Open to product-focused full stack roles, technical collaborations and software projects around web products, API integrations, AI-assisted workflows and digital identity.",
+        "emailCta": "Email me"
+      },
+      "personal": {
+        "titulo": "Full Stack Product Engineer",
+        "headline": "Full Stack Product Engineer building modern web products, API integrations and AI-assisted workflows.",
+        "descripcion": "I work at Performanze developing end-to-end digital products with TypeScript, React, Next.js, Vite, Supabase and Vercel. Previously, I worked at Telefónica Tech on TrustOS, verifiable credentials and digital identity platforms."
+      },
+      "sobre_mi": {
+        "parrafos": [
+          "I am a Full Stack Product Engineer focused on building modern web products from idea to production.",
+          "At Performanze, I work across frontend, backend, internal and external API integrations, deployment and production release using TypeScript, React, Next.js, Vite, Supabase and Vercel.",
+          "I also integrate AI capabilities into real business workflows, adapting technical solutions to each client, product and process.",
+          "Previously, I worked at Telefónica Tech on TrustOS, VCS API, verifiable credentials and digital identity platforms. My background at 42 Madrid strengthens my low-level engineering foundations through C/C++, UNIX systems, algorithms and memory management."
+        ]
+      },
+      "experiencia_laboral": [
+        {
+          "empresa": "Performanze",
+          "puesto": "Full Stack Product Engineer",
+          "fecha": "January 2026 - Present",
+          "logo": "/logos/performanze_logo.jpeg",
+          "descripcion": "I contribute to the end-to-end development of digital products, from early ideation and technical definition to implementation, integrations, deployment and production release.",
+          "bullets": [
+            "Build product-facing applications with TypeScript, React, Next.js, Vite, Supabase and Vercel.",
+            "Develop frontend and backend features connected to internal and external APIs.",
+            "Integrate AI capabilities into real business workflows.",
+            "Work across product definition, technical architecture, implementation and delivery.",
+            "Use Postman, Docker, Cursor, ChatGPT and Claude Code to test, debug and accelerate delivery."
+          ]
+        },
+        {
+          "empresa": "Telefónica Tech",
+          "puesto": "Full Stack Developer",
+          "fecha": "January 2025 - January 2026",
+          "logo": "/logos/telefonica-tech.jpg",
+          "descripcion": "Worked on TrustOS and digital identity products, building APIs, microservices and frontend applications for verifiable credentials and secure authentication flows.",
+          "bullets": [
+            "Built APIs and frontend platforms within the TrustOS ecosystem.",
+            "Developed verifiable credential issuance and verification flows.",
+            "Integrated digital wallets and providers such as PrivadoID, Procivis and Idenfy.",
+            "Built React/Next.js demos and platforms for healthcare, education, corporate and vehicle identity use cases."
+          ]
+        },
+        {
+          "empresa": "AllCloud Computing",
+          "puesto": "IT Support Intern",
+          "fecha": "March 2022 - May 2022",
+          "logo": "/logos/Tarjeta-AllCloud.png",
+          "descripcion": "Corporate IT support role focused on remote diagnostics, workstation optimization, LAN infrastructure and technical documentation.",
+          "bullets": [
+            "Performed remote diagnostics and workstation optimization.",
+            "Installed LAN infrastructure with CAT6 cabling, routers, switches and IP cameras.",
+            "Created technical inventory and infrastructure documentation.",
+            "Improved workstation boot and operational performance."
+          ]
+        }
+      ],
+      "educacion_completa": [
+        {
+          "centro": "42 Madrid",
+          "titulo": "Software Engineering Program",
+          "fecha": "2023 - Present",
+          "logo": "/logos/42Madrid.png",
+          "descripcion": "Project-based engineering program focused on C, C++, UNIX systems, algorithms, memory management and low-level problem solving.",
+          "bullets": [
+            "Built systems projects such as Minishell, cub3D and C++ modules.",
+            "Strengthened debugging, memory ownership, process management and algorithmic thinking."
+          ]
+        },
+        {
+          "centro": "ITEP",
+          "titulo": "HND in Networked Computer Systems Administration (ASIR)",
+          "fecha": "2020 - 2022",
+          "logo": "/logos/ITEP.png",
+          "descripcion": "Training in systems administration, networking, Linux, Windows Server, virtualization, hardware maintenance and IT security.",
+          "bullets": [
+            "Built a foundation in enterprise infrastructure, networks and operating systems."
+          ]
+        }
+      ],
+      "ai_section": {
+        "titulo": "AI-assisted development",
+        "descripcion": "I use AI tools as part of my development workflow to speed up exploration, improve productivity and build AI-powered product features. My focus is not only using AI to code faster, but integrating AI into real business workflows.",
+        "tools": ["Cursor", "ChatGPT", "Claude Code", "AI assistants", "RAG", "Embeddings", "Prompt engineering", "Document indexing", "Whisper/STT concepts"]
+      },
+      "habilidades": [
+        {
+          "categoria": "Frontend",
+          "items": ["React", "Next.js", "Vite", "Tailwind CSS", "Responsive UI", "i18n"]
+        },
+        {
+          "categoria": "Backend",
+          "items": ["Node.js", "Express", "REST APIs", "Internal APIs", "External APIs", "Validation", "Authentication flows"]
+        },
+        {
+          "categoria": "Product Engineering",
+          "items": ["Product development", "End-to-end delivery", "Technical definition", "Production deployment", "API integration"]
+        },
+        {
+          "categoria": "Data & Cloud",
+          "items": ["Supabase", "PostgreSQL", "MongoDB", "Vercel", "Docker", "AWS", "pgvector"]
+        },
+        {
+          "categoria": "AI",
+          "items": ["AI integration", "RAG", "Embeddings", "Document indexing", "PDF processing", "AI assistants", "Cursor", "ChatGPT", "Claude Code", "Whisper/STT"]
+        },
+        {
+          "categoria": "Identity & Security",
+          "items": ["Verifiable Credentials", "Digital wallets", "QR verification", "Certificates", "mTLS", "Secure authentication"]
+        },
+        {
+          "categoria": "Tools",
+          "items": ["Postman", "Git", "GitHub Actions", "Linux", "Docker", "Cursor/VS Code"]
+        },
+        {
+          "categoria": "Languages",
+          "items": ["TypeScript", "JavaScript", "Python", "C", "C++", "SQL", "Bash", "HTML", "CSS"]
+        }
+      ],
+      "proyectos": [
+        {
+          "titulo": "Spidio",
+          "brandName": "SPI-DIO.io",
+          "company": "Performanze",
+          "tipo": "Professional project",
+          "featured": true,
+          "priority": "high",
+          "descripcion": "Spidio is a product developed at Performanze where I work as a Full Stack Product Engineer, building product-facing flows, connecting frontend experiences with backend logic and integrating internal and external APIs.",
+          "detalles": "Spidio (SPI-DIO.io) is a product developed at Performanze where I work across product-facing frontend flows, backend/API integration and reliable production delivery. The project is described at a technical level to avoid exposing confidential business details while showing the end-to-end product engineering work involved.",
+          "bullets": [
+            "Built product-facing UI flows using React, Next.js/Vite and TypeScript.",
+            "Connected frontend experiences with backend/API workflows.",
+            "Worked with Supabase and Vercel for data, deployment and fast iteration.",
+            "Integrated internal and external APIs for business and product workflows.",
+            "Used Postman and Docker-based tooling to test integrations and debug services.",
+            "Focused on clean architecture, responsive UI and reliable product delivery."
+          ],
+          "tecnologias": ["TypeScript", "JavaScript", "React", "Next.js", "Vite", "Supabase", "Vercel", "Postman", "Docker", "REST APIs", "API integrations", "Frontend", "Backend"],
+          "imagen": "/spidio.png",
+          "placeholderImage": "/images/projects/spidio.png",
+          "url": "PENDING_SPIDIO_URL",
+          "github": "/#"
+        },
+        {
+          "titulo": "DUPLEX",
+          "company": "Performanze",
+          "tipo": "Professional project",
+          "featured": true,
+          "priority": "high",
+          "descripcion": "DUPLEX is an AI-assisted platform for industrial and technical service workflows. I worked on the product foundations, SAT assistant flow, document ingestion concepts and source-backed retrieval architecture for technical documentation.",
+          "detalles": "DUPLEX focuses on AI-assisted support for industrial and technical service workflows. The product foundations combine SAT assistant flows, technical documentation ingestion, source-backed retrieval and responsive usage patterns for field technicians.",
+          "bullets": [
+            "Designed and developed the initial SAT assistant workflow.",
+            "Planned document ingestion, PDF indexing and technical manual retrieval.",
+            "Worked with Supabase, PostgreSQL and pgvector concepts for source-backed search.",
+            "Defined RAG/chatbot flows so technicians can ask questions and receive traceable answers.",
+            "Considered responsive mobile/desktop usage for field technicians.",
+            "Planned voice interaction with Whisper/STT and text-to-speech concepts."
+          ],
+          "tecnologias": ["Next.js", "TypeScript", "Supabase", "PostgreSQL", "pgvector", "RAG", "Embeddings", "PDF indexing", "AI assistant", "Whisper/STT", "TTS", "Vercel"],
+          "imagen": "/duplex (1).png",
+          "placeholderImage": "/images/projects/duplex.png",
+          "url": "PENDING_DUPLEX_URL",
+          "github": "/#"
+        },
+        {
+          "titulo": "TrustOS VCS Core API - Multi-Provider Credential Infrastructure",
+          "company": "Telefónica Tech",
+          "tipo": "Professional project",
+          "featured": false,
+          "priority": "medium",
+          "descripcion": "Backend infrastructure powering verifiable credential issuance and verification in the TrustOS ecosystem.",
+          "detalles": "TrustOS VCS Core API is the backend service responsible for creating and verifying verifiable credentials within the TrustOS ecosystem. It provides a unified abstraction layer for wallet providers such as PrivadoID, Procivis and Idenfy, exposing REST endpoints for issuance, verification, QR flows and credential lifecycle operations.",
+          "bullets": [
+            "Developed backend services for verifiable credential issuance and verification.",
+            "Integrated multi-provider wallet flows with PrivadoID, Procivis and Idenfy.",
+            "Implemented REST endpoints, schema validation, QR-based flows and MongoDB persistence.",
+            "Worked with Node.js, Express, TypeScript, Docker, Jest and Swagger/OpenAPI."
+          ],
+          "tecnologias": ["Node.js", "Express", "TypeScript", "Procivis", "Idenfy", "Swagger", "Zod", "Docker", "MongoDB", "Jest"],
+          "imagen": "/trust-vcs.jpeg",
+          "github": "/#"
+        },
+        {
+          "titulo": "TrustOS Verifiable Credentials Platform",
+          "company": "Telefónica Tech",
+          "tipo": "Professional project",
+          "featured": false,
+          "priority": "medium",
+          "descripcion": "Digital identity platform with multi-scenario VC verification, QR issuance, multilingual interface and role-based flows.",
+          "detalles": "TrustOS Verifiable Credentials Platform is a modular Next.js application designed to verify and interact with digital credentials across multiple real-world scenarios. It supports wallet-based authentication, QR verification, multilingual UI and dynamic credential rendering.",
+          "bullets": [
+            "Built modular Next.js frontend flows for digital identity and credential verification demos.",
+            "Implemented healthcare, education, corporate and vehicle/authority scenarios.",
+            "Added multilingual UI, QR flows, polling-based verification and dynamic credential rendering."
+          ],
+          "tecnologias": ["Next.js 14", "React 18", "TypeScript", "Tailwind CSS", "i18n", "REST APIs"],
+          "imagen": "/trust-vcs-portal.png",
+          "url": "https://vcs.trustos.telefonicatech.com/",
+          "github": "/#"
+        },
+        {
+          "titulo": "FraudeBec - Anti Business Email Compromise Platform",
+          "company": "Telefónica Tech",
+          "tipo": "Professional project",
+          "featured": false,
+          "priority": "medium",
+          "descripcion": "Corporate anti-fraud platform combining certificate-based access, mTLS-oriented authentication and supplier/payment verification workflows.",
+          "detalles": "FraudeBec is a corporate anti-Business Email Compromise platform for supplier payment workflows. It combines secure authentication concepts, certificate-based access, bank account verification flows, Dockerized services and cloud-oriented deployment patterns.",
+          "bullets": [
+            "Built secure supplier/payment verification workflows.",
+            "Implemented certificate-based authentication and mTLS-oriented access concepts.",
+            "Worked with Dockerized services, Nginx and AWS ALB-oriented architectures."
+          ],
+          "tecnologias": ["Next.js 14", "TypeScript", "Express", "Nginx", "Docker", "AWS ALB"],
+          "imagen": "/FraudeBec.png",
+          "github": "/#"
+        },
+        {
+          "titulo": "TrustOS PAN - Agricultural Commodity Certificate Portal",
+          "company": "Telefónica Tech",
+          "tipo": "Professional project",
+          "featured": false,
+          "priority": "medium",
+          "descripcion": "Portal for certifying agricultural commodity purchases and anchoring trusted records on blockchain.",
+          "detalles": "TrustOS PAN is a certification portal for agricultural commodity purchases. The platform connects certificate validation, tokenization concepts and blockchain-backed traceability flows through TrustOS APIs and a product-facing web interface.",
+          "bullets": [
+            "Built frontend flows for certificate visualization and validation.",
+            "Worked with TrustOS APIs and blockchain-backed certificate traceability concepts.",
+            "Implemented secure product flows using Next.js and TypeScript."
+          ],
+          "tecnologias": ["Next.js 14", "TypeScript", "TrustOS Token API", "ERC721", "AWS SSM"],
+          "imagen": "/PAN.png",
+          "github": "/#"
+        },
+        {
+          "titulo": "Norteverse - Gamified Verifiable Credentials Experience",
+          "company": "Telefónica Tech",
+          "tipo": "Professional project",
+          "featured": false,
+          "priority": "medium",
+          "descripcion": "Gamified corporate identity experience using verifiable credentials, QR flows and compatibility logic.",
+          "detalles": "Norteverse is a gamified credential experience developed around digital identity flows. Participants use QR-based verification and Procivis credentials, with MongoDB-backed user attributes and matching logic.",
+          "bullets": [
+            "Created a gamified verifiable credentials experience using Procivis and QR-based flows.",
+            "Implemented MongoDB-backed user attributes, UUID-based verification and compatibility matching logic."
+          ],
+          "tecnologias": ["Next.js", "TypeScript", "MongoDB", "Procivis", "QR flows", "Verifiable Credentials"],
+          "imagen": "/NorteVerse.png",
+          "github": "/#"
+        },
+        {
+          "titulo": "cub3D - Raycasting 3D Engine",
+          "company": "42 Madrid",
+          "tipo": "Systems programming",
+          "featured": false,
+          "priority": "low",
+          "descripcion": "3D engine in C inspired by Wolfenstein 3D using raycasting.",
+          "detalles": "cub3D implements a rendering pipeline with DDA raycasting, collision detection, wall projection, FOV calculations, texture mapping, .cub file parsing and pixel graphics using MiniLibX.",
+          "bullets": [
+            "Implemented raycasting, texture mapping, parsing and collision detection in C.",
+            "Strengthened low-level graphics, memory management and algorithmic skills."
+          ],
+          "tecnologias": ["C", "MiniLibX", "Raycasting", "Graphics Programming"],
+          "imagen": "/cub3d.png",
+          "github": "https://github.com/paura432/cub3D"
+        },
+        {
+          "titulo": "Minishell - UNIX Shell Recreation",
+          "company": "42 Madrid",
+          "tipo": "Systems programming",
+          "featured": false,
+          "priority": "low",
+          "descripcion": "Custom UNIX shell replicating Bash core behavior.",
+          "detalles": "Minishell includes a lexer, parser, executor, environment variable system, redirections, pipes, signals, process handling, builtins and memory-safe C implementations.",
+          "bullets": [
+            "Built parsing, pipes, redirections, signals, process management and builtins.",
+            "Reinforced UNIX internals, memory management and systems programming in C."
+          ],
+          "tecnologias": ["C", "UNIX System Calls", "Process Management", "Pipes & Redirections", "Signals", "Parsing", "Memory Management"],
+          "imagen": "/minishell.png",
+          "github": "https://github.com/paura432/minishell"
+        }
+      ],
+      "contacto": {
+        "copyright": "© 2026 Pau Ramos"
+      }
     },
-    "educacion": {
-      "titulo": "Education",
-      "descripcion": "42 Madrid · Higher National Diploma in Networked Computer Systems Administration (ASIR)"
-    },
-    "logros": {
-      "titulo": "Highlights",
-      "descripcion": "Contributor to Telefónica Tech’s TrustOS ecosystem, anti-fraud platforms and multi-provider verifiable credential infrastructure."
+    "es": {
+      "meta": {
+        "language": "Español",
+        "locale": "es_ES"
+      },
+      "nav": {
+        "home": "Inicio",
+        "about": "Sobre mí",
+        "experience": "Experiencia",
+        "education": "Educación",
+        "skills": "Aptitudes",
+        "projects": "Proyectos",
+        "contact": "Contacto"
+      },
+      "ui": {
+        "portfolio": "Portfolio",
+        "viewProjects": "Ver proyectos",
+        "languageLabel": "Idioma",
+        "themeLabel": "Tema",
+        "dark": "Oscuro",
+        "light": "Claro",
+        "detailsOf": "Detalles de",
+        "projectType": "Tipo",
+        "keyContributions": "Contribuciones clave",
+        "privateCode": "El código fuente no está disponible públicamente por motivos de privacidad y seguridad.",
+        "fallbackDetails": "Este proyecto incluye funcionalidades avanzadas, pero su código es privado.",
+        "liveDemo": "Demo",
+        "urlPending": "URL pendiente",
+        "featured": "Destacado",
+        "code": "Código",
+        "contactTitle": "Contacto",
+        "contactText": "Abierto a roles full stack orientados a producto, colaboraciones técnicas y proyectos de software sobre productos web, integraciones con APIs, flujos asistidos por IA e identidad digital.",
+        "emailCta": "Escríbeme"
+      },
+      "personal": {
+        "titulo": "Full Stack Product Engineer",
+        "headline": "Full Stack Product Engineer especializado en productos web modernos, integraciones con APIs y flujos asistidos por IA.",
+        "descripcion": "Trabajo en Performanze desarrollando productos digitales end-to-end con TypeScript, React, Next.js, Vite, Supabase y Vercel. Anteriormente trabajé en Telefónica Tech en TrustOS, credenciales verificables e identidad digital."
+      },
+      "sobre_mi": {
+        "parrafos": [
+          "Soy Full Stack Product Engineer enfocado en construir productos web modernos desde la idea hasta producción.",
+          "En Performanze trabajo en frontend, backend, integraciones con APIs internas y externas, despliegue y puesta en producción usando TypeScript, React, Next.js, Vite, Supabase y Vercel.",
+          "También integro capacidades de IA en flujos reales de negocio, adaptando soluciones técnicas a cada cliente, producto y proceso.",
+          "Anteriormente trabajé en Telefónica Tech en TrustOS, VCS API, credenciales verificables y plataformas de identidad digital. Mi formación en 42 Madrid refuerza mi base técnica de bajo nivel con C/C++, sistemas UNIX, algoritmos y gestión de memoria."
+        ]
+      },
+      "experiencia_laboral": [
+        {
+          "empresa": "Performanze",
+          "puesto": "Full Stack Product Engineer",
+          "fecha": "Enero 2026 - Actualidad",
+          "logo": "/logos/performanze_logo.jpeg",
+          "descripcion": "Participo en el desarrollo end-to-end de productos digitales, desde la ideación inicial y definición técnica hasta la implementación, integraciones, despliegue y puesta en producción.",
+          "bullets": [
+            "Desarrollo aplicaciones de producto con TypeScript, React, Next.js, Vite, Supabase y Vercel.",
+            "Construyo funcionalidades frontend y backend conectadas con APIs internas y externas.",
+            "Integro capacidades de IA en flujos reales de negocio.",
+            "Participo en definición de producto, arquitectura técnica, implementación y entrega.",
+            "Uso Postman, Docker, Cursor, ChatGPT y Claude Code para probar, depurar y acelerar la entrega."
+          ]
+        },
+        {
+          "empresa": "Telefónica Tech",
+          "puesto": "Full Stack Developer",
+          "fecha": "Enero 2025 - Enero 2026",
+          "logo": "/logos/telefonica-tech.jpg",
+          "descripcion": "Trabajé en TrustOS y productos de identidad digital, construyendo APIs, microservicios y aplicaciones frontend para credenciales verificables y flujos de autenticación segura.",
+          "bullets": [
+            "Desarrollé APIs y plataformas frontend dentro del ecosistema TrustOS.",
+            "Implementé flujos de emisión y verificación de credenciales verificables.",
+            "Integré wallets digitales y proveedores como PrivadoID, Procivis e Idenfy.",
+            "Construí demos y plataformas React/Next.js para casos de uso de salud, educación, empresa y movilidad."
+          ]
+        },
+        {
+          "empresa": "AllCloud Computing",
+          "puesto": "IT Support Intern",
+          "fecha": "Marzo 2022 - Mayo 2022",
+          "logo": "/logos/Tarjeta-AllCloud.png",
+          "descripcion": "Rol de soporte IT corporativo centrado en diagnóstico remoto, optimización de puestos, infraestructura LAN y documentación técnica.",
+          "bullets": [
+            "Realicé diagnóstico remoto y optimización de estaciones de trabajo.",
+            "Instalé infraestructura LAN con cableado CAT6, routers, switches y cámaras IP.",
+            "Creé inventario técnico y documentación de infraestructura.",
+            "Mejoré tiempos de arranque y rendimiento de equipos."
+          ]
+        }
+      ],
+      "educacion_completa": [
+        {
+          "centro": "42 Madrid",
+          "titulo": "Programa de Ingeniería de Software",
+          "fecha": "2023 - Actualidad",
+          "logo": "/logos/42Madrid.png",
+          "descripcion": "Programa de ingeniería basado en proyectos, centrado en C, C++, UNIX, algoritmos, gestión de memoria y resolución de problemas de bajo nivel.",
+          "bullets": [
+            "Construcción de proyectos de sistemas como Minishell, cub3D y módulos de C++.",
+            "Refuerzo de debugging, ownership de memoria, gestión de procesos y pensamiento algorítmico."
+          ]
+        },
+        {
+          "centro": "ITEP",
+          "titulo": "ASIR - Administración de Sistemas Informáticos en Red",
+          "fecha": "2020 - 2022",
+          "logo": "/logos/ITEP.png",
+          "descripcion": "Formación en administración de sistemas, redes, Linux, Windows Server, virtualización, mantenimiento hardware y seguridad IT.",
+          "bullets": [
+            "Base técnica en infraestructura empresarial, redes y sistemas operativos."
+          ]
+        }
+      ],
+      "ai_section": {
+        "titulo": "Desarrollo asistido por IA",
+        "descripcion": "Uso herramientas de IA como parte de mi flujo de desarrollo para acelerar exploración, mejorar productividad y construir funcionalidades impulsadas por IA. Mi enfoque no es solo usar IA para programar más rápido, sino integrar IA en flujos reales de negocio.",
+        "tools": ["Cursor", "ChatGPT", "Claude Code", "Asistentes IA", "RAG", "Embeddings", "Prompt engineering", "Indexación documental", "Conceptos Whisper/STT"]
+      },
+      "habilidades": [
+        {
+          "categoria": "Frontend",
+          "items": ["React", "Next.js", "Vite", "Tailwind CSS", "UI responsive", "i18n"]
+        },
+        {
+          "categoria": "Backend",
+          "items": ["Node.js", "Express", "APIs REST", "APIs internas", "APIs externas", "Validación", "Flujos de autenticación"]
+        },
+        {
+          "categoria": "Product Engineering",
+          "items": ["Desarrollo de producto", "Entrega end-to-end", "Definición técnica", "Despliegue a producción", "Integración API"]
+        },
+        {
+          "categoria": "Data & Cloud",
+          "items": ["Supabase", "PostgreSQL", "MongoDB", "Vercel", "Docker", "AWS", "pgvector"]
+        },
+        {
+          "categoria": "IA",
+          "items": ["Integración IA", "RAG", "Embeddings", "Indexación documental", "Procesamiento PDF", "Asistentes IA", "Cursor", "ChatGPT", "Claude Code", "Whisper/STT"]
+        },
+        {
+          "categoria": "Identidad & Seguridad",
+          "items": ["Credenciales verificables", "Wallets digitales", "Verificación QR", "Certificados", "mTLS", "Autenticación segura"]
+        },
+        {
+          "categoria": "Herramientas",
+          "items": ["Postman", "Git", "GitHub Actions", "Linux", "Docker", "Cursor/VS Code"]
+        },
+        {
+          "categoria": "Lenguajes",
+          "items": ["TypeScript", "JavaScript", "Python", "C", "C++", "SQL", "Bash", "HTML", "CSS"]
+        }
+      ],
+      "proyectos": [
+        {
+          "titulo": "Spidio",
+          "brandName": "SPI-DIO.io",
+          "company": "Performanze",
+          "tipo": "Proyecto profesional",
+          "featured": true,
+          "priority": "high",
+          "descripcion": "Spidio es un producto desarrollado en Performanze en el que trabajo como Full Stack Product Engineer, construyendo flujos de producto, conectando experiencias frontend con lógica backend e integrando APIs internas y externas.",
+          "detalles": "Spidio (SPI-DIO.io) es un producto desarrollado en Performanze en el que trabajo sobre flujos frontend orientados a producto, integración backend/API y puesta en producción fiable. El proyecto se describe a nivel técnico para no exponer detalles confidenciales de negocio, mostrando el trabajo end-to-end de product engineering.",
+          "bullets": [
+            "Desarrollé flujos de interfaz de producto con React, Next.js/Vite y TypeScript.",
+            "Conecté experiencias frontend con flujos backend y APIs.",
+            "Trabajé con Supabase y Vercel para datos, despliegue e iteración rápida.",
+            "Integré APIs internas y externas para flujos de negocio y producto.",
+            "Usé Postman y Docker para probar integraciones y depurar servicios.",
+            "Me enfoqué en arquitectura limpia, UI responsive y entrega fiable de producto."
+          ],
+          "tecnologias": ["TypeScript", "JavaScript", "React", "Next.js", "Vite", "Supabase", "Vercel", "Postman", "Docker", "APIs REST", "Integraciones API", "Frontend", "Backend"],
+          "imagen": "/spidio.png",
+          "placeholderImage": "/images/projects/spidio.png",
+          "url": "PENDING_SPIDIO_URL",
+          "github": "/#"
+        },
+        {
+          "titulo": "DUPLEX",
+          "company": "Performanze",
+          "tipo": "Proyecto profesional",
+          "featured": true,
+          "priority": "high",
+          "descripcion": "DUPLEX es una plataforma asistida por IA para flujos industriales y servicios técnicos. Trabajé en las bases del producto, el flujo del asistente SAT, los conceptos de ingesta documental y la arquitectura de recuperación con fuentes para documentación técnica.",
+          "detalles": "DUPLEX se centra en soporte asistido por IA para flujos industriales y servicios técnicos. Las bases del producto combinan asistente SAT, ingesta de documentación técnica, recuperación con fuentes y patrones responsive para técnicos de campo.",
+          "bullets": [
+            "Diseñé y desarrollé el flujo inicial del asistente SAT.",
+            "Planteé la ingesta documental, indexación de PDFs y recuperación de manuales técnicos.",
+            "Trabajé con Supabase, PostgreSQL y conceptos de pgvector para búsqueda con fuentes.",
+            "Definí flujos RAG/chatbot para que los técnicos puedan consultar manuales y recibir respuestas trazables.",
+            "Tuve en cuenta el uso responsive en móvil y escritorio para técnicos de campo.",
+            "Planteé interacción por voz con Whisper/STT y conceptos de texto a voz."
+          ],
+          "tecnologias": ["Next.js", "TypeScript", "Supabase", "PostgreSQL", "pgvector", "RAG", "Embeddings", "Indexación PDF", "Asistente IA", "Whisper/STT", "TTS", "Vercel"],
+          "imagen": "/duplex (1).png",
+          "placeholderImage": "/images/projects/duplex.png",
+          "url": "PENDING_DUPLEX_URL",
+          "github": "/#"
+        },
+        {
+          "titulo": "TrustOS VCS Core API - Infraestructura multi-proveedor de credenciales",
+          "company": "Telefónica Tech",
+          "tipo": "Proyecto profesional",
+          "featured": false,
+          "priority": "medium",
+          "descripcion": "Infraestructura backend para emisión y verificación de credenciales verificables dentro del ecosistema TrustOS.",
+          "detalles": "TrustOS VCS Core API es el servicio backend responsable de crear y verificar credenciales verificables dentro del ecosistema TrustOS. Proporciona una capa de abstracción para proveedores de wallet como PrivadoID, Procivis e Idenfy, exponiendo endpoints REST para emisión, verificación, flujos QR y ciclo de vida de credenciales.",
+          "bullets": [
+            "Desarrollé servicios backend para emisión y verificación de credenciales verificables.",
+            "Integré flujos multi-proveedor con PrivadoID, Procivis e Idenfy.",
+            "Implementé endpoints REST, validación de esquemas, flujos QR y persistencia en MongoDB.",
+            "Trabajé con Node.js, Express, TypeScript, Docker, Jest y Swagger/OpenAPI."
+          ],
+          "tecnologias": ["Node.js", "Express", "TypeScript", "Procivis", "Idenfy", "Swagger", "Zod", "Docker", "MongoDB", "Jest"],
+          "imagen": "/trust-vcs.jpeg",
+          "github": "/#"
+        },
+        {
+          "titulo": "TrustOS Verifiable Credentials Platform",
+          "company": "Telefónica Tech",
+          "tipo": "Proyecto profesional",
+          "featured": false,
+          "priority": "medium",
+          "descripcion": "Plataforma de identidad digital con verificación VC multi-escenario, emisión QR, interfaz multidioma y flujos por rol.",
+          "detalles": "TrustOS Verifiable Credentials Platform es una aplicación modular en Next.js diseñada para verificar e interactuar con credenciales digitales en distintos escenarios. Soporta autenticación con wallets, verificación QR, UI multidioma y renderizado dinámico de credenciales.",
+          "bullets": [
+            "Construí flujos frontend modulares en Next.js para demos de identidad digital y verificación de credenciales.",
+            "Implementé escenarios de salud, educación, empresa y vehículos/autoridad.",
+            "Añadí UI multidioma, flujos QR, verificación basada en polling y renderizado dinámico de credenciales."
+          ],
+          "tecnologias": ["Next.js 14", "React 18", "TypeScript", "Tailwind CSS", "i18n", "APIs REST"],
+          "imagen": "/trust-vcs-portal.png",
+          "url": "https://vcs.trustos.telefonicatech.com/",
+          "github": "/#"
+        },
+        {
+          "titulo": "FraudeBec - Plataforma Anti Business Email Compromise",
+          "company": "Telefónica Tech",
+          "tipo": "Proyecto profesional",
+          "featured": false,
+          "priority": "medium",
+          "descripcion": "Plataforma corporativa antifraude con acceso basado en certificados, autenticación orientada a mTLS y verificación de proveedores/pagos.",
+          "detalles": "FraudeBec es una plataforma corporativa anti-Business Email Compromise para flujos de pago a proveedores. Combina conceptos de autenticación segura, acceso basado en certificados, verificación de cuentas bancarias, servicios Dockerizados y despliegues orientados a cloud.",
+          "bullets": [
+            "Construí flujos seguros de verificación de proveedores y pagos.",
+            "Implementé conceptos de autenticación basada en certificados y acceso orientado a mTLS.",
+            "Trabajé con servicios Dockerizados, Nginx y arquitecturas orientadas a AWS ALB."
+          ],
+          "tecnologias": ["Next.js 14", "TypeScript", "Express", "Nginx", "Docker", "AWS ALB"],
+          "imagen": "/FraudeBec.png",
+          "github": "/#"
+        },
+        {
+          "titulo": "TrustOS PAN - Portal de certificados agrícolas",
+          "company": "Telefónica Tech",
+          "tipo": "Proyecto profesional",
+          "featured": false,
+          "priority": "medium",
+          "descripcion": "Portal para certificar compras de commodities agrícolas y anclar registros confiables en blockchain.",
+          "detalles": "TrustOS PAN es un portal de certificación para compras de commodities agrícolas. La plataforma conecta validación de certificados, conceptos de tokenización y trazabilidad respaldada por blockchain mediante APIs TrustOS e interfaz web de producto.",
+          "bullets": [
+            "Construí flujos frontend para visualización y validación de certificados.",
+            "Trabajé con APIs TrustOS y conceptos de trazabilidad de certificados respaldada por blockchain.",
+            "Implementé flujos seguros de producto usando Next.js y TypeScript."
+          ],
+          "tecnologias": ["Next.js 14", "TypeScript", "TrustOS Token API", "ERC721", "AWS SSM"],
+          "imagen": "/PAN.png",
+          "github": "/#"
+        },
+        {
+          "titulo": "Norteverse - Experiencia gamificada de credenciales verificables",
+          "company": "Telefónica Tech",
+          "tipo": "Proyecto profesional",
+          "featured": false,
+          "priority": "medium",
+          "descripcion": "Experiencia corporativa gamificada usando credenciales verificables, flujos QR y lógica de compatibilidad.",
+          "detalles": "Norteverse es una experiencia gamificada de credenciales desarrollada alrededor de flujos de identidad digital. Los participantes usan verificación basada en QR y credenciales Procivis, con atributos de usuario respaldados por MongoDB y lógica de matching.",
+          "bullets": [
+            "Creé una experiencia gamificada de credenciales verificables usando Procivis y flujos basados en QR.",
+            "Implementé atributos de usuario en MongoDB, verificación basada en UUID y lógica de compatibilidad."
+          ],
+          "tecnologias": ["Next.js", "TypeScript", "MongoDB", "Procivis", "Flujos QR", "Credenciales verificables"],
+          "imagen": "/NorteVerse.png",
+          "github": "/#"
+        },
+        {
+          "titulo": "cub3D - Motor 3D con raycasting",
+          "company": "42 Madrid",
+          "tipo": "Programación de sistemas",
+          "featured": false,
+          "priority": "low",
+          "descripcion": "Motor 3D en C inspirado en Wolfenstein 3D usando raycasting.",
+          "detalles": "cub3D implementa una pipeline de renderizado con raycasting DDA, detección de colisiones, proyección de paredes, cálculos de FOV, texturizado, parser de archivos .cub y gráficos por píxel con MiniLibX.",
+          "bullets": [
+            "Implementé raycasting, texturizado, parsing y detección de colisiones en C.",
+            "Reforcé habilidades de gráficos de bajo nivel, gestión de memoria y algoritmos."
+          ],
+          "tecnologias": ["C", "MiniLibX", "Raycasting", "Programación gráfica"],
+          "imagen": "/cub3d.png",
+          "github": "https://github.com/paura432/cub3D"
+        },
+        {
+          "titulo": "Minishell - Recreación de shell UNIX",
+          "company": "42 Madrid",
+          "tipo": "Programación de sistemas",
+          "featured": false,
+          "priority": "low",
+          "descripcion": "Shell UNIX personalizado que replica comportamiento principal de Bash.",
+          "detalles": "Minishell incluye lexer, parser, executor, sistema de variables de entorno, redirecciones, pipes, señales, gestión de procesos, builtins e implementaciones en C con control de memoria.",
+          "bullets": [
+            "Construí parsing, pipes, redirecciones, señales, gestión de procesos y builtins.",
+            "Reforcé sistemas UNIX, gestión de memoria y programación de sistemas en C."
+          ],
+          "tecnologias": ["C", "UNIX System Calls", "Gestión de procesos", "Pipes y redirecciones", "Señales", "Parsing", "Gestión de memoria"],
+          "imagen": "/minishell.png",
+          "github": "https://github.com/paura432/minishell"
+        }
+      ],
+      "contacto": {
+        "copyright": "© 2026 Pau Ramos"
+      }
     }
-  },
-  "habilidades": [
-    {
-      "categoria": "Tech Stack",
-      "items": [
-        "TypeScript",
-        "JavaScript",
-        "Python",
-        "C",
-        "C++",
-        "Node.js",
-        "Express",
-        "React",
-        "Angular",
-        "Next.js",
-        "HTML",
-        "CSS",
-        "SQL",
-        "CI/CD",
-        "Jest",
-        "Tailwind CSS"
-      ]
-    },
-    {
-      "categoria": "Tools",
-      "items": [
-        "Git",
-        "GitHub Actions",
-        "Postman",
-        "AI agents",
-        "Kubernetes",
-        "MongoDB",
-        "Virtual Box",
-        "Docker"
-      ]
-    },
-    {
-      "categoria": "Systems",
-      "items": [
-        "Linux",
-        "Ubuntu",
-        "MacOS",
-        "Windows Server"
-      ]
-    }
-  ],
-  "experiencia_laboral": [
-    {
-      "empresa": "Telefónica Tech",
-      "puesto": "Full stack developer",
-      "fecha": "2024  Present",
-      "logo": "/logos/telefonica-tech.jpg",
-      "descripcion": "Full-stack development across the TrustOS ecosystem, building end-to-end digital identity platforms. I design and implement backend APIs for verifiable credentials, develop Next.js frontends with complex identity flows and integrate secure authentication mechanisms such as mTLS and certificate-based access. I actively contribute to the TrustOS VCS Core API and collaborate with DevOps and product teams to deliver scalable, production-ready solutions on cloud infrastructure."
-    },
-    {
-      "empresa": "AllCloud Computing",
-      "puesto": "IT Support Intern",
-      "fecha": "2022",
-      "logo": "/logos/Tarjeta-AllCloud.png",
-      "descripcion": "Corporate IT support and infrastructure setup, including system optimization, remote diagnostics and Windows environment configuration. Deployed LAN networks with CAT6 cabling, switches, routers and IP cameras, documenting all technical inventory and improving workstation performance and reliability."
-    }
-  ],
-  "educacion_completa": [
-    {
-      "centro": "42 Madrid",
-      "titulo": "Software Engineering Program",
-      "fecha": "2023  Present",
-      "logo": "/logos/42Madrid.png",
-      "descripcion": "High-intensity project-based training focused on C, C++, algorithms, UNIX systems and low-level engineering. Built real-world projects including a raycasting engine, a Bash-like shell and complex parsers, reinforcing problem-solving, memory management and systems programming."
-    },
-    {
-      "centro": "ITEP",
-      "titulo": "HND in Networked Computer Systems Administration (ASIR)",
-      "fecha": "2020  2022",
-      "logo": "/logos/ITEP.png",
-      "descripcion": "Systems administration, networking, Linux, Windows Server, virtualization, hardware maintenance and IT security. Developed strong foundations in technical infrastructure and enterprise IT environments."
-    }
-  ],
-  "proyectos": [
-    {
-      "titulo": "TrustOS VCS Core API  Multi-Provider Credential Infrastructure",
-      "descripcion": "Backend infrastructure powering all verifiable credential logic at Telefónica Tech, supporting PrivadoID, Procivis and Idenfy.",
-      "detalles": "TrustOS VCS Core API is the backend service responsible for creating and verifying verifiable credentials (VCs) within the TrustOS ecosystem at Telefónica Tech. It provides a unified and secure abstraction layer for issuing credentials through multiple identity wallets in the market, currently supporting PrivadoID, Procivis, and Idenfy. The API exposes a set of endpoints that allow frontend applications to request the issuance or verification of credentials. Each request includes the required schema-specific payload, which must match the credential schema deployed in the selected wallet provider. Once processed, the API returns a verification or issuance link, which the frontend transforms into a QR code to be scanned by the user's wallet. On the architectural side, the backend follows strict engineering standards using ESLint, Prettier, and Semantic Versioning (SemVer) to maintain code quality and ensure consistent releases. It includes a full suite of unit and integration tests, all of which must pass before the service can be merged and deployed to the main branch. This API acts as the core engine behind multiple TrustOS identity demos and production flows, enabling multi-provider interoperability, secure credential lifecycle management, and scalable enterprise identity solutions.",
-      "tecnologias": [
-        "Node.js",
-        "Express",
-        "TypeScript",
-        "Polygon ID",
-        "Procivis",
-        "Idenfy",
-        "Swagger",
-        "Zod",
-        "Docker",
-        "MongoDB",
-        "Jest",
-        "linter",
-        "semVer"
-      ],
-      "imagen": "/trust-vcs.jpeg",
-      "github": "/#"
-    },
-    {
-      "titulo": "TrustOS Verifiable Credentials Platform",
-      "descripcion": "Digital identity platform with multi-scenario VC verification, QR issuance, multilingual interface and role-based flows.",
-      "detalles": "TrustOS Verifiable Credentials Platform is a modular Next.js application designed to verify and interact with digital credentials across multiple real-world scenarios. The platform enables citizens, professionals, and authorities to authenticate with their digital wallets, scan QR codes, and validate trusted attributes through secure backend APIs. The frontend handles complex state transitions for each role, includes a multilingual ES/EN interface, and features a full credential viewer capable of rendering dynamic VC data from providers like PrivadoID, Procivis, and Idenfy. It also implements real-time QR verification with status polling to ensure smooth credential exchanges. Architecturally, the system uses modular components, clean separation of flows, and tailored state management patterns, supporting professional IDs, academic degrees, healthcare credentials, and multi-provider identity verification.",
-      "tecnologias": [
-        "Next.js 14",
-        "React 18",
-        "TypeScript",
-        "Tailwind CSS",
-        "i18n",
-        "REST APIs"
-      ],
-      "imagen": "/trust-vcs-portal.png",
-      "link": "https://vcs.trustos.telefonicatech.com/",
-      "github": "/#"
-    },
-    {
-      "titulo": "FraudeBec  Anti Business Email Compromise Platform",
-      "descripcion": "Corporate anti-fraud system combining mTLS login, Iberpay/Devengo bank verification and verifiable credentials.",
-      "detalles": "FraudeBec is a corporate antiBusiness Email Compromise (BEC) platform designed to prevent fraud in supplier payment workflows. It integrates dual authentication flows (secure mTLS certificate login and a verifiable credentials QR flow), enforced by an Nginx reverse proxy with HMAC-signed requests, AWS ALB mTLS, and strict schema validation. The platform includes real-time bank account verification through the Devengo/Iberpay API to confirm IBAN ownership and prevent fraudulent substitutions. The Next.js frontend provides a supplier onboarding dashboard, secure session handling, and identity validation steps. Fully Dockerized and deployed on AWS, the system ensures strong protection against account hijacking, impersonation, and unauthorized changes to payment destinations.",
-      "tecnologias": [
-        "Next.js 14",
-        "TypeScript",
-        "Express",
-        "Nginx",
-        "Docker",
-        "AWS ALB"
-      ],
-      "imagen": "/FraudeBec.png",
-      "github": "/#"
-    },
-    {
-      "titulo": "TrustOS PAN  Agricultural Commodity Certificate Portal",
-      "descripcion": "Portal for certifying agricultural commodity purchases (wheat, grains, raw materials) and anchoring them on blockchain.",
-      "detalles": "TrustOS PAN is a certification portal for agricultural commodity purchases such as wheat, grains, and raw materials. The platform retrieves validated producer certificates and converts them into blockchain-anchored ERC-721 digital assets using the TrustOS Token API. It allows regulatory bodies, producers, and buyers to authenticate the origin, integrity, and traceability of each commodity lot. Once validated, each certificate is cryptographically signed and published on-chain, ensuring tamper-proof verification across the supply chain. The portal includes secure login, JWT-based authorization, AWS SSM-driven configuration management, and an interface for certificate visualization and digital token issuance.",
-      "tecnologias": [
-        "Next.js 14",
-        "TypeScript",
-        "TrustOS Token API",
-        "ERC721",
-        "AWS SSM"
-      ],
-      "imagen": "/PAN.png",
-      "github": "/#"
-    },
-    {
-      "titulo": "Norteverse  Gamified Verifiable Credentials Experience",
-      "descripcion": "Gamified corporate identity experience where users share 'superpower' credentials and compare compatibility via QR.",
-      "detalles": "Norteverse is a gamified corporate identity experience developed by Telefónica Tech for commercial and customer-facing events. Participants receive a 'superpower' verifiable credential and compare their attributes via a QR-based verification flow. The platform includes full Procivis integration, dynamic UI routing, real-time polling, MongoDB storage, and a matching engine for compatibility scoring. It has been successfully deployed across multiple corporate events, achieving strong engagement and becoming a recurring Telefónica Tech experience.",
-      "tecnologias": [
-        "Next.js",
-        "TypeScript",
-        "MongoDB"
-      ],
-      "imagen": "/NorteVerse.png",
-      "github": "/#"
-    },
-    {
-      "titulo": "cub3D  Raycasting 3D Engine",
-      "descripcion": "3D engine in C inspired by Wolfenstein 3D using raycasting.",
-      "detalles": "Implements a full rendering pipeline, DDA raycasting algorithm, collision detection, wall projection, FOV calculations, texture mapping, .cub file parser and pixel graphics using MiniLibX. Demonstrates strong mathematical and low-level programming skills.",
-      "tecnologias": [
-        "C",
-        "MiniLibX",
-        "Raycasting",
-        "Graphics Programming"
-      ],
-      "imagen": "/cub3d.png",
-      "github": "https://github.com/paura432/cub3D"
-    },
-    {
-      "titulo": "Minishell  UNIX Shell Recreation",
-      "descripcion": "Custom UNIX shell replicating Bash core behavior.",
-      "detalles": "Built a full lexer, parser, AST builder, executor, environment variable system, redirections (<, >, >>, <<), pipes, signals, process handling, custom builtins and robust memory-safe implementations. Shows deep understanding of UNIX internals.",
-      "tecnologias": [
-        "C",
-        "UNIX System Calls",
-        "Process Management",
-        "Pipes & Redirections",
-        "Signals",
-        "Parsing",
-        "Memory Management"
-      ],
-      "imagen": "/minishell.png",
-      "github": "https://github.com/paura432/minishell"
-    }
-  ],
-  "contacto": {
-    "copyright": "© 2025 Pau Ramos"
   }
 }

@@ -12,10 +12,43 @@ html {
   scroll-behavior: smooth;
 }
 
+:root {
+  --bg: #0a0a0f;
+  --page-overlay: rgba(10, 10, 15, 0.72);
+  --nav-bg: rgba(10, 10, 15, 0.88);
+  --surface: rgba(26, 26, 31, 0.92);
+  --surface-soft: rgba(10, 10, 15, 0.72);
+  --image-bg: rgba(10, 10, 15, 0.24);
+  --text: #e8e8ea;
+  --muted: #b8b8ba;
+  --subtle: #888890;
+  --border: #2a2a2f;
+  --accent: #0066ff;
+  --accent-2: #00a8ff;
+  --shadow: 0 24px 60px rgba(0, 0, 0, 0.28);
+}
+
+:root[data-theme='light'] {
+  --bg: #f6f8fc;
+  --page-overlay: rgba(246, 248, 252, 0.82);
+  --nav-bg: rgba(255, 255, 255, 0.88);
+  --surface: rgba(255, 255, 255, 0.94);
+  --surface-soft: rgba(241, 245, 249, 0.88);
+  --image-bg: rgba(241, 245, 249, 0.7);
+  --text: #111827;
+  --muted: #334155;
+  --subtle: #64748b;
+  --border: #d7dee9;
+  --accent: #0057d8;
+  --accent-2: #0076c9;
+  --shadow: 0 24px 60px rgba(15, 23, 42, 0.1);
+}
+
 body {
   overflow-x: hidden;
-  background-color: transparent;
-  color: #e8e8ea;
+  background-color: var(--bg);
+  color: var(--text);
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 @keyframes fadeIn {
@@ -25,6 +58,13 @@ body {
 
 .animate-fadeIn {
   animation: fadeIn 0.3s ease-out;
+}
+
+.text-gradient {
+  background: linear-gradient(90deg, #0066ff, #00a8ff);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
 }
 
 @layer utilities {
