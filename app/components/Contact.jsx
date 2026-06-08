@@ -4,6 +4,7 @@ import { motion } from 'motion/react'
 import { Github, Linkedin, Mail, Copy } from 'lucide-react'
 import { toast } from 'sonner'
 import { Button } from '@/components/ui/button'
+import { SpotlightCard } from './magic/SpotlightCard'
 
 export function Contact({ shared, ui, copyright }) {
   const copyEmail = async () => {
@@ -44,7 +45,11 @@ export function Contact({ shared, ui, copyright }) {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: '-60px' }}
           transition={{ duration: 0.6 }}
-          className="mx-auto max-w-4xl rounded-2xl border border-[var(--brand-border)] bg-[var(--surface)] p-6 text-center shadow-[var(--shadow)] sm:p-8"
+          className="mx-auto max-w-4xl"
+        >
+        <SpotlightCard
+          tiltStrength={5}
+          className="rounded-2xl border border-[var(--brand-border)] bg-[var(--surface)] p-6 text-center shadow-[var(--shadow)] sm:p-8"
         >
           <h2 className="mb-4 text-3xl font-bold text-gradient sm:text-4xl">{ui.contactTitle}</h2>
           <p className="mx-auto mb-8 max-w-2xl text-[var(--text-muted)]">{ui.contactText}</p>
@@ -84,6 +89,7 @@ export function Contact({ shared, ui, copyright }) {
               </motion.a>
             ))}
           </div>
+        </SpotlightCard>
         </motion.div>
       </section>
 

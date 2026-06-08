@@ -5,6 +5,7 @@ import { motion } from 'motion/react'
 import Image from 'next/image'
 import { Badge } from '@/components/ui/badge'
 import { cn } from '@/lib/utils'
+import { SpotlightCard } from './SpotlightCard'
 
 function TimelineItem({ item, index, presentLabel, dotRef }) {
   return (
@@ -48,8 +49,9 @@ function TimelineItem({ item, index, presentLabel, dotRef }) {
         />
       </div>
 
-      {/* Content card */}
-      <div
+      {/* Content card with tilt + spotlight */}
+      <SpotlightCard
+        tiltStrength={5}
         className={cn(
           'flex-1 rounded-2xl border border-[var(--brand-border)] bg-[var(--surface)] p-4 shadow-[var(--shadow)] sm:p-5',
           'transition-colors duration-200 hover:border-[var(--brand-accent)]/50'
@@ -87,7 +89,7 @@ function TimelineItem({ item, index, presentLabel, dotRef }) {
             ))}
           </ul>
         )}
-      </div>
+      </SpotlightCard>
     </motion.div>
   )
 }

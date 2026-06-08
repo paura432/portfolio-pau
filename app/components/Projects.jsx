@@ -28,8 +28,6 @@ function ProjectCard({ project, ui, onClick }) {
       exit={{ opacity: 0, scale: 0.94 }}
       transition={{ duration: 0.3 }}
       onClick={onClick}
-      whileHover={{ rotateX: 1.5, rotateY: -1.5, y: -4 }}
-      style={{ transformPerspective: 1200 }}
       className={`group relative cursor-pointer overflow-hidden rounded-2xl border bg-[var(--surface)] shadow-[var(--shadow)] transition-shadow duration-300 focus:outline-none focus:ring-2 focus:ring-[var(--brand-accent)] ${
         isFeatured
           ? 'border-[var(--brand-accent)]/50 hover:border-[var(--brand-accent)] hover:shadow-[0_0_40px_rgba(0,102,255,0.18)]'
