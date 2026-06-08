@@ -63,7 +63,7 @@ export function Hero({ shared, t, ui }) {
   )
 
   return (
-    <section id="home" className="flex min-h-screen items-center justify-center px-4 pt-24 sm:px-6">
+    <section id="home" className="flex min-h-screen flex-col items-center justify-center px-4 pb-16 pt-28 sm:px-6 sm:pb-20 sm:pt-32">
       <div className="mx-auto max-w-4xl text-center">
         <motion.p
           {...fadeUp(0)}
@@ -119,8 +119,8 @@ export function Hero({ shared, t, ui }) {
             ))}
           </div>
 
-          <div className="relative">
-            <MagneticButton className="justify-center">
+          <div className="relative flex justify-center">
+            <MagneticButton>
               <ShimmerButton href="#projects">{ui.viewProjects}</ShimmerButton>
             </MagneticButton>
           </div>
