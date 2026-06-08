@@ -39,7 +39,16 @@
         "code": "Code",
         "contactTitle": "Contact",
         "contactText": "Open to product-focused full stack roles, technical collaborations and software projects around web products, API integrations, AI-assisted workflows and digital identity.",
-        "emailCta": "Email me"
+        "emailCta": "Email me",
+        "emailCopied": "Email copied to clipboard",
+        "filterAll": "All",
+        "filterFeatured": "Featured",
+        "filterProfessional": "Professional",
+        "filterSystems": "Systems",
+        "viewDetails": "View details",
+        "navProjects": "Projects",
+        "present": "Present",
+        "marqueeLabel": "Companies & Schools"
       },
       "personal": {
         "titulo": "Full Stack Product Engineer",
@@ -359,7 +368,16 @@
         "code": "Código",
         "contactTitle": "Contacto",
         "contactText": "Abierto a roles full stack orientados a producto, colaboraciones técnicas y proyectos de software sobre productos web, integraciones con APIs, flujos asistidos por IA e identidad digital.",
-        "emailCta": "Escríbeme"
+        "emailCta": "Escríbeme",
+        "emailCopied": "Email copiado al portapapeles",
+        "filterAll": "Todos",
+        "filterFeatured": "Destacados",
+        "filterProfessional": "Profesionales",
+        "filterSystems": "Sistemas",
+        "viewDetails": "Ver detalles",
+        "navProjects": "Proyectos",
+        "present": "Actualidad",
+        "marqueeLabel": "Empresas y centros"
       },
       "personal": {
         "titulo": "Full Stack Product Engineer",
