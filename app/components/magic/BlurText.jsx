@@ -4,7 +4,7 @@ import { useRef } from 'react'
 import { motion, useInView } from 'motion/react'
 import { cn } from '@/lib/utils'
 
-export function BlurText({ text, as: Tag = 'span', className, delay = 0, once = true }) {
+export function BlurText({ text, as: Tag = 'span', className, wordClassName, delay = 0, once = true }) {
   const ref = useRef(null)
   const isInView = useInView(ref, { once, margin: '-40px' })
 
@@ -50,7 +50,7 @@ export function BlurText({ text, as: Tag = 'span', className, delay = 0, once = 
           <motion.span
             key={i}
             variants={word}
-            className="inline-block"
+            className={cn('inline-block', wordClassName)}
             aria-hidden="true"
           >
             {w}

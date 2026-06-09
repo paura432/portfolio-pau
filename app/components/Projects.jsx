@@ -256,14 +256,7 @@ export function Projects({ projects, ui }) {
   return (
     <section id="projects" className="px-4 py-12 sm:px-6 sm:py-16 md:py-20">
       <div className="mx-auto max-w-6xl">
-        <motion.div
-          initial={{ opacity: 0, y: 32 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: '-60px' }}
-          transition={{ duration: 0.6 }}
-        >
-          <SectionHeading>{ui.navProjects}</SectionHeading>
-        </motion.div>
+        <SectionHeading>{ui.navProjects}</SectionHeading>
 
         <Tabs value={activeTab} onValueChange={setActiveTab} className="mb-8">
           <TabsList className="flex h-auto flex-wrap gap-1 border border-[var(--brand-border)] bg-[var(--surface-soft)] p-1">

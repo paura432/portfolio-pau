@@ -1,11 +1,17 @@
 'use client'
 
 import { useRef, useCallback } from 'react'
+import dynamic from 'next/dynamic'
 import { motion, useMotionValue, useSpring, useTransform } from 'motion/react'
 import { Github, Linkedin, Mail, Globe2 } from 'lucide-react'
 import { AnimatedGradientText } from './magic/AnimatedGradientText'
 import { ShimmerButton } from './magic/ShimmerButton'
 import { MagneticButton } from './magic/MagneticButton'
+
+const Hero3DScene = dynamic(
+  () => import('./Hero3DScene').then((mod) => mod.Hero3DScene),
+  { ssr: false }
+)
 
 const SPRING = { stiffness: 140, damping: 20, mass: 0.6 }
 
@@ -63,8 +69,9 @@ export function Hero({ shared, t, ui }) {
   )
 
   return (
-    <section id="home" className="flex min-h-screen flex-col items-center justify-center px-4 pb-16 pt-28 sm:px-6 sm:pb-20 sm:pt-32">
-      <div className="mx-auto max-w-4xl text-center">
+    <section id="home" className="relative flex min-h-screen flex-col items-center justify-center overflow-hidden px-4 pb-16 pt-28 sm:px-6 sm:pb-20 sm:pt-32">
+      <Hero3DScene />
+      <div className="relative z-10 mx-auto max-w-4xl text-center">
         <motion.p
           {...fadeUp(0)}
           className="mb-4 inline-flex items-center gap-2 rounded-full border border-[var(--brand-border)] bg-[var(--surface-soft)] px-4 py-2 text-sm font-medium text-[var(--subtle)]"
