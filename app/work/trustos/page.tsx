@@ -1,0 +1,9 @@
+import Link from 'next/link'
+import { ArrowUpRight } from 'lucide-react'
+import CaseHeader from '../../components/CaseHeader'
+
+export const metadata = { title: 'TrustOS — Pau Ramos', description: 'Digital identity infrastructure for verifiable credentials.' }
+
+export default function TrustosPage() {
+  return <main className="case-page case-trustos"><CaseHeader chapter="03 / INFRASTRUCTURE" /><section className="trustos-hero"><p className="kicker">TELEFÓNICA TECH / 2025 — 2026</p><h1>TRUST<br/>OS</h1><p>Digital identity infrastructure for verifiable credential issuance and verification.</p><div className="credential-mark" aria-hidden="true">VC<br/>01</div></section><section className="case-split"><p className="case-label">INFRASTRUCTURE CHAPTER</p><div><h2>Identity is a system of trust.</h2><p>TrustOS VCS Core API provides a unified layer for credential lifecycle operations, wallet-provider integration and verification flows. Public detail stays at an infrastructure level.</p></div></section><section className="trustos-graph"><p className="case-label">CREDENTIAL FLOW</p><div><span>ISSUER</span><i>↓</i><span>VCS API</span><i>↓</i><span>PROVIDER ABSTRACTION</span><small>PRIVADOID · PROCIVIS · IDENFY</small><i>↓</i><span>WALLET</span><i>↓</i><span>VERIFY</span></div></section><section className="case-proof"><div><p className="case-label">WORKED ON</p><ul><li>Credential lifecycle services</li><li>Wallet-provider integrations</li><li>QR verification flows</li><li>REST API and OpenAPI documentation</li></ul></div><div><p className="case-label">TECHNICAL FRAME</p><p>Node.js · Express · TypeScript · MongoDB · Docker · OpenAPI</p></div></section><footer className="case-footer"><Link href="/foundations">Next: Foundations <ArrowUpRight size={18}/></Link><Link href="/">All systems <ArrowUpRight size={18}/></Link></footer></main>
+}
