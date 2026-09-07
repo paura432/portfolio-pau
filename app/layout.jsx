@@ -1,7 +1,5 @@
 import './globals.css'
 import { Geist, Geist_Mono } from 'next/font/google'
-import { ThemeProvider } from './components/providers/ThemeProvider'
-import { Toaster } from 'sonner'
 
 const geistSans = Geist({
   subsets: ['latin'],
@@ -23,10 +21,14 @@ export const metadata = {
   openGraph: {
     title: 'Pau Ramos - Full Stack Product Engineer Portfolio',
     description: 'Modern web products, API integrations, AI-assisted workflows, digital identity and secure systems.',
-    url: 'https://tu-dominio.com',
     siteName: 'Pau Ramos Portfolio',
     locale: 'en_US',
     type: 'website',
+  },
+  twitter: {
+    card: 'summary',
+    title: 'Pau Ramos - Full Stack Product Engineer Portfolio',
+    description: 'Modern web products, API integrations, AI-assisted workflows, digital identity and secure systems.',
   },
 }
 
@@ -37,17 +39,7 @@ export default function RootLayout({ children }) {
       suppressHydrationWarning
       className={`${geistSans.variable} ${geistMono.variable}`}
     >
-      <body>
-        <ThemeProvider
-          attribute="data-theme"
-          defaultTheme="dark"
-          enableSystem={false}
-          storageKey="portfolio-theme"
-        >
-          {children}
-          <Toaster richColors position="bottom-right" />
-        </ThemeProvider>
-      </body>
+      <body>{children}</body>
     </html>
   )
 }
