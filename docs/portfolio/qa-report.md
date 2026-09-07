@@ -15,6 +15,7 @@ Fecha: 2026-09-07. Entorno: WSL / Next.js 16, producción local.
 | Accesibilidad base | PASS | Skip link, landmarks, headings ordenados, enlaces con nombre, controles nativos y equivalente textual de topology. |
 | Touch/teclado | PASS por implementación | Navegación mediante enlaces, menú con botón, slider nativo y botón nativo; objetivos de 44 px. |
 | Reduced motion | PASS por implementación | Las reglas CSS respetan `prefers-reduced-motion`. |
+| i18n | GAP | El selector actual solo traduce parte de la home; cases y contenido de datos permanecen en inglés. No se considera i18n completa. |
 
 ## Inspección visual realizada
 
@@ -35,6 +36,7 @@ El proyecto no define script ni suite `test`; `pnpm test` no puede ejecutarse. N
 1. Falta un PDF de CV real: no se enlaza un archivo inventado.
 2. Falta dominio canónico: por ello no se añaden `metadataBase`, canonical, sitemap ni JSON-LD con URLs ficticias.
 3. OVI continúa limitado deliberadamente a información pública autorizada.
+4. La localización EN/ES necesita una implementación de contenido completa o la retirada explícita del selector parcial.
 
 ## Conclusión
 

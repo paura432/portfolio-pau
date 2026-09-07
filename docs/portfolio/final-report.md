@@ -79,3 +79,4 @@ No hay errores de consola ni warnings de hidratación observados en las rutas in
 3. Aportar brief y assets autorizados de OVI.
 4. Revisar media histórica de DUPLEX y TrustOS antes de reintroducirla.
 5. Completar screenshot QA instrumentada y Lighthouse de producción.
+6. Completar i18n EN/ES o retirar el selector parcial hasta disponer de las traducciones.
