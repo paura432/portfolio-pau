@@ -6,6 +6,15 @@
 
 La reconstrucción reemplaza el portfolio editorial genérico por una arquitectura de carrera: sistemas actuales, infraestructura, Foundations y práctica de diseño. Rutas, accesibilidad base y gates están listos. No se marca READY: falta CV PDF, dominio canónico y material público autorizado de OVI.
 
+## Evidencia y documentación
+
+- Auditoría de estado, repos públicos y assets: `final-audit.md`.
+- Inventario y límites de contenido: `content-map.md`.
+- Sistema visual, interacción y estrategia responsive: `design-system.md`.
+- Gates, accesibilidad y límites de QA instrumentada: `qa-report.md`.
+
+Las referencias se estudiaron como principios —dirección editorial, presentación de trabajo, restricción de motion, UX de recruiter y craft de interfaz—, sin copiar identidades, assets ni código.
+
 ## Diagnóstico y cambio
 
 La versión anterior mantenía Spidio destacado, prometía un Lab sin experiencias implementadas y forzaba DUPLEX, Spidio y TrustOS a una misma plantilla. Foundations era archivo secundario.
@@ -60,6 +69,8 @@ Metadata por ruta y robots existen. Faltan metadataBase, canonical, sitemap y JS
 | npm run build | PASS |
 | Rutas locales | PASS: 8/8 HTTP 200 |
 | Tests | No existe suite. |
+
+No hay errores de consola ni warnings de hidratación observados en las rutas inspeccionadas. No se generan screenshots reproducibles ni una medición Lighthouse porque el entorno WSL no dispone de navegador automatizable y no hay URL de producción.
 
 ## Gaps
 
