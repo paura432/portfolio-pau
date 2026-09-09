@@ -1,38 +1,26 @@
 'use client'
 
 import Link from 'next/link'
-import { Menu, Moon, Sun, X, ArrowDownRight, ArrowUpRight } from 'lucide-react'
-import { useEffect, useState } from 'react'
-import SystemTopology from './SystemTopology'
+import { ArrowDownRight, ArrowUpRight, Menu, X } from 'lucide-react'
+import { useState } from 'react'
 import { contact, experience, foundations, systems } from '../data/portfolio'
 
-const copy = {
-  en: { systems: 'Systems', foundations: 'Foundations', design: 'Design', cv: 'CV', current: 'Current systems', infrastructure: 'Infrastructure', practice: 'Design practice', experience: 'Experience', contact: 'Build a system worth using.', intro: 'Building products across interface, systems and intelligence.', cvCta: 'Request CV', language: 'ES' },
-  es: { systems: 'Sistemas', foundations: 'Fundamentos', design: 'Diseño', cv: 'CV', current: 'Sistemas actuales', infrastructure: 'Infraestructura', practice: 'Práctica de diseño', experience: 'Experiencia', contact: 'Construyamos un sistema que merezca usarse.', intro: 'Construyo productos entre interfaz, sistemas e inteligencia.', cvCta: 'Solicitar CV', language: 'EN' },
-} as const
-
 export default function PortfolioShell() {
-  const [language, setLanguage] = useState<keyof typeof copy>('en')
-  const [theme, setTheme] = useState<'light' | 'dark'>('light')
   const [open, setOpen] = useState(false)
-  const t = copy[language]
-  useEffect(() => { document.documentElement.lang = language; document.documentElement.dataset.theme = theme }, [language, theme])
-  const nav = <><a href="#systems">{t.systems}</a><Link href="/foundations">{t.foundations}</Link><Link href="/design">{t.design}</Link><a href={'mailto:' + contact.email + '?subject=CV%20request'}>{t.cv}</a></>
+  const nav = <><a href="#work">WORK</a><a href="#experience">EXPERIENCE</a><Link href="/foundations">ARCHIVE</Link><Link href="/design">DESIGN</Link><a href="/pau-ramos-cv-es.pdf" download>CV</a></>
 
-  return <main>
+  return <main className="live-home">
     <a className="skip-link" href="#main-content">Skip to content</a>
-    <header className="site-header"><a className="wordmark" href="#intro">PAU / SYSTEMS</a><nav className="desktop-nav" aria-label="Primary navigation">{nav}</nav><div className="nav-tools"><button className="text-button" onClick={() => setLanguage(language === 'en' ? 'es' : 'en')}>{t.language}</button><button className="icon-button" onClick={() => setTheme(theme === 'light' ? 'dark' : 'light')} aria-label="Toggle colour theme">{theme === 'light' ? <Moon size={18} /> : <Sun size={18} />}</button><button className="icon-button menu-button" onClick={() => setOpen(!open)} aria-expanded={open} aria-label="Toggle navigation">{open ? <X /> : <Menu />}</button></div></header>
+    <header className="live-header"><Link className="wordmark" href="/">PAU / LIVE SYSTEMS</Link><nav className="desktop-nav" aria-label="Primary navigation">{nav}</nav><button className="icon-button menu-button" onClick={() => setOpen(!open)} aria-expanded={open} aria-label="Toggle navigation">{open ? <X /> : <Menu />}</button></header>
     {open && <nav className="mobile-nav" aria-label="Mobile navigation" onClick={() => setOpen(false)}>{nav}</nav>}
     <div id="main-content">
-      <section id="intro" className="systems-hero"><p className="kicker">MADRID / 2026</p><h1>PAU<br/>RAMOS</h1><div className="systems-role"><strong>FULL STACK<br/>PRODUCT ENGINEER</strong><p>{t.intro}</p></div><p className="systems-index">00 / INTRO · 01 / CURRENT SYSTEMS · 02 / INFRASTRUCTURE · 03 / FOUNDATIONS</p></section>
-      <SystemTopology />
-      <section id="systems" className="systems-section"><div className="section-label"><span>01</span><h2>{t.current}</h2></div><div className="systems-list">{systems.slice(0, 2).map((project) => <Link href={'/work/' + project.slug} key={project.slug} className={'system-row system-' + project.slug}><span>{project.index}</span><div><h3>{project.title}</h3><p>{project.chapter}</p></div><p>{project.summary}</p><ArrowUpRight aria-hidden="true" /></Link>)}</div></section>
-      <section className="systems-statement"><p>Current work is not a stack. It is a set of decisions across people, interfaces, data and operations.</p></section>
-      <section className="systems-section infrastructure"><div className="section-label"><span>02</span><h2>{t.infrastructure}</h2></div>{systems.slice(2).map((project) => <Link href={'/work/' + project.slug} key={project.slug} className="infrastructure-link"><div><p>{project.company} / {project.period}</p><h3>{project.title}</h3><span>{project.chapter}</span></div><p>{project.summary}</p><ArrowUpRight aria-hidden="true" /></Link>)}</section>
-      <section className="foundations-preview"><div><p className="kicker">03 / ENGINEERING FOUNDATIONS</p><h2>Before products, there were systems.</h2><p>Public work in C, UNIX, graphics, concurrency, networking and C++ made the current product work possible.</p><Link className="link-button" href="/foundations">Explore Foundations <ArrowDownRight size={18}/></Link></div><ol>{foundations.slice(0, 5).map((item) => <li key={item.id}><strong>{item.title}</strong><span>{item.projects}</span></li>)}</ol></section>
-      <section className="design-preview"><p className="kicker">04 / {t.practice.toUpperCase()}</p><h2>Not every product should look like software.</h2><p>Sofía is a public implementation that tests an editorial and media-first visual system.</p><Link href="/design">See design practice <ArrowUpRight size={18}/></Link></section>
-      <section className="experience-section systems-experience"><div className="section-label"><span>05</span><h2>{t.experience}</h2></div>{experience.map(([date, company, role, detail]) => <article className="experience-row" key={company}><p>{date}</p><h3>{company}</h3><strong>{role}</strong><span>{detail}</span></article>)}</section>
-      <section className="contact-section"><p className="kicker">06 / CONTACT</p><h2>{t.contact}</h2><a className="contact-link" href={'mailto:' + contact.email}>Let’s talk <ArrowUpRight aria-hidden="true"/></a><div className="contact-meta"><a href={'mailto:' + contact.email}>{contact.email}</a><a href={contact.linkedin} target="_blank" rel="noreferrer">LinkedIn</a><a href={contact.github} target="_blank" rel="noreferrer">GitHub</a><span>{contact.location}</span></div></section>
+      <section className="live-hero" aria-labelledby="hero-title"><p className="kicker">MADRID · 2026</p><h1 id="hero-title">PAU<br />RAMOS</h1><div className="hero-role"><strong>FULL STACK<br />PRODUCT ENGINEER</strong><p>Building products across interface, systems and AI.</p></div><div className="hero-actions"><a href="#work">SELECTED WORK <ArrowDownRight size={17} /></a><a href="/pau-ramos-cv-es.pdf" download>CV <ArrowDownRight size={17} /></a></div><div className="live-system" aria-hidden="true"><i /><i /><i /><i /></div></section>
+      <section id="work" className="live-section selected-work" aria-labelledby="work-title"><div className="section-label"><span>01</span><h2 id="work-title">SELECTED WORK</h2></div><div className="work-list">{systems.map((project) => <Link href={'/work/' + project.slug} key={project.slug} className={'work-row work-' + project.slug}><span>{project.index}</span><div><h3>{project.title}</h3><p>{project.chapter}</p></div><p>{project.company} / {project.period}</p><ArrowUpRight aria-hidden="true" /></Link>)}</div></section>
+      <section id="experience" className="live-section live-experience" aria-labelledby="experience-title"><div className="section-label"><span>02</span><h2 id="experience-title">EXPERIENCE</h2></div>{experience.slice(0, 2).map(([date, company, role, detail]) => <article className="experience-row" key={company}><p>{date}</p><h3>{company}</h3><strong>{role}</strong><span>{detail}</span></article>)}</section>
+      <section className="archive-callout" aria-labelledby="archive-title"><p className="kicker">03 / ENGINEERING ARCHIVE</p><h2 id="archive-title">Public work behind product decisions.</h2><p>C, UNIX, graphics, concurrency, networking and C++. Evidence, not a competing work index.</p><Link href="/foundations">OPEN ENGINEERING ARCHIVE <ArrowUpRight size={18} /></Link><ol>{foundations.slice(0, 4).map(({ id, title }) => <li key={id}>{title}</li>)}</ol></section>
+      <section className="design-callout"><p className="kicker">04 / DESIGN PRACTICE</p><h2>Different products need different visual systems.</h2><p>Sofía is public evidence of editorial web implementation.</p><Link href="/design">VIEW DESIGN PRACTICE <ArrowUpRight size={18} /></Link></section>
+      <section className="about-callout"><p className="kicker">05 / ABOUT</p><p>Full Stack Product Engineer based in Madrid. I work across product definition, interface, backend systems and AI-assisted workflows. Previously at Telefónica Tech. Engineering foundations from 42 Madrid.</p></section>
+      <footer id="contact" className="live-contact"><p className="kicker">06 / CONTACT + CV</p><h2>Build a system worth using.</h2><a className="cv-download" href="/pau-ramos-cv-es.pdf" download>DOWNLOAD CV <ArrowDownRight aria-hidden="true" /></a><a className="contact-link" href={'mailto:' + contact.email}>EMAIL <ArrowUpRight aria-hidden="true" /></a><div className="contact-meta"><a href={contact.linkedin} target="_blank" rel="noreferrer">LINKEDIN</a><a href={contact.github} target="_blank" rel="noreferrer">GITHUB</a><Link href="/colophon">COLOPHON</Link><a href="https://github.com/paura432/portfolio-pau" target="_blank" rel="noreferrer">VIEW SOURCE</a><span>{contact.location.toUpperCase()}</span></div></footer>
     </div>
   </main>
 }
