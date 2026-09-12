@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react'
 import { useLiveSystem } from './live-system/liveSystemStore'
 
 const links = [
-  ['Go to OVI', '/work/ovi'], ['Go to DUPLEX', '/work/duplex'], ['Go to TrustOS', '/work/trustos'], ['Go to BROKI', '/work/broki'], ['Open Engineering Archive', '/foundations'], ['Open Design Practice', '/design'], ['Open Colophon', '/colophon'], ['Download CV', '/pau-ramos-cv-es.pdf'],
+  ['Go to OVI', '/work/ovi'], ['Go to DUPLEX', '/work/duplex'], ['Go to TrustOS', '/work/trustos'], ['Go to BROKI', '/work/broki'], ['Open Engineering Archive', '/foundations'], ['Open Design Practice', '/design'], ['Open Colophon', '/colophon'], ['Download CV EN', '/cv-en.pdf'], ['Download CV ES', '/cv-es.pdf'],
 ] as const
 
 export default function DevTools() {

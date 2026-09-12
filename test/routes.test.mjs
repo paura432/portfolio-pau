@@ -10,5 +10,5 @@ test('professional routes and technical routes exist', () => {
 
 test('home exposes recruiter work and contact paths', () => {
   const home = read('app/components/PortfolioShell.tsx')
-  for (const text of ['SELECTED WORK', 'EXPERIENCE', 'pau-ramos-cv-es.pdf', 'VIEW SOURCE']) assert.match(home, new RegExp(text))
+  for (const text of ['SELECTED WORK', 'EXPERIENCE', 'cv-en.pdf', 'cv-es.pdf', 'VIEW SOURCE']) assert.match(home, new RegExp(text))
 })
