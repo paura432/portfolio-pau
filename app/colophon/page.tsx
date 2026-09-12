@@ -4,13 +4,14 @@ import CaseHeader from '../components/CaseHeader'
 export const metadata = { title: 'Colophon — Pau Ramos', description: 'How PAU / LIVE SYSTEMS is built.' }
 
 const sections = [
-  ['ARCHITECTURE', 'Next.js App Router with static routes and typed portfolio data.'],
-  ['RENDERING', 'DOM, CSS, and SVG baseline. Experimental rendering remains optional.'],
-  ['MOTION', 'CSS feedback first. Reduced motion disables transitions.'],
-  ['ACCESSIBILITY', 'Skip link, semantic navigation, native controls, keyboard access, and text equivalents.'],
-  ['RESPONSIVE SYSTEM', 'Fluid typography and a mobile composition at 760 px.'],
-  ['TECH STACK', 'Next.js, React, TypeScript, CSS, and lucide-react.'],
-  ['INTERESTING DECISIONS', 'Developer Mode exposes measured viewport, DPR, pointer, and motion state.'],
+  ['WHY LIVE SYSTEMS', 'Product cases need an inspectable, readable system—not decorative WebGL.'],
+  ['APP ROUTER + DOM', 'Next.js App Router supplies routes, metadata and a complete semantic HTML baseline.'],
+  ['LAZY WEBGL', 'Three.js and React Three Fiber load as a pointer-inert enhancement. Lite mode renders no Canvas.'],
+  ['STATE', 'Zustand synchronizes route, active system, render profile, Developer Mode, grid and X-Ray state.'],
+  ['RENDER PROFILES', 'FULL, BALANCED and LITE use DPR, pointer and reduced-motion signals without fingerprinting.'],
+  ['ACCESSIBILITY', 'Skip link, semantic navigation, native controls and text equivalents remain usable without WebGL.'],
+  ['TESTING + PRIVACY', 'Playwright covers browser smoke. Professional models are sanitized; no customer data or credentials appear.'],
+  ['STACK', 'Next.js, React, TypeScript, CSS, Three.js, React Three Fiber, Drei, Zustand, GSAP and Playwright.'],
 ]
 
 export default function ColophonPage() {
