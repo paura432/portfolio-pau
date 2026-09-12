@@ -23,3 +23,10 @@ export function TrustModel() {
   const nodes = step === 'ISSUE' ? ['ISSUER', 'VCS', 'PROVIDER', 'WALLET'] : step === 'PRESENT' ? ['WALLET', 'HOLDER', 'VERIFIER'] : ['VERIFIER', 'PROVIDER', 'VCS', 'RESULT']
   return <section className="case-playground trust-model" aria-labelledby="trust-model-title"><p className="case-label">CREDENTIAL LIFECYCLE</p><h2 id="trust-model-title">Select a lifecycle state.</h2><div className="step-tabs">{['ISSUE', 'PRESENT', 'VERIFY'].map((item) => <button key={item} className={step === item ? 'active' : ''} onClick={() => setStep(item)}>{item}</button>)}</div><ol>{nodes.map((node) => <li key={node}>{node}</li>)}</ol><p>Public infrastructure model. No credential or tenant data is shown.</p></section>
 }
+
+export function BrokiModel() {
+  const stages = [['LEGACY', 'HTML · NODE · POSTGRESQL · N8N'], ['AUDIT', 'DATA · SCHEMA · WORKFLOWS · PARITY'], ['MIGRATION', 'MAPPINGS · NORMALIZATION · EDGE FUNCTIONS · RLS'], ['CURRENT PLATFORM', 'NEXT.JS · SUPABASE · PWA · REALTIME']]
+  const [stage, setStage] = useState(0)
+  const setActiveProject = useLiveSystem((state) => state.setActiveProject)
+  return <section className="case-playground" aria-labelledby="broki-model-title" onFocus={() => setActiveProject('broki')}><p className="case-label">CONCEPTUAL MIGRATION MODEL</p><h2 id="broki-model-title">Records move. Operational meaning stays.</h2><div className="step-tabs">{stages.map(([name], index) => <button key={name} className={stage === index ? 'active' : ''} onClick={() => setStage(index)}>{name}</button>)}</div><div className="diagnosis"><p>STATE {String(stage + 1).padStart(2, '0')}</p><strong>{stages[stage][0]}</strong><p>{stages[stage][1]}</p></div><p>Sanitized migration model. No production records or automation logic shown.</p></section>
+}
