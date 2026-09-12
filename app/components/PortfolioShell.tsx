@@ -3,7 +3,7 @@
 import Link from 'next/link'
 import { ArrowDownRight, ArrowUpRight, Menu, X } from 'lucide-react'
 import { useState } from 'react'
-import { contact, designPractice, experience, foundations, independentWork, systems } from '../data/portfolio'
+import { capabilities, contact, designPractice, experience, foundations, independentWork, systems } from '../data/portfolio'
 
 export default function PortfolioShell() {
   const [open, setOpen] = useState(false)
@@ -20,8 +20,9 @@ export default function PortfolioShell() {
       <section id="experience" className="live-section live-experience" aria-labelledby="experience-title"><div className="section-label"><span>03</span><h2 id="experience-title">EXPERIENCE</h2></div>{experience.slice(0, 2).map(([date, company, role, detail]) => <article className="experience-row" key={company}><p>{date}</p><h3>{company}</h3><strong>{role}</strong><span>{detail}</span></article>)}</section>
       <section className="archive-callout" aria-labelledby="archive-title"><p className="kicker">04 / ENGINEERING ARCHIVE</p><h2 id="archive-title">Public work behind product decisions.</h2><p>C, UNIX, graphics, concurrency, networking and C++. Evidence, not a competing work index.</p><Link href="/foundations">OPEN ENGINEERING ARCHIVE <ArrowUpRight size={18} /></Link><ol>{foundations.slice(0, 4).map(({ id, title }) => <li key={id}>{title}</li>)}</ol></section>
       <section className="design-callout"><p className="kicker">05 / DESIGN PRACTICE</p><h2>Different products need different visual systems.</h2><p>{designPractice.map((project) => project.title).join(' + ')}: public evidence of editorial and portfolio web implementation.</p><Link href="/design">VIEW DESIGN PRACTICE <ArrowUpRight size={18} /></Link></section>
-      <section className="about-callout"><p className="kicker">06 / ABOUT</p><p>Full Stack Product Engineer based in Madrid. I work across product definition, interface, backend systems and AI-assisted workflows. Previously at Telefónica Tech. Engineering foundations from 42 Madrid.</p></section>
-      <footer id="contact" className="live-contact"><p className="kicker">07 / CONTACT + CV</p><h2>Build a system worth using.</h2><a className="cv-download" href="/pau-ramos-cv-es.pdf" download>DOWNLOAD CV <ArrowDownRight aria-hidden="true" /></a><a className="contact-link" href={'mailto:' + contact.email}>EMAIL <ArrowUpRight aria-hidden="true" /></a><div className="contact-meta"><a href={contact.linkedin} target="_blank" rel="noreferrer">LINKEDIN</a><a href={contact.github} target="_blank" rel="noreferrer">GITHUB</a><Link href="/colophon">COLOPHON</Link><a href="https://github.com/paura432/portfolio-pau" target="_blank" rel="noreferrer">VIEW SOURCE</a><span>{contact.location.toUpperCase()}</span></div></footer>
+      <section className="capabilities-callout" aria-labelledby="capabilities-title"><p className="kicker">06 / ENGINEERING CAPABILITIES</p><h2 id="capabilities-title">Technology in context.</h2><div>{capabilities.map(([title, stack]) => <article key={title}><h3>{title}</h3><p>{stack}</p></article>)}</div></section>
+      <section className="about-callout"><p className="kicker">07 / ABOUT</p><p>Full Stack Product Engineer based in Madrid. I work across product definition, interface, backend systems and AI-assisted workflows. Previously at Telefónica Tech. Engineering foundations from 42 Madrid.</p></section>
+      <footer id="contact" className="live-contact"><p className="kicker">08 / CONTACT + CV</p><h2>Build a system worth using.</h2><a className="cv-download" href="/pau-ramos-cv-es.pdf" download>DOWNLOAD CV <ArrowDownRight aria-hidden="true" /></a><a className="contact-link" href={'mailto:' + contact.email}>EMAIL <ArrowUpRight aria-hidden="true" /></a><div className="contact-meta"><a href={contact.linkedin} target="_blank" rel="noreferrer">LINKEDIN</a><a href={contact.github} target="_blank" rel="noreferrer">GITHUB</a><Link href="/colophon">COLOPHON</Link><a href="https://github.com/paura432/portfolio-pau" target="_blank" rel="noreferrer">VIEW SOURCE</a><span>{contact.location.toUpperCase()}</span></div></footer>
     </div>
   </main>
 }

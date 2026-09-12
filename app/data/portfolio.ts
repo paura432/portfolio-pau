@@ -69,6 +69,15 @@ export const designPractice = [
   { title: 'DIEGO', chapter: 'PORTFOLIO WEB IMPLEMENTATION', url: 'https://portfolio-diego.vercel.app', repository: 'https://github.com/paura432/portfolio-diego' },
 ] as const
 
+export const capabilities = [
+  ['PRODUCT ENGINEERING', 'TypeScript · React · Next.js · Vite'],
+  ['BACKEND & DATA', 'Node.js · Express · Supabase · PostgreSQL · MongoDB'],
+  ['AI SYSTEMS', 'RAG · document retrieval · embeddings · LLM integration'],
+  ['MICROSOFT ECOSYSTEM', 'Microsoft Graph · Outlook · Teams · Calendar · OneDrive'],
+  ['SYSTEMS', 'C · C++ · UNIX · processes · threads · networking'],
+  ['DELIVERY', 'Docker · Vercel · Playwright · QA'],
+] as const
+
 export const foundations = [
   { id: 'memory', title: 'MEMORY / C', projects: 'LIBFT · FT_PRINTF · GET_NEXT_LINE', lesson: 'Reusable primitives, formatted output and stream reading.' },
   { id: 'algorithms', title: 'ALGORITHMS', projects: 'PUSH_SWAP', lesson: 'Constraints, ordering and trade-offs.' },
