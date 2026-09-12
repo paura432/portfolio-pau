@@ -1,10 +1,15 @@
 'use client'
 
 import { useState } from 'react'
+import { useLiveSystem } from './live-system/liveSystemStore'
 
 export function OviModel() {
-  const [intent, setIntent] = useState('Summarize my latest messages and prepare tomorrow’s meeting.')
-  return <section className="case-playground ovi-model" aria-labelledby="ovi-model-title"><p className="case-label">CONCEPTUAL PUBLIC MODEL</p><h2 id="ovi-model-title">Intent becomes a useful artifact.</h2><label>USER INTENT<textarea value={intent} onChange={(event) => setIntent(event.target.value)} /></label><ol>{['INTENT', 'TASK PLAN', 'EMAIL CONTEXT', 'KNOWLEDGE', 'CALENDAR', 'ARTIFACT'].map((step) => <li key={step}>{step}</li>)}</ol><p>This is a sanitised explanation, not a production architecture.</p></section>
+  const examples = ['Show my unread emails.', 'What meetings do I have tomorrow?', 'Find the latest document about Project Atlas.', 'Summarize my latest messages and prepare tomorrow’s meeting.']
+  const [intent, setIntent] = useState(examples[3])
+  const setActiveProject = useLiveSystem((state) => state.setActiveProject)
+  const lower = intent.toLowerCase()
+  const steps = lower.includes('meeting') ? ['INTENT', 'CALENDAR', 'CONTEXT', 'ACTION'] : lower.includes('document') ? ['INTENT', 'ONEDRIVE', 'MICROSOFT GRAPH', 'KNOWLEDGE', 'RESULT'] : lower.includes('email') || lower.includes('message') ? ['INTENT', 'OUTLOOK', 'MICROSOFT GRAPH', 'CONTEXT', 'RESULT'] : ['INTENT', 'TASK PLAN', 'OUTLOOK', 'FILES', 'KNOWLEDGE', 'CALENDAR', 'ARTIFACT']
+  return <section className="case-playground ovi-model" aria-labelledby="ovi-model-title" onFocus={() => setActiveProject('ovi')}><p className="case-label">CONCEPTUAL PUBLIC DEMO</p><h2 id="ovi-model-title">Intent becomes a useful artifact.</h2><div className="step-tabs" aria-label="Safe example intents">{examples.map((example) => <button key={example} className={intent === example ? 'active' : ''} onClick={() => setIntent(example)}>{example}</button>)}</div><label>USER INTENT<textarea value={intent} onChange={(event) => setIntent(event.target.value)} /></label><ol>{steps.map((step) => <li key={step}>{step}</li>)}</ol><p>Deterministic educational reconstruction. Not production architecture or a live Microsoft connection.</p></section>
 }
 
 const sources = [{ id: '1', title: 'Technical manual', text: 'Check door-chain continuity before replacing components.' }, { id: '2', title: 'Historical fault', text: 'Similar symptoms followed a loose interlock connection.' }, { id: '3', title: 'Checklist', text: 'Isolate equipment and record the observed state.' }]

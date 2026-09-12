@@ -66,7 +66,7 @@ export const independentWork = {
 
 export const designPractice = [
   { title: 'SOFÍA', chapter: 'EDITORIAL WEB IMPLEMENTATION', url: 'https://sofia-chi-gold.vercel.app', repository: 'https://github.com/paura432/Sofia' },
-  { title: 'DIEGO', chapter: 'PORTFOLIO WEB IMPLEMENTATION', url: 'https://portfolio-diego.vercel.app', repository: 'https://github.com/paura432/portfolio-diego' },
+  { title: 'DIEGO', chapter: 'PORTFOLIO WEB IMPLEMENTATION', url: 'https://portfolio-diego-delgado.vercel.app', repository: 'https://github.com/paura432/portfolio-diego' },
 ] as const
 
 export const capabilities = [
