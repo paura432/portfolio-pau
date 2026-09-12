@@ -18,7 +18,7 @@
 
 ## Validation
 
-`npm run lint`, `npm run typecheck`, `npm test` and `npm run build` passed locally on 2026-09-12.
+`npm run lint`, `npm run typecheck`, `npm test`, `npm run test:e2e` and `npm run build` passed locally on 2026-09-12. Playwright smoke-tested every public route at 320 px and 1440 px.
 
 ## Deliberate omissions
 
