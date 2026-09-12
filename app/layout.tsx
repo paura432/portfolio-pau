@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import { Geist, Geist_Mono } from 'next/font/google'
 import DevTools from './components/DevTools'
 import './globals.css'
+import './v2.css'
 
 const geistSans = Geist({ subsets: ['latin'], variable: '--font-sans', display: 'swap' })
 const geistMono = Geist_Mono({ subsets: ['latin'], variable: '--font-mono', display: 'swap' })

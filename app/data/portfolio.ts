@@ -56,6 +56,19 @@ export const systems: SystemProject[] = [
   },
 ]
 
+export const independentWork = {
+  title: 'BROKI',
+  chapter: 'INDEPENDENT FIELD OPERATIONS',
+  period: '2026',
+  summary: 'A product migration for operational work: from a legacy stack to a current web platform.',
+  technologies: ['Next.js', 'TypeScript', 'Supabase', 'PostgreSQL', 'PWA'],
+} as const
+
+export const designPractice = [
+  { title: 'SOFÍA', chapter: 'EDITORIAL WEB IMPLEMENTATION', url: 'https://sofia-chi-gold.vercel.app', repository: 'https://github.com/paura432/Sofia' },
+  { title: 'DIEGO', chapter: 'PORTFOLIO WEB IMPLEMENTATION', url: 'https://portfolio-diego.vercel.app', repository: 'https://github.com/paura432/portfolio-diego' },
+] as const
+
 export const foundations = [
   { id: 'memory', title: 'MEMORY / C', projects: 'LIBFT · FT_PRINTF · GET_NEXT_LINE', lesson: 'Reusable primitives, formatted output and stream reading.' },
   { id: 'algorithms', title: 'ALGORITHMS', projects: 'PUSH_SWAP', lesson: 'Constraints, ordering and trade-offs.' },
