@@ -29,6 +29,15 @@ test('Developer Mode launcher opens command palette', async ({ page }) => {
   await expect(page.getByRole('dialog', { name: 'Command palette' })).toBeHidden()
 })
 
+test('Foundations header links remain usable', async ({ page }) => {
+  await page.goto('/foundations')
+  await page.getByRole('link', { name: 'HOME' }).click()
+  await expect(page).toHaveURL('/')
+  await page.goto('/foundations')
+  await page.getByRole('link', { name: 'DESIGN', exact: true }).click()
+  await expect(page).toHaveURL('/design')
+})
+
 test('integration evidence keeps project relationships visible', async ({ page }) => {
   await page.goto('/')
   await expect(page.getByRole('heading', { name: 'Technology is evidence of work.' })).toBeVisible()
