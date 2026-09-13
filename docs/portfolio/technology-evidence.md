@@ -9,8 +9,8 @@ Public claims are limited to evidence available in this workspace, supplied CV e
 | Gamma | OVI | User-confirmed integration | Artifact generation integration | Presentation generation is integrated into an artifact workflow. | High |
 | Supabase, PostgreSQL, Edge Functions, RLS, Realtime | BROKI; OVI; DUPLEX | BROKI source; existing project evidence map | Platform + backend | Data, authorization and application backend flows. | High |
 | RAG, embeddings, retrieval | OVI; DUPLEX | Existing project evidence map | AI architecture | Source-aware document context supports product workflows. | High |
-| Playwright | BROKI; portfolio | Repository scripts and browser tests | E2E / acceptance quality | Browser-level regression and acceptance checks. | High |
-| Husky | BROKI | `.husky/pre-commit` and `package.json` | Pre-commit quality gate | Runs install, lint, type check, unit, integration and E2E commands. | High |
+| Playwright | OVI; DUPLEX; BROKI; portfolio | User-confirmed for professional projects; repository tests for BROKI/portfolio | E2E / acceptance quality | Browser-level regression and acceptance checks. | High |
+| Husky | OVI; DUPLEX; BROKI | User-confirmed for professional projects; BROKI `.husky/pre-commit` and `package.json` inspected | Pre-commit quality gate | Quality gates run before commit; exact BROKI command is documented. | High |
 | REST APIs, OpenAPI | TrustOS | Supplied CV and project evidence map | Built API + contract documentation | Credential lifecycle and provider flows at infrastructure level. | CV-verified |
 | PrivadoID, Procivis, Idenfy | TrustOS | Supplied CV and existing case evidence | External provider integration | Provider-backed credential lifecycle flows. | CV-verified |
 | PWA | BROKI | App source and project evidence map | Application delivery | Operational web application capability. | High |
