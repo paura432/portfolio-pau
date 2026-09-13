@@ -1,6 +1,10 @@
-import Link from 'next/link'
+'use client'
+
 import { ArrowLeft } from 'lucide-react'
+import { useRouter } from 'next/navigation'
 
 export default function CaseHeader({ chapter }: { chapter: string }) {
-  return <header className="case-header"><Link href="/"><ArrowLeft size={18} /> PAU / SYSTEMS</Link><span>{chapter}</span></header>
+  const router = useRouter()
+  const back = () => window.history.length > 1 ? router.back() : router.push('/')
+  return <header className="case-header"><button type="button" className="case-back" onClick={back} aria-label="Go back"><ArrowLeft size={18} /> PAU / SYSTEMS</button><span>{chapter}</span></header>
 }
