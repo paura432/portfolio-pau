@@ -38,6 +38,30 @@ test('Foundations header links remain usable', async ({ page }) => {
   await expect(page).toHaveURL('/design')
 })
 
+test('mobile case navigation opens from the three-line control', async ({ page }) => {
+  await page.setViewportSize({ width: 320, height: 704 })
+  await page.goto('/work/duplex')
+  const menu = page.locator('.case-mobile-menu')
+  await menu.locator('> summary').click()
+  await expect(menu.getByRole('link', { name: 'DESIGN', exact: true })).toBeVisible()
+  await expect(menu.getByText('CV', { exact: true })).toBeVisible()
+})
+
+test('case header fits every responsive breakpoint', async ({ page }) => {
+  for (const width of [320, 390, 420, 621, 768, 1024, 1440]) {
+    await page.setViewportSize({ width, height: 704 })
+    await page.goto('/work/duplex')
+    await expect(page.locator('.case-header')).toHaveJSProperty('scrollWidth', width)
+    if (width <= 620) {
+      await expect(page.getByLabel('Open navigation')).toBeVisible()
+      await expect(page.locator('.case-nav')).toBeHidden()
+    } else {
+      await expect(page.locator('.case-nav')).toBeVisible()
+      await expect(page.getByLabel('Open navigation')).toBeHidden()
+    }
+  }
+})
+
 test('integration evidence keeps project relationships visible', async ({ page }) => {
   await page.goto('/')
   await expect(page.getByRole('heading', { name: 'Technology is evidence of work.' })).toBeVisible()
