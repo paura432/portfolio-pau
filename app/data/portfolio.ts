@@ -21,6 +21,26 @@ export type IntegrationEvidence = {
   publicDescription: string
 }
 
+type CaseDetail = {
+  role: string
+  builtAt: string
+  year: string
+  scope: string[]
+  stack: string[]
+  challenge: string
+  decisions: { decision: string; why: string; tradeOff: string }[]
+  delivered: string[]
+  quality: string[]
+  boundary: string
+}
+
+export const caseDetails: Record<'ovi' | 'duplex' | 'broki' | 'trustos', CaseDetail> = {
+  ovi: { role: 'Full Stack Product Engineer', builtAt: 'Performanze', year: '2026 — now', scope: ['Product workflows', 'Microsoft context', 'Artifacts'], stack: ['React', 'Supabase', 'Microsoft Graph'], challenge: 'Turn work requests into reliable actions across Microsoft 365 context.', decisions: [{ decision: 'Structured product routing', why: 'Actions need explicit intent and context.', tradeOff: 'More contracts than a pure chat interface.' }], delivered: ['AI-assisted productivity workflows', 'Microsoft 365 context integration', 'Artifact generation integration'], quality: ['Public-safe conceptual demo'], boundary: 'No tenant data, credentials, private payloads or exact architecture.' },
+  duplex: { role: 'Technical leadership on SAT module', builtAt: 'Performanze', year: '2026 — now', scope: ['Technical workflows', 'Retrieval', 'Source traceability'], stack: ['Next.js', 'Supabase', 'PostgreSQL', 'RAG'], challenge: 'Keep technical diagnosis grounded in equipment context and traceable sources.', decisions: [{ decision: 'Evidence before diagnosis', why: 'Technical answers need manuals, checklists and history.', tradeOff: 'More explicit source handling than generic chat.' }], delivered: ['SAT assistant workflow', 'Source-backed diagnosis', 'Escalation context'], quality: ['Public-safe sanitized reconstruction'], boundary: 'No manuals, customer data, equipment records or private integrations.' },
+  broki: { role: 'Independent product engineering', builtAt: 'Independent product', year: '2026', scope: ['Product architecture', 'Frontend', 'Backend', 'Data', 'QA'], stack: ['Next.js', 'Supabase', 'PostgreSQL', 'Edge Functions', 'Playwright'], challenge: 'Model airport ground operations in one coherent operational platform.', decisions: [{ decision: 'Operational domains as one system', why: 'Fleet, GSE, tools and personnel share operational state.', tradeOff: 'Requires clear domain relations and access boundaries.' }, { decision: 'Legacy transition as secondary work', why: 'Existing records must keep operational meaning.', tradeOff: 'Audit and normalization add delivery complexity.' }], delivered: ['Airport operations platform', 'Operational resource workflows', 'PWA and realtime interfaces'], quality: ['Husky pre-commit gate', 'Unit, integration and E2E coverage', 'Offline smoke checks'], boundary: 'No airport name, customer data, production records or private workflows.' },
+  trustos: { role: 'Software Developer', builtAt: 'Telefónica Tech', year: '2025 — 2026', scope: ['Backend APIs', 'Provider integration', 'Credential flows'], stack: ['Node.js', 'Express', 'MongoDB', 'OpenAPI'], challenge: 'Provide a coherent credential lifecycle across identity providers.', decisions: [{ decision: 'Provider abstraction', why: 'Credential flows need a consistent product contract.', tradeOff: 'Provider differences remain a system constraint.' }], delivered: ['Credential lifecycle services', 'Provider integrations', 'QR verification flows', 'OpenAPI documentation'], quality: ['Infrastructure-level public model'], boundary: 'No tenant data, credentials, provider configuration or private infrastructure.' },
+}
+
 export const contact = {
   name: 'Pau Ramos',
   email: 'pauramosimo@gmail.com',

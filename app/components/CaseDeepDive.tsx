@@ -1,0 +1,6 @@
+import { caseDetails } from '../data/portfolio'
+
+export default function CaseDeepDive({ project }: { project: keyof typeof caseDetails }) {
+  const detail = caseDetails[project]
+  return <><section className="case-metadata" aria-label="Project metadata"><div><span>ROLE</span><strong>{detail.role}</strong></div><div><span>BUILT AT</span><strong>{detail.builtAt}</strong></div><div><span>YEAR</span><strong>{detail.year}</strong></div><div><span>SCOPE</span><strong>{detail.scope.join(' · ')}</strong></div><div><span>STACK</span><strong>{detail.stack.join(' · ')}</strong></div></section><section className="case-deep-dive"><p className="case-label">ENGINEERING CHALLENGE</p><h2>{detail.challenge}</h2><div className="case-decision-list"><p className="case-label">KEY DECISIONS</p>{detail.decisions.map(({ decision, why, tradeOff }) => <article key={decision}><h3>{decision}</h3><p><b>WHY</b> {why}</p><p><b>TRADE-OFF</b> {tradeOff}</p></article>)}</div><div className="case-delivery"><div><p className="case-label">WHAT I BUILT / DELIVERED</p><ul>{detail.delivered.map((item) => <li key={item}>{item}</li>)}</ul></div><div><p className="case-label">QUALITY + DELIVERY</p><ul>{detail.quality.map((item) => <li key={item}>{item}</li>)}</ul></div></div><p className="case-boundary">PUBLIC BOUNDARY / {detail.boundary}</p></section></>
+}

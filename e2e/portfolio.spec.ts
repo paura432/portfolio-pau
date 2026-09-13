@@ -39,7 +39,7 @@ test('integration evidence keeps project relationships visible', async ({ page }
   await expect(page.getByRole('heading', { name: 'SUPABASE' })).toBeVisible()
   await expect(page.getByRole('heading', { name: 'PRIVADOID · PROCIVIS · IDENFY' })).toBeVisible()
   await page.goto('/work/broki')
-  await expect(page.getByText('AIRPORT OPERATIONS PLATFORM')).toBeVisible()
+  await expect(page.getByText('Airport operations platform', { exact: true })).toBeVisible()
   await expect(page.getByText('Ground Support Equipment')).toBeVisible()
   await expect(page.getByText('MIGRATION, NOT RESKIN')).toHaveCount(0)
 })
