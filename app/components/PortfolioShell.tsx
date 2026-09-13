@@ -10,7 +10,7 @@ import IntegrationEvidence from './IntegrationEvidence'
 export default function PortfolioShell() {
   const [open, setOpen] = useState(false)
   const setActiveProject = useLiveSystem((state) => state.setActiveProject)
-  const nav = <><a href="#work">WORK</a><a href="#experience">EXPERIENCE</a><Link href="/foundations">ARCHIVE</Link><Link href="/design">DESIGN</Link><a href="/cv-en.pdf" download>CV EN</a><a href="/cv-es.pdf" download>CV ES</a></>
+  const nav = <><a href="#work">WORK</a><a href="#experience">EXPERIENCE</a><Link href="/foundations">ARCHIVE</Link><Link href="/design">DESIGN</Link><Link href="/colophon">COLOPHON</Link><details className="cv-menu"><summary>CV</summary><a href="/cv-en.pdf" download>CV EN</a><a href="/cv-es.pdf" download>CV ES</a></details></>
 
   return <main className="live-home">
     <a className="skip-link" href="#main-content">Skip to content</a>
