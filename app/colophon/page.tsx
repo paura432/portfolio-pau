@@ -15,5 +15,5 @@ const sections = [
 ]
 
 export default function ColophonPage() {
-  return <main className="foundation-detail"><CaseHeader chapter="COLOPHON" /><section className="foundation-detail-hero"><p className="kicker">PAU / LIVE SYSTEMS</p><h1>Built to inspect.</h1><p>The portfolio is a product artifact. Every interactive layer has a readable baseline.</p></section><section className="foundation-map">{sections.map(([title, detail]) => <article key={title}><span>{title}</span><h2>{title}</h2><p>{detail}</p></article>)}</section><footer className="case-footer"><a href="https://github.com/paura432/portfolio-pau" target="_blank" rel="noreferrer">View source</a><Link href="/">Back to home</Link></footer></main>
+  return <main className="foundation-detail"><CaseHeader chapter="COLOPHON" /><section className="foundation-detail-hero"><p className="kicker">PAU / LIVE SYSTEMS</p><h1>Built to Inspect.</h1><p>The portfolio is a product artifact. Every interactive layer has a readable baseline.</p></section><section className="foundation-map">{sections.map(([title, detail]) => <article key={title}><span>{title}</span><h2>{title}</h2><p>{detail}</p></article>)}</section><footer className="case-footer"><a href="https://github.com/paura432/portfolio-pau" target="_blank" rel="noreferrer">View source</a><Link href="/">Back to home</Link></footer></main>
 }
