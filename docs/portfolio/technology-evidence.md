@@ -1,28 +1,24 @@
 # PAU RAMOS — Technology evidence
 
-Only technologies found in local/public source or the supplied CV appear here.
+Public claims are limited to evidence available in this workspace, supplied CV evidence, or direct confirmation for a provider-level claim. No secrets, IDs, customer data, private URLs, payloads or internal architecture appear here.
 
-| Capability | Evidence projects | Confidence |
-| --- | --- | --- |
-| TypeScript, React, Next.js | Portfolio, Broki, Sofía, DUPLEX, supplied CV | Verified |
-| Supabase, PostgreSQL, RLS, Edge Functions | Broki migrations/functions and OVI/DUPLEX Supabase source | Verified |
-| Microsoft Graph, Outlook, Teams, Calendar, OneDrive | OVI functions, migrations, tests, and readiness docs | Verified locally; public copy must remain high-level |
-| Retrieval, embeddings, document processing | OVI knowledge/embedding source; DUPLEX manuals and assistant/retrieval contracts | Verified locally; no private corpus claims |
-| Node.js, Express, MongoDB, Docker, OpenAPI | Supplied CV / TrustOS | CV-verified |
-| PWA, realtime, Leaflet, Playwright | Broki app manifest, components, scripts, and tests | Verified |
-| Motion / media pipeline / i18n | Sofía package, source and media tooling | Verified |
-| C, UNIX processes, threads, graphics, networking | Public 42 repos and archive | Verified |
-| C++ | 42CPPS public repository and supplied CV | Verified |
-| Angular, MVC, Python, Vite, Tailwind, CI/CD, pytest | CV lists some; local evidence varies. | Do not present as core capability until project-level evidence is mapped. |
+| Technology | Project | Evidence | Type of use | Public-safe claim | Confidence |
+| --- | --- | --- | --- | --- | --- |
+| Microsoft Graph | OVI | Existing project evidence map | External API + orchestration | Microsoft 365 context supports AI-assisted workflows. | High |
+| Outlook, Teams, Calendar, OneDrive, SharePoint | OVI | Existing project evidence map | Microsoft Graph surfaces | Surface names only; no tenant or resource identity details. | High |
+| Gamma | OVI | User-confirmed integration | Artifact generation integration | Presentation generation is integrated into an artifact workflow. | High |
+| Supabase, PostgreSQL, Edge Functions, RLS, Realtime | BROKI; OVI; DUPLEX | BROKI source; existing project evidence map | Platform + backend | Data, authorization and application backend flows. | High |
+| RAG, embeddings, retrieval | OVI; DUPLEX | Existing project evidence map | AI architecture | Source-aware document context supports product workflows. | High |
+| Playwright | BROKI; portfolio | Repository scripts and browser tests | E2E / acceptance quality | Browser-level regression and acceptance checks. | High |
+| Husky | BROKI | `.husky/pre-commit` and `package.json` | Pre-commit quality gate | Runs install, lint, type check, unit, integration and E2E commands. | High |
+| REST APIs, OpenAPI | TrustOS | Supplied CV and project evidence map | Built API + contract documentation | Credential lifecycle and provider flows at infrastructure level. | CV-verified |
+| PrivadoID, Procivis, Idenfy | TrustOS | Supplied CV and existing case evidence | External provider integration | Provider-backed credential lifecycle flows. | CV-verified |
+| PWA | BROKI | App source and project evidence map | Application delivery | Operational web application capability. | High |
+| C, C++, UNIX, processes, threads, networking | 42 archive | Public repositories | Systems engineering | Public foundations behind product work. | High |
 
-## Public capability groups
+## Verification boundaries
 
-1. Product engineering: TypeScript, React, Next.js, responsive UI, accessibility.
-2. Backend and data: Node.js, REST APIs, Supabase, PostgreSQL, MongoDB.
-3. AI systems: Microsoft context integration, retrieval, embeddings, document processing, traceable assistance.
-4. Systems: C, C++, UNIX processes, threads, networking, raycasting.
-5. Delivery: Docker, Vercel, PWA, testing and QA practices.
-
-## Presentation rule
-
-Technology appears with a project relationship, never as an unqualified logo wall. Example: `SUPABASE — OVI · DUPLEX · BROKI` only where a public claim is permitted.
+- No `lint-staged` configuration exists in BROKI. Do not claim it.
+- No current OVI or DUPLEX checkout is available in this workspace. Public OVI/DUPLEX claims retain the existing evidence-map boundary; no deeper implementation detail is added.
+- Microsoft Graph resource identity (`site` / `drive` / `item`) is not published: current evidence does not justify a public implementation claim.
+- No source verifies PPTXGenJS, Automizer, pgvector, LangChain, Jest, pytest, GitHub Actions or a project-wide CI workflow for this pass. They are not presented as portfolio capability claims.

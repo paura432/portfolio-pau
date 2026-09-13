@@ -28,3 +28,18 @@ test('Developer Mode launcher opens command palette', async ({ page }) => {
   await page.keyboard.press('Escape')
   await expect(page.getByRole('dialog', { name: 'Command palette' })).toBeHidden()
 })
+
+test('integration evidence keeps project relationships visible', async ({ page }) => {
+  await page.goto('/')
+  await expect(page.getByRole('heading', { name: 'Technology is evidence of work.' })).toBeVisible()
+  const graph = page.getByRole('heading', { name: 'MICROSOFT GRAPH' }).locator('..')
+  await graph.focus()
+  await expect(graph.getByText('USED IN', { exact: true })).toBeVisible()
+  await expect(graph.getByText('OVI', { exact: true })).toBeVisible()
+  await expect(page.getByRole('heading', { name: 'SUPABASE' })).toBeVisible()
+  await expect(page.getByRole('heading', { name: 'PRIVADOID · PROCIVIS · IDENFY' })).toBeVisible()
+  await page.goto('/work/broki')
+  await expect(page.getByText('AIRPORT OPERATIONS PLATFORM')).toBeVisible()
+  await expect(page.getByText('Ground Support Equipment')).toBeVisible()
+  await expect(page.getByText('MIGRATION, NOT RESKIN')).toHaveCount(0)
+})

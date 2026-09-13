@@ -11,6 +11,16 @@ export type SystemProject = {
   confidential?: boolean
 }
 
+export type IntegrationEvidence = {
+  id: string
+  name: string
+  category: 'CONSUMED' | 'CONSUMED + ORCHESTRATED' | 'BUILT' | 'ORCHESTRATED' | 'PLATFORM' | 'AI' | 'QUALITY'
+  projects: ('ovi' | 'duplex' | 'broki' | 'trustos' | 'portfolio')[]
+  capabilities: string[]
+  work: string
+  publicDescription: string
+}
+
 export const contact = {
   name: 'Pau Ramos',
   email: 'pauramosimo@gmail.com',
@@ -58,10 +68,10 @@ export const systems: SystemProject[] = [
 
 export const independentWork = {
   title: 'BROKI',
-  chapter: 'INDEPENDENT FIELD OPERATIONS',
+  chapter: 'AIRPORT OPERATIONS PLATFORM',
   period: '2026',
-  summary: 'A product migration for operational work: from a legacy stack to a current web platform.',
-  technologies: ['Next.js', 'TypeScript', 'Supabase', 'PostgreSQL', 'PWA'],
+  summary: 'Operational platform for airport ground operations, connecting fleet, GSE, tools, personnel and operational traceability.',
+  technologies: ['Next.js', 'TypeScript', 'Supabase', 'PostgreSQL', 'Edge Functions', 'RLS', 'Realtime', 'PWA', 'Playwright'],
 } as const
 
 export const designPractice = [
@@ -71,12 +81,24 @@ export const designPractice = [
 
 export const capabilities = [
   ['PRODUCT ENGINEERING', 'TypeScript · React · Next.js · Vite'],
-  ['BACKEND & DATA', 'Node.js · Express · Supabase · PostgreSQL · MongoDB'],
-  ['AI SYSTEMS', 'RAG · document retrieval · embeddings · LLM integration'],
-  ['MICROSOFT ECOSYSTEM', 'Microsoft Graph · Outlook · Teams · Calendar · OneDrive'],
+  ['BACKEND & DATA', 'Node.js · Express · Supabase · PostgreSQL · MongoDB · Edge Functions · Realtime · RLS'],
+  ['AI & KNOWLEDGE', 'RAG · document retrieval · embeddings · LLM integration'],
+  ['APIs & INTEGRATIONS', 'Microsoft Graph · Outlook · Teams · Calendar · OneDrive · SharePoint · Gamma · OpenAPI'],
+  ['QUALITY ENGINEERING', 'Playwright · unit · integration · acceptance · production smoke · Husky'],
   ['SYSTEMS', 'C · C++ · UNIX · processes · threads · networking'],
-  ['DELIVERY', 'Docker · Vercel · Playwright · QA'],
+  ['DELIVERY', 'Docker · Vercel · Git · Linux · Postman'],
 ] as const
+
+export const integrations: IntegrationEvidence[] = [
+  { id: 'graph', name: 'MICROSOFT GRAPH', category: 'CONSUMED + ORCHESTRATED', projects: ['ovi'], capabilities: ['Outlook', 'Teams', 'Calendar', 'OneDrive', 'SharePoint'], work: 'Integrated Microsoft 365 context into AI-assisted product workflows.', publicDescription: 'Communication, calendar and file context can support product actions. No tenant data or resource identifiers are public.' },
+  { id: 'gamma', name: 'GAMMA', category: 'ORCHESTRATED', projects: ['ovi'], capabilities: ['Presentation generation', 'Artifact workflow'], work: 'Integrated presentation generation into an artifact workflow.', publicDescription: 'Public description is provider-level only; no payloads, generated customer material or credentials are shown.' },
+  { id: 'supabase', name: 'SUPABASE', category: 'PLATFORM', projects: ['ovi', 'duplex', 'broki'], capabilities: ['PostgreSQL', 'Edge Functions', 'Authorization', 'Realtime'], work: 'Built across data, backend and application flows.', publicDescription: 'Project evidence supports platform use; the public model omits schemas, records and endpoints.' },
+  { id: 'rag', name: 'RAG / RETRIEVAL', category: 'AI', projects: ['ovi', 'duplex'], capabilities: ['Document context', 'Embeddings', 'Traceable sources'], work: 'Designed retrieval context for useful, source-aware workflows.', publicDescription: 'No private corpus, document content or production ranking logic is shown.' },
+  { id: 'trustos', name: 'REST / OPENAPI', category: 'BUILT', projects: ['trustos'], capabilities: ['Credential lifecycle', 'QR verification', 'Provider integration'], work: 'Developed API-facing credential lifecycle and provider flows.', publicDescription: 'Infrastructure-level public model only.' },
+  { id: 'providers', name: 'PRIVADOID · PROCIVIS · IDENFY', category: 'CONSUMED', projects: ['trustos'], capabilities: ['Verifiable credentials', 'Wallet flows', 'Verification'], work: 'Integrated credential providers behind product lifecycle flows.', publicDescription: 'No provider configuration or private infrastructure is shown.' },
+  { id: 'playwright', name: 'PLAYWRIGHT', category: 'QUALITY', projects: ['broki', 'portfolio'], capabilities: ['E2E', 'Acceptance', 'Regression'], work: 'Built and maintained browser-level quality checks.', publicDescription: 'Portfolio and BROKI repositories contain Playwright coverage.' },
+  { id: 'husky', name: 'HUSKY', category: 'QUALITY', projects: ['broki'], capabilities: ['Pre-commit gate', 'Lint', 'Types', 'Unit / integration / E2E'], work: 'Configured a pre-commit quality gate.', publicDescription: 'Verified BROKI hook runs install, lint, type check, unit, integration and E2E commands. No lint-staged configuration exists.' },
+]
 
 export const foundations = [
   { id: 'memory', title: 'MEMORY / C', projects: 'LIBFT · FT_PRINTF · GET_NEXT_LINE', lesson: 'Reusable primitives, formatted output and stream reading.' },

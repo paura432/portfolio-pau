@@ -30,8 +30,8 @@ export function TrustModel() {
 }
 
 export function BrokiModel() {
-  const stages = [['LEGACY', 'HTML · NODE · POSTGRESQL · N8N'], ['AUDIT', 'DATA · SCHEMA · WORKFLOWS · PARITY'], ['MIGRATION', 'MAPPINGS · NORMALIZATION · EDGE FUNCTIONS · RLS'], ['CURRENT PLATFORM', 'NEXT.JS · SUPABASE · PWA · REALTIME']]
+  const stages = [['FLEET', 'Vehicles and operational state'], ['GSE', 'Ground Support Equipment and availability'], ['TOOLS', 'Inventory, assignments and service context'], ['PERSONNEL', 'Roster and operational responsibility']]
   const [stage, setStage] = useState(0)
   const setActiveProject = useLiveSystem((state) => state.setActiveProject)
-  return <section className="case-playground" aria-labelledby="broki-model-title" onFocus={() => setActiveProject('broki')}><p className="case-label">CONCEPTUAL MIGRATION MODEL</p><h2 id="broki-model-title">Records move. Operational meaning stays.</h2><div className="step-tabs">{stages.map(([name], index) => <button key={name} className={stage === index ? 'active' : ''} onClick={() => setStage(index)}>{name}</button>)}</div><div className="diagnosis"><p>STATE {String(stage + 1).padStart(2, '0')}</p><strong>{stages[stage][0]}</strong><p>{stages[stage][1]}</p></div><p>Sanitized migration model. No production records or automation logic shown.</p></section>
+  return <section className="case-playground" aria-labelledby="broki-model-title" onFocus={() => setActiveProject('broki')}><p className="case-label">CONCEPTUAL AIRPORT OPERATIONS MODEL</p><h2 id="broki-model-title">One operational system, traceable work.</h2><div className="step-tabs" aria-label="Operational domains">{stages.map(([name], index) => <button type="button" key={name} className={stage === index ? 'active' : ''} onClick={() => setStage(index)}>{name}</button>)}</div><div className="diagnosis"><p>OPERATIONAL DOMAIN {String(stage + 1).padStart(2, '0')}</p><strong>{stages[stage][0]}</strong><p>{stages[stage][1]} · OPERATIONAL TRACEABILITY</p></div><p>Public-safe model. Existing data and workflows were incorporated as a secondary engineering challenge; no production records or automation logic shown.</p></section>
 }
