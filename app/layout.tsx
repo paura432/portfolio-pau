@@ -6,6 +6,7 @@ import './globals.css'
 import './v2.css'
 import './capabilities.css'
 import './runtime.css'
+import './i18n.css'
 
 const geistSans = Geist({ subsets: ['latin'], variable: '--font-sans', display: 'swap' })
 const geistMono = Geist_Mono({ subsets: ['latin'], variable: '--font-mono', display: 'swap' })

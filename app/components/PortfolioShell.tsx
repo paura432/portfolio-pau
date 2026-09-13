@@ -7,15 +7,14 @@ import { capabilities, contact, designPractice, experience, foundations, indepen
 import { useLiveSystem } from './live-system/liveSystemStore'
 import IntegrationEvidence from './IntegrationEvidence'
 
-export default function PortfolioShell() {
+export default function PortfolioShell({ standalone = true }: { standalone?: boolean }) {
   const [open, setOpen] = useState(false)
   const setActiveProject = useLiveSystem((state) => state.setActiveProject)
   const nav = <><a href="#work">WORK</a><a href="#experience">EXPERIENCE</a><Link href="/foundations">ARCHIVE</Link><Link href="/design">DESIGN</Link><Link href="/colophon">COLOPHON</Link><details className="cv-menu"><summary>CV</summary><a href="/cv-en.pdf" download>CV EN</a><a href="/cv-es.pdf" download>CV ES</a></details></>
 
   return <main className="live-home">
     <a className="skip-link" href="#main-content">Skip to content</a>
-    <header className="live-header"><Link className="wordmark" href="/">PAU RAMOS <span>/ LIVE SYSTEMS</span></Link><nav className="desktop-nav" aria-label="Primary navigation">{nav}</nav><button className="icon-button menu-button" onClick={() => setOpen(!open)} aria-expanded={open} aria-label="Toggle navigation">{open ? <X /> : <Menu />}</button></header>
-    {open && <nav className="mobile-nav" aria-label="Mobile navigation" onClick={() => setOpen(false)}>{nav}</nav>}
+    {standalone && <><header className="live-header"><Link className="wordmark" href="/">PAU RAMOS <span>/ LIVE SYSTEMS</span></Link><nav className="desktop-nav" aria-label="Primary navigation">{nav}</nav><button className="icon-button menu-button" onClick={() => setOpen(!open)} aria-expanded={open} aria-label="Toggle navigation">{open ? <X /> : <Menu />}</button></header>{open && <nav className="mobile-nav" aria-label="Mobile navigation" onClick={() => setOpen(false)}>{nav}</nav>}</>}
     <div id="main-content">
       <section className="live-hero" aria-labelledby="hero-title"><p className="kicker">MADRID · 2026</p><h1 id="hero-title">PAU<br />RAMOS</h1><div className="hero-role"><strong>FULL STACK<br />PRODUCT ENGINEER</strong><p>Building products across interface, systems and AI.</p></div><div className="hero-actions"><a href="#work">SELECTED WORK <ArrowDownRight size={17} /></a><a href="/cv-en.pdf" download>CV EN <ArrowDownRight size={17} /></a><a href="/cv-es.pdf" download>CV ES <ArrowDownRight size={17} /></a></div><div className="live-system" aria-hidden="true"><i /><i /><i /><i /></div></section>
       <section id="work" className="live-section selected-work" aria-labelledby="work-title"><div className="section-label"><span>01</span><h2 id="work-title">PROFESSIONAL SYSTEMS</h2></div><div className="work-list">{systems.map((project) => <Link href={'/work/' + project.slug} key={project.slug} className={'work-row work-' + project.slug} onMouseEnter={() => setActiveProject(project.slug)} onFocus={() => setActiveProject(project.slug)} onMouseLeave={() => setActiveProject('home')}><span>{project.index}</span><div><h3>{project.title}</h3><p>{project.chapter}</p></div><p>{project.company} / {project.period}</p><ArrowUpRight aria-hidden="true" /></Link>)}</div></section>

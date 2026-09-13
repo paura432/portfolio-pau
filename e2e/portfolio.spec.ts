@@ -32,7 +32,7 @@ test('Developer Mode launcher opens command palette', async ({ page }) => {
 test('Foundations header links remain usable', async ({ page }) => {
   await page.goto('/foundations')
   await page.getByRole('link', { name: 'HOME' }).click()
-  await expect(page).toHaveURL('/')
+  await expect(page).toHaveURL('/en')
   await page.goto('/foundations')
   await page.getByRole('link', { name: 'DESIGN', exact: true }).click()
   await expect(page).toHaveURL('/design')
@@ -60,6 +60,16 @@ test('case header fits every responsive breakpoint', async ({ page }) => {
       await expect(page.getByLabel('Open navigation')).toBeHidden()
     }
   }
+})
+
+test('localized routes keep locale while switching language', async ({ page }) => {
+  await page.goto('/en/work/duplex')
+  await expect(page.locator('html')).toHaveAttribute('lang', 'en')
+  await page.getByRole('link', { name: 'Cambiar a castellano' }).click()
+  await expect(page).toHaveURL('/es/work/duplex')
+  await expect(page.locator('html')).toHaveAttribute('lang', 'es')
+  await page.getByRole('link', { name: 'Switch to English' }).click()
+  await expect(page).toHaveURL('/en/work/duplex')
 })
 
 test('integration evidence keeps project relationships visible', async ({ page }) => {

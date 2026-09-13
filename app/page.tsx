@@ -1,5 +1,5 @@
-import PortfolioShell from './components/PortfolioShell'
+import { redirect } from 'next/navigation'
 
 export default function Home() {
-  return <PortfolioShell />
+  redirect('/en')
 }
