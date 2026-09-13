@@ -22,6 +22,7 @@ export default function DevTools() {
     const update = () => setViewport([window.innerWidth, window.innerHeight, window.devicePixelRatio])
     const key = (event: KeyboardEvent) => {
       if ((event.metaKey || event.ctrlKey) && event.key.toLowerCase() === 'k') { event.preventDefault(); setOpen(true) }
+      if (event.key === 'Escape') setOpen(false)
       if (dev && event.key.toLowerCase() === 'g') toggleGridMode()
       if (dev && event.key.toLowerCase() === 'x') toggleXrayMode()
     }
@@ -38,5 +39,5 @@ export default function DevTools() {
     if (name === 'View Source') window.open('https://github.com/paura432/portfolio-pau', '_blank', 'noopener,noreferrer')
     setOpen(false)
   }
-  return <><button className="dev-launcher" onClick={() => setOpen(true)}>CMD K</button>{dev && <aside className="dev-readout" aria-label="Developer Mode"><strong>DEV MODE</strong><span>ROUTE {location.pathname}</span><span>VIEWPORT {viewport[0]} × {viewport[1]}</span><span>DPR {viewport[2]}</span><span>MOTION {matchMedia('(prefers-reduced-motion: reduce)').matches ? 'REDUCED' : 'FULL'}</span><span>POINTER {matchMedia('(pointer: coarse)').matches ? 'COARSE' : 'FINE'}</span><span>ACTIVE SYSTEM {activeProject.toUpperCase()}</span><span>RENDER PROFILE {profile}</span></aside>}{open && <div className="command-backdrop" role="presentation" onMouseDown={() => setOpen(false)}><section className="command-palette" role="dialog" aria-modal="true" aria-label="Command palette" onMouseDown={(event) => event.stopPropagation()}><p>COMMAND PALETTE</p>{links.map(([label, href]) => <a key={href} href={href}>{label}</a>)}{['Toggle Developer Mode', 'Toggle Layout Grid', 'Toggle X-Ray View', 'View Source'].map((name) => <button key={name} onClick={() => action(name)}>{name}</button>)}</section></div>}</>
+  return <><button type="button" className="dev-launcher" aria-expanded={open} onClick={() => setOpen(true)}>CMD K</button>{dev && <aside className="dev-readout" aria-label="Developer Mode"><strong>DEV MODE</strong><span>ROUTE {location.pathname}</span><span>VIEWPORT {viewport[0]} × {viewport[1]}</span><span>DPR {viewport[2]}</span><span>MOTION {matchMedia('(prefers-reduced-motion: reduce)').matches ? 'REDUCED' : 'FULL'}</span><span>POINTER {matchMedia('(pointer: coarse)').matches ? 'COARSE' : 'FINE'}</span><span>ACTIVE SYSTEM {activeProject.toUpperCase()}</span><span>RENDER PROFILE {profile}</span></aside>}{open && <div className="command-backdrop" role="presentation" onMouseDown={() => setOpen(false)}><section className="command-palette" role="dialog" aria-modal="true" aria-label="Command palette" onMouseDown={(event) => event.stopPropagation()}><p>COMMAND PALETTE</p>{links.map(([label, href]) => <a key={href} href={href}>{label}</a>)}{['Toggle Developer Mode', 'Toggle Layout Grid', 'Toggle X-Ray View', 'View Source'].map((name) => <button type="button" key={name} onClick={() => action(name)}>{name}</button>)}</section></div>}</>
 }
