@@ -70,6 +70,18 @@ test('localized routes keep locale while switching language', async ({ page }) =
   await expect(page).toHaveURL('/en/work/duplex')
 })
 
+test('localized paths select the matching Live System', async ({ page }) => {
+  await page.goto('/es/work/duplex')
+  await expect(page.getByText(/Live system: duplex\./)).toBeAttached()
+  await page.getByRole('link', { name: 'Next: TrustOS' }).click()
+  await expect(page).toHaveURL('/es/work/trustos')
+  await page.getByRole('button', { name: 'CMD K' }).click()
+  await page.getByRole('link', { name: 'Open Engineering Archive' }).click()
+  await expect(page).toHaveURL('/es/foundations')
+  await page.goto('/en/foundations/cub3d')
+  await expect(page.getByText(/Live system: archive\./)).toBeAttached()
+})
+
 test('integration evidence keeps project relationships visible', async ({ page }) => {
   await page.goto('/')
   await expect(page.getByRole('heading', { name: 'Technology is evidence of work.' })).toBeVisible()

@@ -1,4 +1,4 @@
-import Link from 'next/link'
+import Link from '../components/LocaleLink'
 import CaseHeader from '../components/CaseHeader'
 
 export const metadata = { title: 'Colophon — Pau Ramos', description: 'How PAU / LIVE SYSTEMS is built.' }

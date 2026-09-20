@@ -1,4 +1,4 @@
-import Link from 'next/link'
+import Link from '../../components/LocaleLink'
 import { ArrowUpRight } from 'lucide-react'
 import CaseHeader from '../../components/CaseHeader'
 import CaseDeepDive from '../../components/CaseDeepDive'
