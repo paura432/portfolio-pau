@@ -30,33 +30,31 @@ test('Developer Mode launcher opens command palette', async ({ page }) => {
 })
 
 test('Foundations header links remain usable', async ({ page }) => {
-  await page.goto('/foundations')
-  await page.getByRole('link', { name: 'HOME' }).click()
+  await page.goto('/en/foundations')
+  await page.getByRole('link', { name: 'ALL SYSTEMS', exact: true }).click()
   await expect(page).toHaveURL('/en')
-  await page.goto('/foundations')
+  await page.goto('/en/foundations')
   await page.getByRole('link', { name: 'DESIGN', exact: true }).click()
-  await expect(page).toHaveURL('/design')
+  await expect(page).toHaveURL('/en/design')
 })
 
 test('mobile case navigation opens from the three-line control', async ({ page }) => {
   await page.setViewportSize({ width: 320, height: 704 })
-  await page.goto('/work/duplex')
-  const menu = page.locator('.case-mobile-menu')
-  await menu.locator('> summary').click()
-  await expect(menu.getByRole('link', { name: 'DESIGN', exact: true })).toBeVisible()
-  await expect(menu.getByText('CV', { exact: true })).toBeVisible()
+  await page.goto('/en/work/duplex')
+  await page.getByRole('button', { name: 'Open navigation' }).click()
+  await expect(page.getByRole('link', { name: 'DESIGN', exact: true })).toBeVisible()
+  await expect(page.getByRole('navigation', { name: 'Mobile navigation' }).getByText('CV', { exact: true })).toBeVisible()
 })
 
 test('case header fits every responsive breakpoint', async ({ page }) => {
   for (const width of [320, 390, 420, 621, 768, 1024, 1440]) {
     await page.setViewportSize({ width, height: 704 })
-    await page.goto('/work/duplex')
-    await expect(page.locator('.case-header')).toHaveJSProperty('scrollWidth', width)
-    if (width <= 620) {
+    await page.goto('/en/work/duplex')
+    await expect(page.locator('.global-header')).toHaveJSProperty('scrollWidth', width)
+    if (width <= 900) {
       await expect(page.getByLabel('Open navigation')).toBeVisible()
-      await expect(page.locator('.case-nav')).toBeHidden()
     } else {
-      await expect(page.locator('.case-nav')).toBeVisible()
+      await expect(page.locator('.global-nav')).toBeVisible()
       await expect(page.getByLabel('Open navigation')).toBeHidden()
     }
   }
