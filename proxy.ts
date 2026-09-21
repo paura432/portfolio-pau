@@ -2,6 +2,7 @@ import { NextResponse, type NextRequest } from 'next/server'
 
 export function proxy(request: NextRequest) {
   const { pathname } = request.nextUrl
+  if (pathname.includes('.')) return NextResponse.next()
   const segment = pathname.split('/')[1]
   if (segment && segment !== 'en' && segment !== 'es') return NextResponse.redirect(new URL(`/en${pathname}`, request.url))
   const locale = segment === 'es' ? 'es' : 'en'

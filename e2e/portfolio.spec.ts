@@ -12,6 +12,14 @@ test('public routes render at desktop and mobile widths', async ({ page }) => {
   }
 })
 
+test('CV downloads are served as PDFs', async ({ page }) => {
+  for (const path of ['/cv-en.pdf', '/cv-es.pdf']) {
+    const response = await page.request.get(path)
+    expect(response.status()).toBe(200)
+    expect(response.headers()['content-type']).toContain('application/pdf')
+  }
+})
+
 test('Developer Mode launcher opens command palette', async ({ page }) => {
   await page.goto('/foundations')
   await page.getByRole('button', { name: 'CMD K' }).click()
